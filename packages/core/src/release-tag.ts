@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category ReleaseTag
+ * @module ReleaseTag
  */
 
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';

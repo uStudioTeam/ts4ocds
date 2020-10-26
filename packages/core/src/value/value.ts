@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category Value
+ * @module Value
  */
 
 import type { Currency } from './currency';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category RelatedProcess
+ * @module RelatedProcess
  */
 
 import type { Scheme } from './scheme';

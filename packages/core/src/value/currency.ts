@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category Value
+ * @module Value
  */
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';
 

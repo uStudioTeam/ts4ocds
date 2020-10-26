@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category Period
+ * @module Period
  */
 
 import { Period } from './period';
