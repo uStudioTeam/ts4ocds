@@ -7,8 +7,5 @@
   "homepage": "https://github.com/uStudioCompany/ts4ocds",
   "peerDependencies": {
     "typescript": "4.0.3"
-  },
-  "dependencies": {
-    "class-transformer": "^0.3.1"
   }
 }

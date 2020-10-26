@@ -5,17 +5,18 @@ export class OpenCodeList<T extends string> extends ClosedCodeList<T> {
 
   protected readonly set: Set<T>;
 
-  // constructor is repeated for better intellisense
   public constructor(values: readonly T[] | null) {
-    super(values);
+    super(values || []);
   }
 
   public add<V extends string>(value: V): OpenCodeList<T | V> {
     return new OpenCodeList((new Set([...this.set, value]) as unknown) as ReadonlyArray<T | V>);
   }
 
-  public clear(): void {
+  public clear(): OpenCodeList<string> {
     this.set.clear();
+
+    return new OpenCodeList(null);
   }
 
   public delete<V extends T>(value: V): OpenCodeList<Exclude<T, V>> {
