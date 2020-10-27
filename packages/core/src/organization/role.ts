@@ -20,7 +20,7 @@ export const Roles = new OpenCodeList([
   'payee',
   'reviewBody',
   'interestedParty',
-] as const);
+]);
 
 /**
  * The party's role(s) in the contracting process,

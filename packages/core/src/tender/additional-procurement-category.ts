@@ -13,7 +13,7 @@ import { MainProcurementCategories } from './main-procurement-category';
 export const AdditionalProcurementCategories = new OpenCodeList([
   ...MainProcurementCategories,
   'consultingServices',
-] as const);
+]);
 
 /**
  * Any additional categories describing the objects of this contracting process,

@@ -14,7 +14,7 @@ export const SubmissionMethods = new OpenCodeList([
   'electronicAuction',
   'written',
   'inPerson',
-] as const);
+]);
 
 /**
  * The methods by which bids are submitted,

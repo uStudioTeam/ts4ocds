@@ -26,7 +26,7 @@ export const ReleaseTags = new ClosedCodeList([
   'implementationUpdate',
   'contractTermination',
   'compiled',
-] as const);
+]);
 
 /**
  * One or more values from the closed [releaseTag](https://standard.open-contracting.org/1.1/en/schema/codelists/#release-tag)

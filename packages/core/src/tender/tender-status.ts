@@ -17,7 +17,7 @@ export const TenderStatuses = new ClosedCodeList([
   'unsuccessful',
   'complete',
   'withdrawn',
-] as const);
+]);
 
 /**
  * The current status of the tender,
