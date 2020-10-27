@@ -31,8 +31,8 @@ export class AddressDetails<
   public locality?: Classification<L>;
 
   /**
-   * The most detailed level of NUTS codes, NUTS 3 should be used and it should be taken from the EU codelist linked from
-   * [](http://ec.europa.eu/eurostat/ramon/index.cfm?TargetUrl=DSP_PUB_WELC).
+   * The most detailed level of NUTS codes, NUTS 3 should be used and it should be taken from the
+   * [EU codelist](http://ec.europa.eu/eurostat/ramon/index.cfm?TargetUrl=DSP_PUB_WELC).
    */
   @Type(() => String)
   public NUTSCode?: NC;
