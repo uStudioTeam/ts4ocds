@@ -9,8 +9,8 @@ export class OpenCodeList<T extends string> extends ClosedCodeList<T> {
     super(values || []);
   }
 
-  public add<V extends string>(value: V): OpenCodeList<T | V> {
-    return new OpenCodeList((new Set([...this.set, value]) as unknown) as ReadonlyArray<T | V>);
+  public add<V extends string>(value: V | readonly V[]): OpenCodeList<T | V> {
+    return new OpenCodeList([...this.set, ...[Array.isArray(value) ? value : [value]]] as ReadonlyArray<T | V>);
   }
 
   public clear(): OpenCodeList<string> {
