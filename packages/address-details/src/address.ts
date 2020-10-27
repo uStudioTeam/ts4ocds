@@ -4,7 +4,7 @@
  */
 
 import { Type } from 'class-transformer';
-import * as Core from '@ts4ocds/core/organization';
+import * as Core from '@ts4ocds/core/address';
 
 import { AddressDetails } from './address-details';
 

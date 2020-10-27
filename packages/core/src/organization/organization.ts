@@ -6,7 +6,7 @@
 import { Type } from 'class-transformer';
 
 import type { Role } from './role';
-import { Address } from './address';
+import { Address } from '../address';
 import { Identifier } from './identifier';
 import { ContactPoint } from './contact-point';
 
