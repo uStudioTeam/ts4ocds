@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @category RelatedProcess
+ * @module RelatedProcess
  */
 
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';
