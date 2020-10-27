@@ -3,12 +3,35 @@
  * @module Period
  */
 
+import { Type } from 'class-transformer';
+
 /**
  * Key events during a contracting process may have a known start date, end date, duration,
  * or maximum extent (the latest date the period can extend to).
  * In some cases, not all of these fields will have known or relevant values.
  */
 export class Period {
+  /**
+   * The start date for the period.
+   * When known, a precise start date must be provided.
+   */
+  @Type(() => Date)
+  public startDate?: Date | string;
+
+  /**
+   * The end date for the period.
+   * When known, a precise end date must be provided.
+   */
+  @Type(() => Date)
+  public endDate?: Date | string;
+
+  /**
+   * The period cannot be extended beyond this date.
+   * This field can be used to express the maximum available date for extension or renewal of this period.
+   */
+  @Type(() => Date)
+  public maxExtentDate?: Date | string;
+
   /**
    * The maximum duration of this period in days.
    * A user interface can collect or display this data in months or years as appropriate,
@@ -19,24 +42,6 @@ export class Period {
    * should be equal to the difference between startDate and maxExtentDate.
    */
   public durationInDays?: number;
-
-  /**
-   * The start date for the period.
-   * When known, a precise start date must be provided.
-   */
-  public startDate?: Date | string;
-
-  /**
-   * The end date for the period.
-   * When known, a precise end date must be provided.
-   */
-  public endDate?: Date | string;
-
-  /**
-   * The period cannot be extended beyond this date.
-   * This field can be used to express the maximum available date for extension or renewal of this period.
-   */
-  public maxExtentDate?: Date | string;
 
   public getRange(maxDate: Date | string): number {
     if (this.startDate && this.endDate) {

@@ -3,19 +3,28 @@
  * @module Item
  */
 
-import type { Value } from '../../value';
+import { Type } from 'class-transformer';
+
+import { Value } from '../../value';
 import type { UnitClassificationScheme } from './unit-classification-scheme';
 
 /**
  * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
  */
-export class Unit {
+export class Unit<S extends UnitClassificationScheme | string = UnitClassificationScheme> {
   /**
    * The list from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
    * 'UNCEFACT' is recommended.
    */
-  public scheme?: UnitClassificationScheme;
+  @Type(() => String)
+  public scheme?: S;
+
+  /**
+   * The monetary value of a single unit.
+   */
+  @Type(() => Value)
+  public value?: Value;
 
   /**
    * The identifier from the codelist referenced in the scheme property.
@@ -27,11 +36,6 @@ export class Unit {
    * Name of the unit.
    */
   public name?: string;
-
-  /**
-   * The monetary value of a single unit.
-   */
-  public value?: Value;
 
   /**
    * The machine-readable URI for the unit of measure, provided by the scheme.

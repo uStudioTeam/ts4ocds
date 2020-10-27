@@ -3,20 +3,36 @@
  * @module Document
  */
 
+import { Type } from 'class-transformer';
+
 import type { DocumentType } from './document-type';
 
 export class Document<DT extends DocumentType | string = DocumentType> {
+  /**
+   * A classification of the document described,
+   * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
+   */
+  @Type(() => String)
+  public documentType?: DT;
+
+  /**
+   * The date on which the document was first published.
+   * This is particularly important for legally important documents such as notices of a tender.
+   */
+  @Type(() => Date)
+  public datePublished?: Date | string;
+
+  /**
+   * Date that the document was last modified
+   */
+  @Type(() => Date)
+  public dateModified?: Date | string;
+
   /**
    * A local, unique identifier for this document.
    * This field is used to keep track of multiple revisions of a document through the compilation from release to record mechanism.
    */
   public id: string | number;
-
-  /**
-   * A classification of the document described,
-   * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
-   */
-  public documentType?: DT;
 
   /**
    * The document title.
@@ -36,17 +52,6 @@ export class Document<DT extends DocumentType | string = DocumentType> {
    * The server providing access to this document ought to be configured to correctly report the document mime type.
    */
   public url?: string;
-
-  /**
-   * The date on which the document was first published.
-   * This is particularly important for legally important documents such as notices of a tender.
-   */
-  public datePublished?: Date | string;
-
-  /**
-   * Date that the document was last modified
-   */
-  public dateModified?: Date | string;
 
   /**
    * The format of the document, using the open [IANA Media Types](http://www.iana.org/assignments/media-types/) codelist

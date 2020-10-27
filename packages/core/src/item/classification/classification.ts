@@ -3,6 +3,8 @@
  * @module Item
  */
 
+import { Type } from 'class-transformer';
+
 import type { ItemClassificationScheme } from './item-classification-scheme';
 
 /**
@@ -11,13 +13,14 @@ import type { ItemClassificationScheme } from './item-classification-scheme';
  * and an identifier for the category from that list being applied.
  * It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.
  */
-export class Classification {
+export class Classification<S extends ItemClassificationScheme | string = ItemClassificationScheme> {
   /**
    * The scheme or codelist from which the classification code is taken.
    * For line item classifications,
    * this uses the open [itemClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#item-classification-scheme) codelist.
    */
-  public scheme?: ItemClassificationScheme;
+  @Type(() => String)
+  public scheme?: S;
 
   /**
    * The classification code taken from the scheme.

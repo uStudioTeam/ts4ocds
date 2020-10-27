@@ -3,6 +3,8 @@
  * @module Amendment
  */
 
+import { Type } from 'class-transformer';
+
 /**
  * Amendment information
  */
@@ -10,6 +12,7 @@ export class Amendment {
   /**
    * The date of this amendment.
    */
+  @Type(() => Date)
   public date?: Date | string;
 
   /**
