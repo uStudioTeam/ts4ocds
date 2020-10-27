@@ -1,7 +1,7 @@
 {
   "name": "TS4OCDS",
   "inputFiles": ["packages"],
-  "exclude": ["**/node_modules/**/*", "**/index.{d.ts,ts}"],
+  "exclude": ["**/node_modules/**/*", "**/index.{d.ts,ts}", "packages/*/lib"],
   "out": "dist",
   "mode": "modules",
   "readme": "README.md",
