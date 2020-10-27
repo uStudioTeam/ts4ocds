@@ -1,10 +1,6 @@
 {
   "name": "@ts4ocds/conversions",
   "version": "1.0.0",
-  "license": "MIT",
-  "author": "uStudio Front-End Department",
-  "repository": "github:uStudioCompany/ts4ocds",
-  "homepage": "https://github.com/uStudioCompany/ts4ocds",
   "peerDependencies": {
     "typescript": "4.0.3"
   }
