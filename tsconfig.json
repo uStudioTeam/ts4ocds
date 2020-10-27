@@ -20,6 +20,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "@ts4ocds/address-details": ["packages/address-details/src/index.ts"],
       "@ts4ocds/conversions/*": ["packages/conversions/src/*"],
       "@ts4ocds/core/*": ["packages/core/src/*"],
       "@ts4ocds/lots/*": ["packages/lots/src/*"],
