@@ -18,7 +18,7 @@ export const Relationships = new OpenCodeList([
   'subContract',
   'replacementProcess',
   'renewalProcess',
-] as const);
+]);
 
 /**
  * The type of relationship,

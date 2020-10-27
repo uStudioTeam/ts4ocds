@@ -17,7 +17,7 @@ export const MilestoneTypes = new OpenCodeList([
   'delivery',
   'reporting',
   'financing',
-] as const);
+]);
 
 /**
  * The nature of the milestone,

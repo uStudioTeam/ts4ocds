@@ -10,10 +10,7 @@ import { MainProcurementCategories } from './main-procurement-category';
  * Any additional categories describing the objects of this contracting process,
  * using the open [extendedProcurementCategory](https://standard.open-contracting.org/1.1/en/schema/codelists/#extended-procurement-category) codelist.
  */
-export const AdditionalProcurementCategories = new OpenCodeList([
-  ...MainProcurementCategories,
-  'consultingServices',
-] as const);
+export const AdditionalProcurementCategories = new OpenCodeList([...MainProcurementCategories, 'consultingServices']);
 
 /**
  * Any additional categories describing the objects of this contracting process,
