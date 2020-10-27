@@ -1,22 +1,16 @@
 export class ClosedCodeList<T extends string> {
-  public readonly size: number;
-
   protected readonly set: ReadonlySet<T>;
 
-  public constructor(values: readonly T[] | null) {
+  public constructor(values: readonly T[]) {
     this.set = new Set(values);
+  }
+
+  public get size(): number {
+    return this.set.size;
   }
 
   public [Symbol.iterator](): IterableIterator<T> {
     return this.set[Symbol.iterator]();
-  }
-
-  public entries(): IterableIterator<[T, T]> {
-    return this.set.entries();
-  }
-
-  public keys(): IterableIterator<T> {
-    return this.set.keys();
   }
 
   public values(): IterableIterator<T> {
