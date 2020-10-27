@@ -10,7 +10,7 @@ import { CodeList, OpenCodeList } from '@ts4ocds/utils';
  * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
  * 'UNCEFACT' is recommended.
  */
-export const UnitClassificationSchemes = new OpenCodeList(['UNCEFACT', 'QUDT'] as const);
+export const UnitClassificationSchemes = new OpenCodeList(['UNCEFACT', 'QUDT']);
 
 /**
  * The list from which identifiers for units of measure are taken,

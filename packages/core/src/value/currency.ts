@@ -311,7 +311,7 @@ export const Currencies = new ClosedCodeList([
   'ZWL',
   'ZWN',
   'ZWR',
-] as const);
+]);
 
 /**
  * The currency of the amount,

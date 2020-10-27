@@ -19,7 +19,7 @@ export const ItemClassificationSchemes = new OpenCodeList([
   'OKDP',
   'OKPD',
   'CUCOP',
-] as const);
+]);
 
 /**
  * The scheme or codelist from which the classification code is taken.

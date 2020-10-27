@@ -18,7 +18,7 @@ export const AwardCriteria = new OpenCodeList([
   'bestProposal',
   'bestValueToGovernment',
   'singleBidOnly',
-] as const);
+]);
 
 /**
  * The award criteria for the procurement,

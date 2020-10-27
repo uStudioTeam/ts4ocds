@@ -51,7 +51,7 @@ export const DocumentTypes = new OpenCodeList([
   'submissionDocuments',
   'contractSummary',
   'cancellationDetails',
-] as const);
+]);
 
 /**
  * A classification of the document described,
