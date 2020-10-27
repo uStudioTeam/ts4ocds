@@ -1,0 +1,12 @@
+export { TenderStatuses } from './tender-status';
+export { AwardCriteria } from './award-criteria';
+export type { TenderStatus } from './tender-status';
+export type { AwardCriterion } from './award-criteria';
+export { SubmissionMethods } from './submission-method';
+export { ProcurementMethods } from './procurement-method';
+export type { SubmissionMethod } from './submission-method';
+export type { ProcurementMethod } from './procurement-method';
+export { MainProcurementCategories } from './main-procurement-category';
+export type { MainProcurementCategory } from './main-procurement-category';
+export { AdditionalProcurementCategories } from './additional-procurement-category';
+export type { AdditionalProcurementCategory } from './additional-procurement-category';
