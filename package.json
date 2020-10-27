@@ -9,11 +9,11 @@
     ]
   },
   "scripts": {
-    "format": "prettier --check \"packages/**/*.{ts,tsx}\"",
-    "lint": "eslint --quiet --color \"packages/**/*.{ts,tsx}\"",
+    "format": "prettier --check \"packages/**/*.ts\"",
+    "lint": "eslint --quiet --color \"packages/**/*.ts\"",
     "typecheck": "tsc -p ./tsconfig.ci.json",
     "prebuild": "rimraf \"packages/*/{lib,*.tsbuildinfo}\" dist",
-    "build:ts": "lerna exec -- copyfiles \"src/**/*\" \"src/*\" lib -u 1",
+    "build:ts": "lerna exec -- cp -R src/ lib/",
     "build:docs": "typedoc",
     "build": "npm-run-all -p build:ts build:docs",
     "test": "npm-run-all -p format lint typecheck",
@@ -26,7 +26,6 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
-    "copyfiles": "^2.4.0",
     "eslint": "^7.11.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.14.0",
