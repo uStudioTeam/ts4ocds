@@ -71,7 +71,7 @@ export class Requirement {
   }
 
   /**
-   * Used to check if the requirement has specified numeric value range (minValue, maxValue).
+   * Used to check if the requirement has specified numeric value range (`minValue`, `maxValue`).
    */
   public isRanged(requirement: Requirement): this is RangedRequirement {
     if (this.isOfType('numeric')) {
@@ -81,6 +81,9 @@ export class Requirement {
     return false;
   }
 
+  /**
+   * Creates a {@link RequirementReference} from this `Requirement`
+   */
   public toReference(): RequirementReference {
     return plainToClass(RequirementReference, this);
   }
@@ -102,6 +105,9 @@ export class Requirement {
     value: NumericRequirementResponse['value']
   ): NumericRequirementResponse;
 
+  /**
+   * Creates a {@link RequirementResponse} from this `Requirement`
+   */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
     const prototype = (() => {
       switch (typeof value) {

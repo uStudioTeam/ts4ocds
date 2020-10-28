@@ -66,6 +66,9 @@ export class RequirementResponse {
 
   public isOfType(dataType: 'numeric'): this is NumericRequirementResponse;
 
+  /**
+   * Used to check if this RequirementResponse has spesific `value` {@link DataType | dataType}
+   */
   public isOfType(dataType: Exclude<DataType, 'number' | 'integer'> | 'numeric'): boolean {
     switch (dataType) {
       case 'boolean':
