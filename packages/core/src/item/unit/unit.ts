@@ -11,14 +11,14 @@ import type { UnitClassificationScheme } from './unit-classification-scheme';
 /**
  * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
  */
-export class Unit<S extends UnitClassificationScheme | string = UnitClassificationScheme> {
+export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> {
   /**
    * The list from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
    * 'UNCEFACT' is recommended.
    */
   @Type(() => String)
-  public scheme?: S;
+  public scheme?: S | string;
 
   /**
    * The monetary value of a single unit.
