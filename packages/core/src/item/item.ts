@@ -7,23 +7,22 @@ import { Type } from 'class-transformer';
 
 import { Unit } from './unit';
 import { Classification } from '../classification';
-import type { ItemClassificationScheme } from './item-classification-scheme';
 
 /**
  * A good, service, or work to be contracted.
  */
-export class Item<CS extends ItemClassificationScheme | string = ItemClassificationScheme> {
+export class Item {
   /**
    * The primary classification for the item.
    */
   @Type(() => Classification)
-  public classification?: Classification<CS>;
+  public classification?: Classification;
 
   /**
    * An array of additional classifications for the item.
    */
   @Type(() => Classification)
-  public additionalClassifications?: Classification<CS>[];
+  public additionalClassifications?: Classification[];
 
   /**
    * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
