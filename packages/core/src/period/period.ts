@@ -3,7 +3,10 @@
  * @module Period
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
+
+import type { RangedPeriod } from './ranged-period';
+import type { ExtendedPeriod } from './extended-period';
 
 /**
  * Key events during a contracting process may have a known start date, end date, duration,
@@ -15,21 +18,18 @@ export class Period {
    * The start date for the period.
    * When known, a precise start date must be provided.
    */
-  @Type(() => Date)
   public startDate?: Date | string;
 
   /**
    * The end date for the period.
    * When known, a precise end date must be provided.
    */
-  @Type(() => Date)
   public endDate?: Date | string;
 
   /**
    * The period cannot be extended beyond this date.
    * This field can be used to express the maximum available date for extension or renewal of this period.
    */
-  @Type(() => Date)
   public maxExtentDate?: Date | string;
 
   /**
@@ -43,9 +43,21 @@ export class Period {
    */
   public durationInDays?: number;
 
-  public getRange(maxDate: Date | string): number {
-    if (this.startDate && this.endDate) {
-      return (new Date(maxDate).getTime() - new Date(this.startDate).getTime()) / (1000 * 60 * 60 * 24);
+  public constructor(initializer: Initializer<Period>) {
+    Object.assign(this, initializer);
+  }
+
+  public isExtended(): this is ExtendedPeriod {
+    return this.startDate !== undefined && this.maxExtentDate !== undefined;
+  }
+
+  public isRanged(): this is RangedPeriod {
+    return this.startDate !== undefined && this.endDate !== undefined;
+  }
+
+  public getRange(maxDate: Date | string | undefined): number {
+    if (this.isRanged()) {
+      return (new Date(maxDate || this.endDate).getTime() - new Date(this.startDate).getTime()) / (1000 * 60 * 60 * 24);
     }
 
     return -1;
@@ -69,7 +81,7 @@ export class Period {
   }
 
   public isRangeValid(): boolean {
-    return Boolean(this.startDate && this.endDate && this.getRange(this.endDate) >= 0);
+    return Boolean(this.getRange(this.endDate) >= 0);
   }
 
   public isDurationValid(

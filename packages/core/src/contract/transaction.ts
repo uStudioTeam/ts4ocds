@@ -3,10 +3,10 @@
  * @module Contract
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
-import { Value } from '../value';
-import { OrganizationReference } from '../organization';
+import type { Value } from '../value';
+import type { OrganizationReference } from '../organization';
 
 /**
  * A spending transaction related to the contracting process.
@@ -18,34 +18,30 @@ import { OrganizationReference } from '../organization';
  */
 export class Transaction {
   /**
+   * A unique identifier for this transaction.
+   * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
+   */
+  public id: string | number;
+
+  /**
    * The date of the transaction
    */
-  @Type(() => Date)
   public date?: Date | string;
 
   /**
    * The value of the transaction.
    */
-  @Type(() => Value)
   public value: Value;
 
   /**
    * An organization reference for the organization from which the funds in this transaction originate.
    */
-  @Type(() => OrganizationReference)
   public payer: OrganizationReference;
 
   /**
    * An organization reference for the organization which receives the funds in this transaction.
    */
-  @Type(() => OrganizationReference)
   public payee: OrganizationReference;
-
-  /**
-   * A unique identifier for this transaction.
-   * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
-   */
-  public id: string | number;
 
   /**
    * Used to point either to a corresponding Fiscal Data Package, IATI file,
@@ -58,4 +54,8 @@ export class Transaction {
    * A URI pointing directly to a machine-readable record about this spending transaction.
    */
   public uri?: string;
+
+  public constructor(initializer: Initializer<Transaction>) {
+    Object.assign(this, initializer);
+  }
 }

@@ -3,9 +3,11 @@
  * @module Conversions
  */
 
-import { Type } from 'class-transformer';
+import { hasOwnProperty, Initializer } from '@ts4ocds/utils';
 
 import { Coefficient } from '../coefficient';
+
+import type { RelatedConversion } from './related-conversion';
 
 /**
  * Conversion is used to describe conversions and its coefficients applicable
@@ -13,23 +15,30 @@ import { Coefficient } from '../coefficient';
  */
 export class Conversion {
   /**
-   * A list of applicable coefficients for this conversion
-   */
-  @Type(() => Coefficient)
-  public coefficients: Coefficient[];
-
-  /**
    * An identifier for this conversion.
    */
   public id: string | number;
+
+  /**
+   * Free text description of this conversion could be shared here
+   */
+  public description?: string;
+
+  /**
+   * A list of applicable coefficients for this conversion
+   */
+  public coefficients: Coefficient[];
 
   /**
    * The free-text rationale of using of this conversion
    */
   public rationale?: string;
 
-  /**
-   * Free text description of this conversion could be shared here
-   */
-  public description?: string;
+  public constructor(initializer: Initializer<Conversion>) {
+    Object.assign(this, initializer);
+  }
+
+  public isRelated(): this is RelatedConversion {
+    return hasOwnProperty(this, 'relatesTo', 'relatedItem');
+  }
 }

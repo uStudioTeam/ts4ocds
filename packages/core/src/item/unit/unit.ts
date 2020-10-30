@@ -3,9 +3,10 @@
  * @module Item
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
-import { Value } from '../../value';
+import type { Value } from '../../value';
+
 import type { UnitClassificationScheme } from './unit-classification-scheme';
 
 /**
@@ -17,13 +18,11 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
    * 'UNCEFACT' is recommended.
    */
-  @Type(() => String)
   public scheme?: S | string;
 
   /**
    * The monetary value of a single unit.
    */
-  @Type(() => Value)
   public value?: Value;
 
   /**
@@ -41,4 +40,8 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
    * The machine-readable URI for the unit of measure, provided by the scheme.
    */
   public uri?: string;
+
+  public constructor(initializer: Initializer<Unit<S>>) {
+    Object.assign(this, initializer);
+  }
 }

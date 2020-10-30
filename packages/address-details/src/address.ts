@@ -3,12 +3,15 @@
  * @module AddressDetails
  */
 
-import { Type } from 'class-transformer';
 import * as Core from '@ts4ocds/core/address';
+import type { Initializer } from '@ts4ocds/utils';
 
-import { AddressDetails } from './address-details';
+import type { AddressDetails } from './address-details';
 
 export class Address extends Core.Address {
-  @Type(() => AddressDetails)
   public addressDetails?: AddressDetails;
+
+  public constructor(initializer: Initializer<Address>) {
+    super(initializer);
+  }
 }

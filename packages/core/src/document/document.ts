@@ -3,31 +3,11 @@
  * @module Document
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
 import type { DocumentType } from './document-type';
 
 export class Document<DT extends DocumentType = DocumentType> {
-  /**
-   * A classification of the document described,
-   * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
-   */
-  @Type(() => String)
-  public documentType?: DT | string;
-
-  /**
-   * The date on which the document was first published.
-   * This is particularly important for legally important documents such as notices of a tender.
-   */
-  @Type(() => Date)
-  public datePublished?: Date | string;
-
-  /**
-   * Date that the document was last modified
-   */
-  @Type(() => Date)
-  public dateModified?: Date | string;
-
   /**
    * A local, unique identifier for this document.
    * This field is used to keep track of multiple revisions of a document through the compilation from release to record mechanism.
@@ -46,6 +26,23 @@ export class Document<DT extends DocumentType = DocumentType> {
    * the description field can be used to describe arrangements for obtaining a copy of the document.
    */
   public description?: string;
+
+  /**
+   * A classification of the document described,
+   * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
+   */
+  public documentType?: DT | string;
+
+  /**
+   * The date on which the document was first published.
+   * This is particularly important for legally important documents such as notices of a tender.
+   */
+  public datePublished?: Date | string;
+
+  /**
+   * Date that the document was last modified
+   */
+  public dateModified?: Date | string;
 
   /**
    * A direct link to the document or attachment.
@@ -67,4 +64,8 @@ export class Document<DT extends DocumentType = DocumentType> {
    * is recommended unless there is a clear user need for distinguishing the language subtype.
    */
   public language?: string;
+
+  public constructor(initializer: Initializer<Document<DT>>) {
+    Object.assign(this, initializer);
+  }
 }

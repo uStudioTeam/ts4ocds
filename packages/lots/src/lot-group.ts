@@ -3,8 +3,8 @@
  *  @module Lots
  */
 
-import { Type } from 'class-transformer';
-import { Value } from '@ts4ocds/core/value';
+import type { Value } from '@ts4ocds/core/value';
+import type { Initializer } from '@ts4ocds/utils';
 
 import type { Lot } from './lot';
 
@@ -13,13 +13,6 @@ import type { Lot } from './lot';
  * a lot group is used to capture this information.
  */
 export class LotGroup {
-  /**
-   * The maximum estimated value of the lots in this group.
-   * This may be lower than the sum total of lot values
-   */
-  @Type(() => Value)
-  public maximumValue: Value;
-
   /**
    * A local identifier for this group of lots.
    */
@@ -32,7 +25,17 @@ export class LotGroup {
   public relatedLots?: Array<Lot['id']>;
 
   /**
+   * The maximum estimated value of the lots in this group.
+   * This may be lower than the sum total of lot values
+   */
+  public maximumValue: Value;
+
+  /**
    * The buyer reserves the right to combine the lots in this group when awarding a contract.
    */
   public optionsToCombine?: boolean;
+
+  public constructor(initializer: Initializer<LotGroup>) {
+    Object.assign(this, initializer);
+  }
 }

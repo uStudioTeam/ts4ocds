@@ -1,9 +1,9 @@
 /**
  * @packageDocumentation
- * @module Item
+ * @module Classification
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
 /**
  * A classification consists of at least two parts:
@@ -12,12 +12,6 @@ import { Type } from 'class-transformer';
  * It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.
  */
 export class Classification<S extends string = string> {
-  /**
-   * The scheme or codelist from which the classification code is taken.
-   */
-  @Type(() => String)
-  public scheme?: S;
-
   /**
    * The classification code taken from the scheme.
    */
@@ -29,7 +23,16 @@ export class Classification<S extends string = string> {
   public description?: string;
 
   /**
+   * The scheme or codelist from which the classification code is taken.
+   */
+  public scheme?: S;
+
+  /**
    * A URI to uniquely identify the classification code.
    */
   public uri?: string;
+
+  public constructor(initializer: Initializer<Classification<S>>) {
+    Object.assign(this, initializer);
+  }
 }

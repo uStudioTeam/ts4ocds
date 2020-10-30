@@ -3,6 +3,8 @@
  * @module Requirements
  */
 
+import type { Initializer } from '@ts4ocds/utils';
+
 import type { Requirement } from './requirement';
 
 /**
@@ -18,4 +20,8 @@ export class RequirementReference {
    * The title of the requirement which the response is applicable to.
    */
   public title?: Requirement['title'];
+
+  public constructor(initializer: Initializer<RequirementReference>) {
+    Object.assign(this, initializer);
+  }
 }

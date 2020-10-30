@@ -3,6 +3,8 @@
  * @module Organization
  */
 
+import type { Initializer } from '@ts4ocds/utils';
+
 /**
  * A person, contact point or department to contact in relation to this contracting process.
  */
@@ -31,4 +33,8 @@ export class ContactPoint {
    * A web address for the contact point/person.
    */
   public url?: string;
+
+  public constructor(initializer: Initializer<ContactPoint>) {
+    Object.assign(this, initializer);
+  }
 }

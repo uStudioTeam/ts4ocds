@@ -15,7 +15,7 @@ export function WithRelatedLots<T extends new (...args: any[]) => any>(
     relatedLots?: Array<Lot['id']>;
   };
 } {
-  return class extends Base {
+  return class RelatedLots extends Base {
     public relatedLots?: Array<Lot['id']>;
   };
 }

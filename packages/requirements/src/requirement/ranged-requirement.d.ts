@@ -3,7 +3,7 @@
  * @module Requirements
  */
 
-import { Requirement } from './requirement';
+import type { Requirement } from './requirement';
 
 /**
  * An atomic requirement.
@@ -11,19 +11,19 @@ import { Requirement } from './requirement';
  * or a range of threshold values within which the response has to fit in.
  * The requirement may apply to a certain period of time.
  */
-export class RangedRequirement extends Requirement {
+export interface RangedRequirement extends Requirement {
   /**
    * The data type in which the requirement response must be provided.
    */
-  public dataType: 'number' | 'integer';
+  dataType: 'number' | 'integer';
 
   /**
    * Used to state the lower bound of the requirement when the response must be within a certain range.
    */
-  public minValue?: number;
+  minValue?: number;
 
   /**
    * Used to state the upper bound of the requirement when the response must be within a certain range.
    */
-  public maxValue?: number;
+  maxValue?: number;
 }

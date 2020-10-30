@@ -1,6 +1,3 @@
-import { Type } from 'class-transformer';
-
-import { OptionGroup } from '../option-group';
 import type { OptionGroups } from '../option-details';
 
 export function WithOptionGroups<T extends new (...args: any[]) => any>(
@@ -10,14 +7,7 @@ export function WithOptionGroups<T extends new (...args: any[]) => any>(
     optionDetails: OptionGroups;
   };
 } {
-  class OptionDetails extends Base {
-    @Type(() => {
-      return () => ({
-        optionGroups: OptionGroup,
-      });
-    })
+  return class OptionDetails extends Base {
     public optionDetails: OptionGroups;
-  }
-
-  return OptionDetails;
+  };
 }

@@ -4,7 +4,7 @@
  */
 
 import { Period } from '@ts4ocds/core/period';
-import { plainToClass, Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
 import {
   RequirementResponse,
@@ -15,10 +15,10 @@ import {
 import type { DataType } from '../data-type';
 import { RequirementReference } from '../requirement-reference';
 
-import type { BooleanRequirement } from './boolean-requirement';
 import type { StringRequirement } from './string-requirement';
-import type { NumericRequirement } from './numeric-requirement';
 import type { RangedRequirement } from './ranged-requirement';
+import type { NumericRequirement } from './numeric-requirement';
+import type { BooleanRequirement } from './boolean-requirement';
 
 /**
  * An atomic requirement.
@@ -30,13 +30,11 @@ export class Requirement {
   /**
    * The data type in which the requirement response must be provided.
    */
-  @Type(() => String)
   public dataType?: DataType;
 
   /**
    * Used to specify a particular period the requirement applies to, for example the bidder's turnover in a given year.
    */
-  @Type(() => Period)
   public period?: Period;
 
   /**
@@ -55,6 +53,10 @@ export class Requirement {
    * A free text description for this atomic requirement.
    */
   public description?: string;
+
+  public constructor(initializer: Initializer<Requirement>) {
+    Object.assign(this, initializer);
+  }
 
   public isOfType(type: 'boolean'): this is BooleanRequirement;
 
@@ -85,7 +87,10 @@ export class Requirement {
    * Creates a {@link RequirementReference} from this `Requirement`
    */
   public toReference(): RequirementReference {
-    return plainToClass(RequirementReference, this);
+    return new RequirementReference({
+      id: this.id,
+      title: this.title,
+    });
   }
 
   public toResponse(id: RequirementResponse['id']): RequirementResponse;
@@ -109,25 +114,7 @@ export class Requirement {
    * Creates a {@link RequirementResponse} from this `Requirement`
    */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
-    const prototype = (() => {
-      switch (typeof value) {
-        case 'string': {
-          return StringRequirementResponse;
-        }
-        case 'boolean': {
-          return BooleanRequirementResponse;
-        }
-        case 'number': {
-          return NumericRequirementResponse;
-        }
-        case 'undefined':
-        default: {
-          return RequirementResponse;
-        }
-      }
-    })();
-
-    return plainToClass(prototype, {
+    return new RequirementResponse({
       id,
       value,
       requirement: this.toReference(),

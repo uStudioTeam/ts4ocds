@@ -3,7 +3,7 @@
  * @module Value
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
 import type { Currency } from './currency';
 
@@ -12,14 +12,17 @@ import type { Currency } from './currency';
  */
 export class Value {
   /**
-   * The currency of the amount,
-   * from the closed [currency](https://standard.open-contracting.org/1.1/en/schema/codelists/#currency) codelist.
-   */
-  @Type(() => String)
-  public currency?: Currency;
-
-  /**
    * Amount as a number.
    */
   public amount?: number;
+
+  /**
+   * The currency of the amount,
+   * from the closed [currency](https://standard.open-contracting.org/1.1/en/schema/codelists/#currency) codelist.
+   */
+  public currency?: Currency;
+
+  public constructor(initializer: Initializer<Value>) {
+    Object.assign(this, initializer);
+  }
 }

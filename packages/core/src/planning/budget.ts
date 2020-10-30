@@ -3,9 +3,9 @@
  * @module Planning
  */
 
-import { Type } from 'class-transformer';
+import type { Initializer } from '@ts4ocds/utils';
 
-import { Value } from '../value';
+import type { Value } from '../value';
 
 /**
  * This section contains information about the budget line, and associated projects,
@@ -17,14 +17,6 @@ import { Value } from '../value';
  */
 export class Budget {
   /**
-   * The value reserved in the budget for this contracting process.
-   * A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
-   * Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
-   */
-  @Type(() => Value)
-  public amount: Value;
-
-  /**
    * An identifier for the budget line item which provides funds for this contracting process.
    * This identifier should be possible to cross-reference against the provided data source.
    */
@@ -35,6 +27,13 @@ export class Budget {
    * May be used to provide the title of the budget line, or the programme used to fund this project.
    */
   public description?: string;
+
+  /**
+   * The value reserved in the budget for this contracting process.
+   * A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
+   * Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
+   */
+  public amount: Value;
 
   /**
    * The name of the project through which this contracting process is funded (if applicable).
@@ -58,4 +57,8 @@ export class Budget {
    * Human readable documents can be included using the planning.documents block.
    */
   public uri?: string;
+
+  public constructor(initializer: Initializer<Budget>) {
+    Object.assign(this, initializer);
+  }
 }

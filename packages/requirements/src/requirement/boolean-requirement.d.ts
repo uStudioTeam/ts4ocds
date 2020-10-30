@@ -3,7 +3,7 @@
  * @module Requirements
  */
 
-import { Requirement } from './requirement';
+import type { Requirement } from './requirement';
 
 /**
  * An atomic requirement.
@@ -11,19 +11,14 @@ import { Requirement } from './requirement';
  * or a range of threshold values within which the response has to fit in.
  * The requirement may apply to a certain period of time.
  */
-export class StringRequirement extends Requirement {
+export interface BooleanRequirement extends Requirement {
   /**
    * The data type in which the requirement response must be provided.
    */
-  public dataType: 'string';
+  dataType: 'boolean';
 
   /**
    * Used to state the requirement when the response must be particular value.
    */
-  public expectedValue?: string;
-
-  /**
-   * A regular expression against which validate the requirement response.
-   */
-  public pattern?: string;
+  expectedValue?: boolean;
 }

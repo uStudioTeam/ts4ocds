@@ -1,5 +1,4 @@
-import { Type } from 'class-transformer';
-import { Option } from '@ts4ocds/options/option';
+import type { Option } from '@ts4ocds/options/option';
 
 export function WithOptions<T extends new (...args: any[]) => any>(
   Base: T
@@ -8,10 +7,7 @@ export function WithOptions<T extends new (...args: any[]) => any>(
     options?: Option[];
   };
 } {
-  class Mixin extends Base {
-    @Type(() => Option)
+  return class Options extends Base {
     public options?: Option[];
-  }
-
-  return Mixin;
+  };
 }
