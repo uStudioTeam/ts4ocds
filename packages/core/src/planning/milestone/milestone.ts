@@ -11,7 +11,7 @@ import type { MilestoneStatus } from './milestone-status';
 /**
  * The milestone block can be used to represent a wide variety of events in the lifetime of a contracting process."
  */
-export class Milestone<MT extends MilestoneType | string = MilestoneType> {
+export class Milestone<MT extends MilestoneType = MilestoneType> {
   /**
    * The date the milestone is due.
    */
@@ -35,7 +35,7 @@ export class Milestone<MT extends MilestoneType | string = MilestoneType> {
    * using the open [milestoneType](https://standard.open-contracting.org/1.1/en/schema/codelists/#milestone-type) codelist.
    */
   @Type(() => String)
-  public type?: MT;
+  public type?: MT | string;
 
   /**
    * The status that was realized on the date provided in `dateModified`,

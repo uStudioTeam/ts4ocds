@@ -10,4 +10,6 @@ import { WithRelatedLots } from './mixins';
 /**
  * If this document relates to the particular lot(s), provide the identifier(s) of the related lot(s) here.
  */
-export class Document extends WithRelatedLots(Core.Document) {}
+export class Document<DT extends Core.DocumentType = Core.DocumentType> extends WithRelatedLots(Core.Document) {
+  public documentType?: Core.Document<DT>['documentType'];
+}

@@ -7,13 +7,13 @@ import { Type } from 'class-transformer';
 
 import type { DocumentType } from './document-type';
 
-export class Document<DT extends DocumentType | string = DocumentType> {
+export class Document<DT extends DocumentType = DocumentType> {
   /**
    * A classification of the document described,
    * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
    */
   @Type(() => String)
-  public documentType?: DT;
+  public documentType?: DT | string;
 
   /**
    * The date on which the document was first published.
