@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Utils
+ */
+
 import type { Initializer } from './initializer';
 
 export abstract class Initializable<T> {

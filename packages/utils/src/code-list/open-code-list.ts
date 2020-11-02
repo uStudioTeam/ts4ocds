@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Utils
+ */
+
 import { ClosedCodeList } from './closed-code-list';
 
 export class OpenCodeList<T extends string> extends ClosedCodeList<T> {

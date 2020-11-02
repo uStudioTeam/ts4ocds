@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Utils
+ */
+
 export function hasOwnProperty<O extends object>(object: O, property: string): boolean;
 
 export function hasOwnProperty<O extends object>(object: O, ...properties: string[]): boolean;
