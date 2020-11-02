@@ -55,7 +55,7 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> extends I
   public isRelatedTo(relatesTo: 'item'): this is ItemCriterion;
 
   /**
-   * Used to specify this criterion's relation to the specific entity.
+   * Used to specify this criterion's relation to the specific {@link Item} or tenderer.
    */
   public isRelatedTo(relatesTo: Criterion['relatesTo']): boolean {
     return this.relatesTo === relatesTo;

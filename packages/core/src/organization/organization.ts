@@ -72,6 +72,9 @@ export class Organization<
    */
   public name?: string;
 
+  /**
+   * Creates an instance of the {@link OrganizationReference} class from this `Organization`
+   */
   public toReference(): OrganizationReference {
     return new OrganizationReference({
       id: this.id,

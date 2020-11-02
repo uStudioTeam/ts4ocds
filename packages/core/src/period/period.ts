@@ -43,22 +43,30 @@ export class Period extends Initializable<Period> {
    */
   public durationInDays?: number;
 
+  /**
+   * Used to check if this `period` is defined through the use of `startDate` and `maxExtentDate` fields
+   */
   public isExtended(): this is ExtendedPeriod {
     return this.startDate !== undefined && this.maxExtentDate !== undefined;
   }
 
+  /**
+   * Used to check if this `period` is defined through the use of `startDate` and `endDate` fields
+   */
   public isRanged(): this is RangedPeriod {
     return this.startDate !== undefined && this.endDate !== undefined;
   }
 
-  public getRange(maxDate: Date | string | undefined): number {
-    if (this.isRanged()) {
-      return (new Date(maxDate || this.endDate).getTime() - new Date(this.startDate).getTime()) / (1000 * 60 * 60 * 24);
-    }
-
-    return -1;
+  /**
+   * Returns the range of dates this `period` is being valid for
+   */
+  public getRange(maxDate: Date | string): number {
+    return (new Date(maxDate).getTime() - new Date(this.startDate || '').getTime()) / (1000 * 60 * 60 * 24) ?? -1;
   }
 
+  /**
+   * Sets the range for this `period`
+   */
   public setRange(startDate: NonNullable<Period['startDate']>, endDate: NonNullable<Period['endDate']>): void {
     this.startDate = startDate;
     this.endDate = endDate;
@@ -66,6 +74,9 @@ export class Period extends Initializable<Period> {
     this.durationInDays = this.getRange(this.endDate);
   }
 
+  /**
+   * Sets the extent for this `period`
+   */
   public setExtent(
     startDate: NonNullable<Period['startDate']>,
     maxExtentDate: NonNullable<Period['maxExtentDate']>
@@ -76,10 +87,17 @@ export class Period extends Initializable<Period> {
     this.durationInDays = this.getRange(this.maxExtentDate);
   }
 
+  /**
+   * Checks if this `period`'s range is valid according to {@link Period.durationInDays} description
+   */
   public isRangeValid(): boolean {
-    return Boolean(this.getRange(this.endDate) >= 0);
+    return Boolean(this.getRange(this.endDate as Date) >= 0);
   }
 
+  /**
+   *
+   * Checks if this `period`'s duration is valid according to {@link Period.durationInDays} description
+   */
   public isDurationValid(
     maxDate: Date | string,
     durationInDays: Period['durationInDays'] = this.durationInDays

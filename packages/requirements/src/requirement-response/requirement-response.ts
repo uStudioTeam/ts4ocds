@@ -61,21 +61,16 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
 
   public isOfType(dataType: 'string'): this is StringRequirementResponse;
 
-  public isOfType(dataType: 'numeric'): this is NumericRequirementResponse;
+  public isOfType(dataType: 'number' | 'integer' | 'numeric'): this is NumericRequirementResponse;
 
   /**
    * Used to check if this RequirementResponse has spesific `value` {@link DataType | dataType}
    */
-  public isOfType(dataType: Exclude<DataType, 'number' | 'integer'> | 'numeric'): boolean {
-    switch (dataType) {
-      case 'boolean':
-      case 'string': {
-        return typeof this.value === dataType;
-      }
-      case 'numeric':
-      default: {
-        return typeof this.value === 'number';
-      }
+  public isOfType(dataType: DataType | 'numeric'): boolean {
+    if (['integer', 'numeric'].includes(dataType)) {
+      return typeof this.value === 'number';
     }
+
+    return typeof this.value === dataType;
   }
 }

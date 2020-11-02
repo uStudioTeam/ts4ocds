@@ -34,10 +34,16 @@ export class Coefficient extends Initializable<Coefficient> {
    */
   public formula?: string;
 
+  /**
+   * Used to show if this coefficient should be defined by a precise `value`
+   */
   public isPrecise(): this is PreciseCoefficient {
     return hasOwnProperty(this, 'value');
   }
 
+  /**
+   * Used to show if this coefficient should be defined by a range of `[minValue, maxValue]`
+   */
   public isRanged(): this is RangedCoefficient {
     return hasOwnProperty(this, 'minValue', 'maxValue');
   }

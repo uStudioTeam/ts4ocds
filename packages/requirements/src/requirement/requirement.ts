@@ -65,7 +65,11 @@ export class Requirement extends Initializable<Requirement> {
    * 'numeric' is accepted for checking for both `number` and `integer` at the same time.
    */
   public isOfType(dataType: DataType | 'numeric'): boolean {
-    return dataType === 'numeric' ? ['number', 'integer'].includes(this.dataType || '') : this.dataType === dataType;
+    if (dataType === 'numeric') {
+      return ['number', 'integer'].includes(this.dataType || '');
+    }
+
+    return this.dataType === dataType;
   }
 
   /**
@@ -80,7 +84,7 @@ export class Requirement extends Initializable<Requirement> {
   }
 
   /**
-   * Creates a {@link RequirementReference} from this `Requirement`
+   * Creates an instance of a {@link RequirementReference} class from this `Requirement`
    */
   public toReference(): RequirementReference {
     return new RequirementReference({
@@ -107,7 +111,7 @@ export class Requirement extends Initializable<Requirement> {
   ): NumericRequirementResponse;
 
   /**
-   * Creates a {@link RequirementResponse} from this `Requirement`
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`
    */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
     return new RequirementResponse({

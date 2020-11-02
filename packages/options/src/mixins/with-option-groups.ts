@@ -1,5 +1,9 @@
 import type { OptionGroups } from '../option-details';
 
+/**
+ * Adds an `optionDetils` field declaration to class being applied to,
+ * which should hold an {@link OptionGroups} object inside
+ */
 export function WithOptionGroups<T extends new (...args: any[]) => any>(
   Base: T
 ): T & {

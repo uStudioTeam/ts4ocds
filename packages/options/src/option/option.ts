@@ -41,10 +41,16 @@ export class Option<D extends Dimensions = undefined> extends Initializable<Opti
 
   public measure?: string | number;
 
+  /**
+   * Used to check if this `option` is definined by a precise `value`
+   */
   public isPresice(): this is PreciseOption<D> {
     return hasOwnProperty(this, 'value');
   }
 
+  /**
+   * Used to show if this coefficient should be defined by a range of `[minValue, maxValue]`
+   */
   public isRanged(): this is RangedOption<D> {
     return hasOwnProperty(this, 'minValue', 'maxValue');
   }

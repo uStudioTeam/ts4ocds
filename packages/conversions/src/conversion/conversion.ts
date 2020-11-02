@@ -34,6 +34,9 @@ export class Conversion extends Initializable<Conversion> {
    */
   public rationale?: string;
 
+  /**
+   * Used to show if this conversion relates to a specific {@link Requirement} or {@link Observation}
+   */
   public isRelated(): this is RelatedConversion {
     return hasOwnProperty(this, 'relatesTo', 'relatedItem');
   }

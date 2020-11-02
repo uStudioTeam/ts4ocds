@@ -22,6 +22,9 @@ export class MilestoneReference extends Initializable<MilestoneReference> {
    */
   public title?: string;
 
+  /**
+   * Creates an instance of a `MilestoneReference` class from the provided {@link Milestone}
+   */
   public static fromMilestone<M extends Milestone>(milestone: M): MilestoneReference {
     return new MilestoneReference({
       id: `${milestone.id}`,

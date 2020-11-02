@@ -8,6 +8,9 @@ import type { Initializer } from '@ts4ocds/utils';
 
 import type { AddressDetails } from '../address-details';
 
+/**
+ * An address.
+ */
 export class Address extends Core.Address {
   public addressDetails?: AddressDetails;
 

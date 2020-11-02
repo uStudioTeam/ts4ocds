@@ -6,7 +6,7 @@
 import * as Core from '@ts4ocds/core/award';
 import type { Initializer } from '@ts4ocds/utils';
 
-import { RequirementResponse } from '../requirement-response';
+import type { RequirementResponse } from '../requirement-response';
 
 /**
  * An award for the given procurement.
