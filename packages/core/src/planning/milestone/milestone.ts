@@ -3,14 +3,15 @@
  * @module Planning
  */
 
-import { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
+
 import type { MilestoneType } from './milestone-type';
 import type { MilestoneStatus } from './milestone-status';
 
 /**
  * The milestone block can be used to represent a wide variety of events in the lifetime of a contracting process."
  */
-export class Milestone<MT extends MilestoneType = MilestoneType> {
+export class Milestone<MT extends MilestoneType = MilestoneType> extends Initializable<Milestone<MT>> {
   /**
    * A local identifier for this milestone, unique within this block.
    * This field is used to keep track of multiple revisions of a milestone through the compilation from release to record mechanism.
@@ -60,8 +61,4 @@ export class Milestone<MT extends MilestoneType = MilestoneType> {
    * represents the date an approvalLetter is due or signed.
    */
   public code?: string;
-
-  public constructor(initializer: Initializer<Milestone<MT>>) {
-    Object.assign(this, initializer);
-  }
 }

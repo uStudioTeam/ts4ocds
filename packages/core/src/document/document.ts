@@ -3,11 +3,16 @@
  * @module Document
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { DocumentType } from './document-type';
 
-export class Document<DT extends DocumentType = DocumentType> {
+/**
+ * Links to, or descriptions of, external documents can be attached at various locations within the standard.
+ * Documents can be supporting information, formal notices, downloadable forms,
+ * or any other kind of resource that ought to be made public as part of full open contracting.
+ */
+export class Document<DT extends DocumentType = DocumentType> extends Initializable<Document<DT>> {
   /**
    * A local, unique identifier for this document.
    * This field is used to keep track of multiple revisions of a document through the compilation from release to record mechanism.
@@ -64,8 +69,4 @@ export class Document<DT extends DocumentType = DocumentType> {
    * is recommended unless there is a clear user need for distinguishing the language subtype.
    */
   public language?: string;
-
-  public constructor(initializer: Initializer<Document<DT>>) {
-    Object.assign(this, initializer);
-  }
 }

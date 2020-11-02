@@ -3,12 +3,12 @@
  * @module Options
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * Whether buyer reserves the right to combine options a 'Option to combine' is used to capture this information
  */
-export class OptionToCombine {
+export class OptionToCombine extends Initializable<OptionToCombine> {
   /**
    * An identifier for this OptionToCombine
    */
@@ -18,8 +18,4 @@ export class OptionToCombine {
    * A number of options related to this OptionToCombine
    */
   public relatedOptions: Array<string | number>;
-
-  public constructor(initializer: Initializer<OptionToCombine>) {
-    Object.assign(this, initializer);
-  }
 }

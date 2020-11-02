@@ -3,7 +3,7 @@
  * @module Classification
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * A classification consists of at least two parts:
@@ -11,7 +11,7 @@ import type { Initializer } from '@ts4ocds/utils';
  * and an identifier for the category from that list being applied.
  * It is useful to also publish a text label and/or URI that users can draw on to interpret the classification.
  */
-export class Classification<S extends string = string> {
+export class Classification<S extends string = string> extends Initializable<Classification<S>> {
   /**
    * The classification code taken from the scheme.
    */
@@ -31,8 +31,4 @@ export class Classification<S extends string = string> {
    * A URI to uniquely identify the classification code.
    */
   public uri?: string;
-
-  public constructor(initializer: Initializer<Classification<S>>) {
-    Object.assign(this, initializer);
-  }
 }

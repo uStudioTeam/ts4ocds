@@ -3,7 +3,7 @@
  * @module Conversions
  */
 
-import { hasOwnProperty, Initializer } from '@ts4ocds/utils';
+import { hasOwnProperty, Initializable } from '@ts4ocds/utils';
 
 import { Coefficient } from '../coefficient';
 
@@ -13,7 +13,7 @@ import type { RelatedConversion } from './related-conversion';
  * Conversion is used to describe conversions and its coefficients applicable
  * for specific value received for requirement or observation
  */
-export class Conversion {
+export class Conversion extends Initializable<Conversion> {
   /**
    * An identifier for this conversion.
    */
@@ -33,10 +33,6 @@ export class Conversion {
    * The free-text rationale of using of this conversion
    */
   public rationale?: string;
-
-  public constructor(initializer: Initializer<Conversion>) {
-    Object.assign(this, initializer);
-  }
 
   public isRelated(): this is RelatedConversion {
     return hasOwnProperty(this, 'relatesTo', 'relatedItem');

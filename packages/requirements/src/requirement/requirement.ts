@@ -4,7 +4,7 @@
  */
 
 import { Period } from '@ts4ocds/core/period';
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import {
   RequirementResponse,
@@ -26,7 +26,7 @@ import type { BooleanRequirement } from './boolean-requirement';
  * or a range of threshold values within which the response has to fit in.
  * The requirement may apply to a certain period of time.
  */
-export class Requirement {
+export class Requirement extends Initializable<Requirement> {
   /**
    * The data type in which the requirement response must be provided.
    */
@@ -53,10 +53,6 @@ export class Requirement {
    * A free text description for this atomic requirement.
    */
   public description?: string;
-
-  public constructor(initializer: Initializer<Requirement>) {
-    Object.assign(this, initializer);
-  }
 
   public isOfType(type: 'boolean'): this is BooleanRequirement;
 

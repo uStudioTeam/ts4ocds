@@ -3,7 +3,7 @@
  * @module Conversions
  */
 
-import { hasOwnProperty, Initializer } from '@ts4ocds/utils';
+import { hasOwnProperty, Initializable } from '@ts4ocds/utils';
 import type { Period } from '@ts4ocds/core/period';
 
 import type { RangedCoefficient } from './ranged-coefficient';
@@ -12,7 +12,7 @@ import type { PreciseCoefficient } from './precise-coefficient';
 /**
  * A coefficient applied in case of the value of prescribed attribute matches
  */
-export class Coefficient {
+export class Coefficient extends Initializable<Coefficient> {
   /**
    * An identifier for this coefficient.
    */
@@ -33,10 +33,6 @@ export class Coefficient {
    * in specific case this field must be populated with such formula
    */
   public formula?: string;
-
-  public constructor(initializer: Initializer<Coefficient>) {
-    Object.assign(this, initializer);
-  }
 
   public isPrecise(): this is PreciseCoefficient {
     return hasOwnProperty(this, 'value');

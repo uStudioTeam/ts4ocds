@@ -3,7 +3,7 @@
  * @module Planning
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Value } from '../value';
 
@@ -15,7 +15,7 @@ import type { Value } from '../value';
  * where no linked Budget Data Package is available, to provide enough information to allow a user to manually
  * or automatically cross-reference with another published source of budget and project information.
  */
-export class Budget {
+export class Budget extends Initializable<Budget> {
   /**
    * An identifier for the budget line item which provides funds for this contracting process.
    * This identifier should be possible to cross-reference against the provided data source.
@@ -57,8 +57,4 @@ export class Budget {
    * Human readable documents can be included using the planning.documents block.
    */
   public uri?: string;
-
-  public constructor(initializer: Initializer<Budget>) {
-    Object.assign(this, initializer);
-  }
 }

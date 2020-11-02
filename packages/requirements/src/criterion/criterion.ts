@@ -3,7 +3,7 @@
  * @module Requirements
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { ItemCriterion } from './item-criterion';
 import type { RequirementGroup } from '../requirement-group';
@@ -12,7 +12,7 @@ import type { TendererCriterion } from './tenderer-criterion';
 /**
  * A criterion on which either bidders or items will be judged, evaluated or assessed.
  */
-export class Criterion<RG extends RequirementGroup = RequirementGroup> {
+export class Criterion<RG extends RequirementGroup = RequirementGroup> extends Initializable<Criterion<RG>> {
   /**
    * The identifier for this criterion.
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
@@ -49,10 +49,6 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> {
    * For example criterion may be defined against items or against bidders.
    */
   public relatesTo?: 'tenderer' | 'item';
-
-  public constructor(initializer: Initializer<Criterion<RG>>) {
-    Object.assign(this, initializer);
-  }
 
   public isRelatedTo(relatesTo: 'tenderer'): this is TendererCriterion;
 

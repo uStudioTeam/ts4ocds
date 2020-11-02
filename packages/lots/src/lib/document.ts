@@ -6,7 +6,7 @@
 import * as Core from '@ts4ocds/core/document';
 import type { Initializer } from '@ts4ocds/utils';
 
-import { WithRelatedLots } from './mixins';
+import { WithRelatedLots } from '../mixins';
 
 /**
  * If this document relates to the particular lot(s), provide the identifier(s) of the related lot(s) here.

@@ -5,7 +5,7 @@
 
 import type { Unit } from '@ts4ocds/core/item';
 import type { Period } from '@ts4ocds/core/period';
-import { hasOwnProperty, Initializer } from '@ts4ocds/utils';
+import { hasOwnProperty, Initializable } from '@ts4ocds/utils';
 
 import type { MilestoneReference } from '../milestone-reference';
 
@@ -13,7 +13,11 @@ import type { Dimensions } from './dimensions';
 import type { FinancialObservation } from './financial-observation';
 import type { NonFinancialObservation } from './non-financial-observation';
 
-export class Observation<D extends Dimensions = undefined> {
+/**
+ * An actual or target observation.
+ * Observations should include either a value (for financial metrics) or measure (for other metrics).
+ */
+export class Observation<D extends Dimensions = undefined> extends Initializable<Observation<D>> {
   /**
    * A local identifier for this specific observation.
    * This may be an arbitrary identifier, or could be a composite of the metric identifier, and the date
@@ -48,10 +52,6 @@ export class Observation<D extends Dimensions = undefined> {
    * target or actual observation relates.
    */
   public relatedImplementationMilestone?: MilestoneReference;
-
-  public constructor(initializer: Initializer<Observation<D>>) {
-    Object.assign(this, initializer);
-  }
 
   /**
    * Used to specify if this observation is related to financial metrics.

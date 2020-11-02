@@ -6,7 +6,7 @@
 import * as Core from '@ts4ocds/core/address';
 import type { Initializer } from '@ts4ocds/utils';
 
-import type { AddressDetails } from './address-details';
+import type { AddressDetails } from '../address-details';
 
 export class Address extends Core.Address {
   public addressDetails?: AddressDetails;

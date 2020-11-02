@@ -3,7 +3,7 @@
  * @module Item
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Unit } from './unit';
 import type { Classification } from '../classification';
@@ -11,7 +11,7 @@ import type { Classification } from '../classification';
 /**
  * A good, service, or work to be contracted.
  */
-export class Item {
+export class Item extends Initializable<Item> {
   /**
    * A local identifier to reference and merge the items by.
    * Must be unique within a given array of items.
@@ -42,8 +42,4 @@ export class Item {
    * The number of units to be provided.
    */
   public quantity?: number;
-
-  public constructor(initializer: Initializer<Item>) {
-    Object.assign(this, initializer);
-  }
 }

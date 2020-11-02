@@ -3,7 +3,7 @@
  * @module Contract
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Value } from '../value';
 import type { OrganizationReference } from '../organization';
@@ -16,7 +16,7 @@ import type { OrganizationReference } from '../organization';
  * or to provide enough information to allow a user to manually or automatically cross-reference with some other
  * published source of transactional spending data.
  */
-export class Transaction {
+export class Transaction extends Initializable<Transaction> {
   /**
    * A unique identifier for this transaction.
    * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
@@ -54,8 +54,4 @@ export class Transaction {
    * A URI pointing directly to a machine-readable record about this spending transaction.
    */
   public uri?: string;
-
-  public constructor(initializer: Initializer<Transaction>) {
-    Object.assign(this, initializer);
-  }
 }

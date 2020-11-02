@@ -3,7 +3,7 @@
  * @module Contract
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Document } from '../document';
 import type { Milestone } from '../planning';
@@ -12,7 +12,7 @@ import type { Transaction } from './transaction';
 /**
  * Information during the performance / implementation stage of the contract.
  */
-export class Implementation {
+export class Implementation extends Initializable<Implementation> {
   /**
    * A list of the spending transactions made against this contract
    */
@@ -27,8 +27,4 @@ export class Implementation {
    * Documents and reports that are part of the implementation phase e.g. audit and evaluation reports.
    */
   public documents: Document[];
-
-  public constructor(initializer: Initializer<Implementation>) {
-    Object.assign(this, initializer);
-  }
 }

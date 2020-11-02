@@ -3,7 +3,7 @@
  * @module Award
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Item } from '../item';
 import type { Value } from '../value';
@@ -18,7 +18,7 @@ import type { OrganizationReference } from '../organization';
  * There can be more than one award per contracting process e.g. because the contract is split among different providers,
  * or because it is a standing offer.
  */
-export class Award {
+export class Award extends Initializable<Award> {
   /**
    * The identifier for this award.
    * It must be unique and must not change within the Open Contracting Process it is part of (defined by a single ocid).
@@ -84,8 +84,4 @@ export class Award {
    * from the closed [awardStatus](https://standard.open-contracting.org/1.1/en/schema/codelists/#award-status) codelist.
    */
   public status?: AwardStatus;
-
-  public constructor(initializer: Initializer<Award>) {
-    Object.assign(this, initializer);
-  }
 }

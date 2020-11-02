@@ -3,13 +3,13 @@
  * @module Metrics
  */
 
+import { Initializable } from '@ts4ocds/utils';
 import type { Milestone } from '@ts4ocds/core/planning';
-import type { Initializer } from '@ts4ocds/utils';
 
 /**
  * A block used to reference a milestone, including the ID and title of the milestone being referenced.
  */
-export class MilestoneReference {
+export class MilestoneReference extends Initializable<MilestoneReference> {
   /**
    * The ID of the milestone being referenced,
    * this must match the ID of a milestone described elsewhere in a release about this contracting process.
@@ -21,10 +21,6 @@ export class MilestoneReference {
    * this must match the title of a milestone described elsewhere in a release about this contracting process.
    */
   public title?: string;
-
-  public constructor(initializer: Initializer<MilestoneReference>) {
-    Object.assign(this, initializer);
-  }
 
   public static fromMilestone<M extends Milestone>(milestone: M): MilestoneReference {
     return new MilestoneReference({

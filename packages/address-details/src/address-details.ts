@@ -3,10 +3,10 @@
  * @module AddressDetails
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 import type { Classification } from '@ts4ocds/core/classification';
 
-export class AddressDetails<NC extends string = string> {
+export class AddressDetails<NC extends string = string> extends Initializable<AddressDetails<NC>> {
   /**
    * Country code according to ['iso-alpha2'](https://www.iso.org/obp/ui/#search) classifier
    */
@@ -27,8 +27,4 @@ export class AddressDetails<NC extends string = string> {
    * [EU codelist](http://ec.europa.eu/eurostat/ramon/index.cfm?TargetUrl=DSP_PUB_WELC).
    */
   public NUTSCode?: NC;
-
-  public constructor(initializer: Initializer<AddressDetails<NC>>) {
-    Object.assign(this, initializer);
-  }
 }

@@ -3,7 +3,7 @@
  * @module Item
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Value } from '../../value';
 
@@ -12,7 +12,7 @@ import type { UnitClassificationScheme } from './unit-classification-scheme';
 /**
  * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
  */
-export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> {
+export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> extends Initializable<Unit<S>> {
   /**
    * The list from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
@@ -40,8 +40,4 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
    * The machine-readable URI for the unit of measure, provided by the scheme.
    */
   public uri?: string;
-
-  public constructor(initializer: Initializer<Unit<S>>) {
-    Object.assign(this, initializer);
-  }
 }

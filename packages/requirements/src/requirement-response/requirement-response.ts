@@ -3,7 +3,7 @@
  * @module Requirements
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 import type { Period } from '@ts4ocds/core/period';
 import type { OrganizationReference } from '@ts4ocds/core/organization';
 
@@ -17,7 +17,7 @@ import type { NumericRequirementResponse } from './numeric-requirement-response'
  * An assertion that responds to a single requirement.
  * A requirement response provides the value for the requirement and may provide the period to which it applies.
  */
-export class RequirementResponse {
+export class RequirementResponse extends Initializable<RequirementResponse> {
   /**
    * The identifier for this requirement response.
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
@@ -56,10 +56,6 @@ export class RequirementResponse {
    * this field should be used to reference the entry in the parties section for the tenderer the response relates to.
    */
   public relatedTenderer?: OrganizationReference;
-
-  public constructor(initializer: Initializer<RequirementResponse>) {
-    Object.assign(this, initializer);
-  }
 
   public isOfType(dataType: 'boolean'): this is BooleanRequirementResponse;
 

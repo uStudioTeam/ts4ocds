@@ -3,12 +3,12 @@
  * @module Amendment
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * Amendment information
  */
-export class Amendment {
+export class Amendment extends Initializable<Amendment> {
   /**
    * An identifier for this amendment: often the amendment number
    */
@@ -40,8 +40,4 @@ export class Amendment {
    * that provides the values for this contracting process **after** the amendment was made.
    */
   public releaseID?: string;
-
-  public constructor(initializer: Initializer<Amendment>) {
-    Object.assign(this, initializer);
-  }
 }

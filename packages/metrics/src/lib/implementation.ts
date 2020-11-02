@@ -6,8 +6,11 @@
 import * as Core from '@ts4ocds/core/contract';
 import type { Initializer } from '@ts4ocds/utils';
 
-import type { Metric } from './metric';
+import type { Metric } from '../metric';
 
+/**
+ * Information during the performance / implementation stage of the contract.
+ */
 export class Implementation extends Core.Implementation {
   /**
    * Reported results from the delivery of the contracted goods, works or services.

@@ -3,7 +3,7 @@
  * @module Metrics
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import { Observation } from './observation';
 
@@ -13,7 +13,7 @@ import { Observation } from './observation';
  * In award and contract sections it indicates the awarded/contracted results.
  * In the implementation section it is used to provide updates on actually delivered results, also known as outputs.
  */
-export class Metric<O extends Observation = Observation> {
+export class Metric<O extends Observation = Observation> extends Initializable<Metric<O>> {
   /**
    * An identifier for this metric.
    * In some cases this may be drawn from a codelist of metrics required for this type of contracting process,
@@ -36,8 +36,4 @@ export class Metric<O extends Observation = Observation> {
    * An array of target or actual values for this metric.
    */
   public observations: O[];
-
-  public constructor(initializer: Initializer<Metric<O>>) {
-    Object.assign(this, initializer);
-  }
 }

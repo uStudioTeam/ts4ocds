@@ -3,12 +3,12 @@
  * @module Organization
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * An address.
  */
-export class Address {
+export class Address extends Initializable<Address> {
   /**
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */
@@ -33,8 +33,4 @@ export class Address {
    * The country name. For example, United States.
    */
   public countryName?: string;
-
-  public constructor(initializer: Initializer<Address>) {
-    Object.assign(this, initializer);
-  }
 }

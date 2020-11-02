@@ -3,7 +3,7 @@
  * @module Options
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Option } from '../option';
 
@@ -12,7 +12,7 @@ import type { OptionGroupRelatesTo } from './option-group-relates-to';
 /**
  * An option group is a set of options that may be applied by Procuring Entity for specific property
  */
-export class OptionGroup {
+export class OptionGroup extends Initializable<OptionGroup> {
   /**
    * An identifier for this group
    */
@@ -32,8 +32,4 @@ export class OptionGroup {
    * The scheme element that the group applies to
    */
   public relatesTo: OptionGroupRelatesTo;
-
-  public constructor(initializer: Initializer<OptionGroup>) {
-    Object.assign(this, initializer);
-  }
 }

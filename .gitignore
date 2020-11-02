@@ -3,9 +3,14 @@
 .idea
 .DS_Store
 
+# Generated files
+.docusaurus
+.cache-loader
+
 # Build
-lib
-dist
+packages/*/lib
+!packages/*/src/lib
+build
 
 # Logs
 logs
@@ -28,7 +33,7 @@ pids
 coverage
 
 # Dependency directories
-node_modules/
+node_modules
 
 # TypeScript cache
 *.tsbuildinfo

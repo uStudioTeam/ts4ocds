@@ -3,12 +3,12 @@
  * @module Organization
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * A unique identifier for a party (organization).
  */
-export class Identifier {
+export class Identifier extends Initializable<Identifier> {
   /**
    * The identifier of the organization in the selected scheme.
    */
@@ -34,8 +34,4 @@ export class Identifier {
    * that can be done through the URL field of the Organization contact point.
    */
   public uri?: string;
-
-  public constructor(initializer: Initializer<Identifier>) {
-    Object.assign(this, initializer);
-  }
 }

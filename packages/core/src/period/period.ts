@@ -3,7 +3,7 @@
  * @module Period
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { RangedPeriod } from './ranged-period';
 import type { ExtendedPeriod } from './extended-period';
@@ -13,7 +13,7 @@ import type { ExtendedPeriod } from './extended-period';
  * or maximum extent (the latest date the period can extend to).
  * In some cases, not all of these fields will have known or relevant values.
  */
-export class Period {
+export class Period extends Initializable<Period> {
   /**
    * The start date for the period.
    * When known, a precise start date must be provided.
@@ -42,10 +42,6 @@ export class Period {
    * should be equal to the difference between startDate and maxExtentDate.
    */
   public durationInDays?: number;
-
-  public constructor(initializer: Initializer<Period>) {
-    Object.assign(this, initializer);
-  }
 
   public isExtended(): this is ExtendedPeriod {
     return this.startDate !== undefined && this.maxExtentDate !== undefined;

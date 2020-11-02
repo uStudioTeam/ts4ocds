@@ -3,8 +3,8 @@
  *  @module Lots
  */
 
+import { Initializable } from '@ts4ocds/utils';
 import type { Value } from '@ts4ocds/core/value';
-import type { Initializer } from '@ts4ocds/utils';
 
 import type { Lot } from './lot';
 
@@ -12,7 +12,7 @@ import type { Lot } from './lot';
  * Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots,
  * a lot group is used to capture this information.
  */
-export class LotGroup {
+export class LotGroup extends Initializable<LotGroup> {
   /**
    * A local identifier for this group of lots.
    */
@@ -34,8 +34,4 @@ export class LotGroup {
    * The buyer reserves the right to combine the lots in this group when awarding a contract.
    */
   public optionsToCombine?: boolean;
-
-  public constructor(initializer: Initializer<LotGroup>) {
-    Object.assign(this, initializer);
-  }
 }

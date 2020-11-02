@@ -3,7 +3,7 @@
  * @module Organization
  */
 
-import type { Initializer } from '@ts4ocds/utils';
+import { Initializable } from '@ts4ocds/utils';
 
 import type { Role } from './role';
 import type { Address } from '../address';
@@ -14,7 +14,10 @@ import { OrganizationReference } from './organization-reference';
 /**
  * A party (organization)
  */
-export class Organization<PD extends Record<string, any> | undefined = undefined, R extends Role | string = Role> {
+export class Organization<
+  R extends Role = Role,
+  PD extends Record<string, any> | undefined = undefined
+> extends Initializable<Organization<R, PD>> {
   /**
    * The ID used for cross-referencing to this party from other sections of the release.
    * This field may be built with the following structure {identifier.scheme}-{identifier.id}(-{department-identifier}).
@@ -53,7 +56,7 @@ export class Organization<PD extends Record<string, any> | undefined = undefined
    * The party's role(s) in the contracting process,
    * using the open [partyRole](https://standard.open-contracting.org/1.1/en/schema/codelists/#party-role) codelist.
    */
-  public roles?: R[];
+  public roles?: Array<R | string>;
 
   /**
    * Additional classification information about parties can be provided using partyDetail extensions
@@ -68,10 +71,6 @@ export class Organization<PD extends Record<string, any> | undefined = undefined
    * of the department or sub-unit involved in this contracting process.
    */
   public name?: string;
-
-  public constructor(initializer: Initializer<Organization<PD, R>>) {
-    Object.assign(this, initializer);
-  }
 
   public toReference(): OrganizationReference {
     return new OrganizationReference({
