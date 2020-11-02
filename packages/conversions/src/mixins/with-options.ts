@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Conversions
+ */
+
 import type { Option } from '@ts4ocds/options/option';
 
 /**

@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Options
+ */
+
 import type { OptionGroup } from './option-group';
 import type { OptionToCombine } from './option-to-combine';
 

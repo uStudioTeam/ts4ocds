@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Options
+ */
+
 import type { OptionGroups } from '../option-details';
 
 /**
