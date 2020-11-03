@@ -42,29 +42,28 @@
   .results {
     position: absolute;
     visibility: hidden;
-    top: 40px;
+    top: 54px;
     width: 100%;
     margin: 0;
     padding: 0;
     list-style: none;
-    box-shadow: 0 0 4px rgba(#000, 0.25);
+    box-shadow: 0 2px 8px rgba(#f7f7f7, 0.1);
 
     li {
-      padding: 0 10px;
+      padding: 0 16px;
       background-color: var(--c-background);
     }
 
-    li:nth-child(even) {
-      background-color: var(--c-panel);
+    li:not(:last-child) {
+      border-bottom: 1px solid var(--c-faint-weak);
     }
 
     li.state {
       display: none;
     }
 
-    li.current,
     li:hover {
-      background-color: var(--c-panel-divider);
+      background-color: var(--c-accent-weak-down);
     }
 
     a {

@@ -1,4 +1,22 @@
 html.default {
+  height: 100%;
+  
+  .col-content {
+    margin-top: 16px;
+    
+    > .tsd-panel-group {
+      margin-top: 16px;
+    }
+    
+    > .tsd-comment {
+      padding: 0;
+      margin-bottom: 32px;
+      
+      color: var(--c-base-strong);
+      background-color: transparent;
+    }
+  }
+  
   @include size-md {
     .col-content {
       width: 72%;
@@ -12,7 +30,6 @@ html.default {
       padding-left: 10px;
     }
   }
-
 
   @include size-xs-sm {
     .col-content {
@@ -42,7 +59,7 @@ html.default {
     }
 
     .overlay {
-      content: "";
+      content: '';
       display: block;
       position: fixed;
       z-index: 1023;
@@ -107,16 +124,22 @@ html.default {
       }
     }
   }
+  
+  body {
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .tsd-page-title {
-  padding: 70px 0 20px 0;
-  margin: 0 0 40px 0;
+  padding: calc(54px + 16px) 0 16px 0;
+  margin: 0;
   background: var(--c-panel);
-  box-shadow: 0 0 5px rgba(#000, 0.35);
 
   h1 {
-    margin: 0;
+    margin: 4px 0 0;
   }
 }
 
@@ -124,6 +147,7 @@ html.default {
   margin: 0;
   padding: 0;
   color: var(--c-text-aside);
+  font-size: 12px;
 
   a {
     color: var(--c-text-aside);
@@ -137,8 +161,9 @@ html.default {
   li {
     display: inline;
 
-    &:after {
-      content: " / ";
+    &:not(:last-child):after {
+      content: ' > ';
+      color: var(--c-faint-strong-down);
     }
   }
 }

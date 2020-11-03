@@ -18,6 +18,12 @@
 }
 
 @font-face {
+  font-family: 'Source Sans Pro';
+  font-weight: 300;
+  src: url('../../fonts/SourceSansPro/SourceSansPro-Light.ttf') format('truetype');
+}
+
+@font-face {
   font-family: Inconsolata;
   font-weight: normal;
   src: url('../../fonts/Inconsolata/Inconsolata-Regular.ttf') format('truetype');
@@ -55,6 +61,24 @@ pre {
     font-size: 100%;
     background-color: transparent;
   }
+}
+
+p {
+  code {
+    padding: 3px 6px 4px;
+
+    border-radius: 4px;
+    background-color: var(--c-base-weak);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--c-base-strong);
 }
 
 .tsd-typography {
