@@ -15,7 +15,7 @@ import type { RequirementResponse } from '../requirement-response';
  */
 export class Award<RR extends RequirementResponse = RequirementResponse> extends Core.Award {
   /**
-   * A list of the detailed responses of this award to the requirements of the tender.
+   * A list of the detailed {@link RequirementResponse | responses} of this award to the {@link Requirement | requirements} of the tender.
    */
   public requirementResponses?: RR[];
 

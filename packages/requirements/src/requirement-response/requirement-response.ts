@@ -14,8 +14,8 @@ import type { BooleanRequirementResponse } from './boolean-requirement-response'
 import type { NumericRequirementResponse } from './numeric-requirement-response';
 
 /**
- * An assertion that responds to a single requirement.
- * A requirement response provides the value for the requirement and may provide the period to which it applies.
+ * An assertion that responds to a single {@link Requirement | requirement}.
+ * A requirement response provides the value for the {@link Requirement | requirement} and may provide the {@link Period | period} to which it applies.
  */
 export class RequirementResponse extends Initializable<RequirementResponse> {
   /**
@@ -37,17 +37,17 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
   public description?: string;
 
   /**
-   * The value of this requirement response. The value must be of the type defined in the requirement.dataType field.
+   * The value of this requirement response. The value must be of the type defined in the {@link Requirement.dataType} field.
    */
   public value?: string | number | boolean;
 
   /**
-   * The period which the requirement response is applicable to.
+   * The {@link Period | period} which the requirement response is applicable to.
    */
   public period?: Period;
 
   /**
-   * The id and title of the requirement which the response is applicable to.
+   * The id and title of the {@link Requirement | requirement} which the response is applicable to.
    */
   public requirement!: RequirementReference;
 
@@ -57,14 +57,23 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
    */
   public relatedTenderer?: OrganizationReference;
 
+  /**
+   * Used to check if this {@link RequirementResponse.value | `RequirementResponse`'s `value`} has boolean {@link DataType | dataType}.
+   */
   public isOfType(dataType: 'boolean'): this is BooleanRequirementResponse;
 
+  /**
+   * Used to check if this {@link RequirementResponse.value | `RequirementResponse`'s `value`} has string {@link DataType | dataType}.
+   */
   public isOfType(dataType: 'string'): this is StringRequirementResponse;
 
+  /**
+   * Used to check if this {@link RequirementResponse.value | `RequirementResponse`'s `value`} has numeric {@link DataType | dataType}.
+   */
   public isOfType(dataType: 'number' | 'integer' | 'numeric'): this is NumericRequirementResponse;
 
   /**
-   * Used to check if this RequirementResponse has spesific `value` {@link DataType | dataType}
+   * Used to check if this {@link RequirementResponse.value | `RequirementResponse`'s `value`} has spesific {@link DataType | dataType}.
    */
   public isOfType(dataType: DataType | 'numeric'): boolean {
     if (['integer', 'numeric'].includes(dataType)) {

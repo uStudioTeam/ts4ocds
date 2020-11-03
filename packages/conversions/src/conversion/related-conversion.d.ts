@@ -12,7 +12,7 @@ import type { Conversion } from './conversion';
 export interface RelatedConversion extends Conversion {
   /**
    * The schema element that the conversion applies.
-   * For example, the conversion may be defined against a requirement or against a metric.
+   * For example, the conversion may be defined against a {@link Requirement | requirement} or against a {@link Observation | metric}.
    */
   relatesTo: 'requirement' | 'observation';
 

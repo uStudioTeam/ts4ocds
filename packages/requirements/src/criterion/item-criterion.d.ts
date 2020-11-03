@@ -3,11 +3,14 @@
  * @module Requirements.Criterion
  */
 
-import { Criterion } from './criterion';
+import type { Item } from '@ts4ocds/core/item';
+
 import type { RequirementGroup } from '../requirement-group';
 
+import type { Criterion } from './criterion';
+
 /**
- * A criterion on which either bidders or items will be judged, evaluated or assessed.
+ * A criterion on which either bidders or {@link Item | items} will be judged, evaluated or assessed.
  */
 export interface ItemCriterion<RG extends RequirementGroup = RequirementGroup> extends Criterion<RG> {
   /**
@@ -15,8 +18,8 @@ export interface ItemCriterion<RG extends RequirementGroup = RequirementGroup> e
    */
   relatesTo: 'item';
   /**
-   * This field must be populated with the id of the item in this tender section
+   * This field must be populated with the id of the {@link Item | item} in this tender section
    * which the criterion relates to.
    */
-  relatedItem: string;
+  relatedItem: Item['id'];
 }
