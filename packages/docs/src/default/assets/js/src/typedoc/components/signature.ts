@@ -135,9 +135,9 @@ export class Signature extends Component {
     this.groups = [];
     // @ts-ignore
     // eslint-disable-next-line no-restricted-syntax
-    for (const [index, signature] of signatures.entries()) {
+    [...signatures].forEach((signature, index) => {
       this.groups.push(new SignatureGroup(signature, descriptions[index]));
-    }
+    });
   }
 
   /**

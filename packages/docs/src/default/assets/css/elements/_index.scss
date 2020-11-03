@@ -21,25 +21,31 @@
 // </section>
 //
 .tsd-index-panel {
-  .tsd-index-content {
-    margin-bottom: (-30px) !important;
-  }
-
   .tsd-index-section {
-    margin-bottom: 30px !important;
+    &:not(:first-child) {
+      h3 {
+        border-top: 1px solid var(--c-panel-divider);
+      }
+    }
+    
+    &:first-child {
+      h3 {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
   }
 
   h3 {
     @extend h4;
 
-    margin: 0 -20px 10px -20px;
-    padding: 0 20px 10px 20px;
-    border-bottom: 1px solid var(--c-panel-divider);
+    margin: 16px -16px 0;
+    padding: 16px 16px 0;
   }
 
   ul.tsd-index-list {
     @include vendors(column-count, 3);
-    @include vendors(column-gap, 20px);
+    @include vendors(column-gap, 32px);
 
     padding: 0;
     list-style: none;
@@ -49,14 +55,16 @@
       @include vendors(column-count, 1);
     }
 
-
     @include size-md {
       @include vendors(column-count, 2);
     }
 
-
     li {
       @include vendors(page-break-inside, avoid);
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
     }
   }
 
@@ -77,8 +85,20 @@
     color: var(--c-ts-class);
   }
 
+  .tsd-kind-property a {
+    color: var(--c-ts-property);
+  }
+
   .tsd-kind-module a {
     color: var(--c-ts);
+  }
+
+  .tsd-kind-method a {
+    color: var(--c-ts);
+  }
+
+  .tsd-kind-constructor a {
+    color: var(--c-ts-constructor);
   }
 
   .tsd-kind-interface a {

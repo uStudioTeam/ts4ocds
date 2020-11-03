@@ -8,21 +8,5 @@
 // </aside>
 //
 .tsd-sources {
-  font-size: var(--font-size-mono);
-  color: var(--c-text-aside);
-  margin: 0 0 1em 0;
-
-  a {
-    color: var(--c-text-aside);
-    text-decoration: underline;
-  }
-
-  ul, p {
-    margin: 0 !important;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-  }
+  display: none;
 }
