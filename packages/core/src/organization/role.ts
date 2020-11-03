@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Organization
+ * @module Standard.Organization
  */
 
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';

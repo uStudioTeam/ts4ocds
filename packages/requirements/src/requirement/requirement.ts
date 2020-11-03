@@ -1,10 +1,10 @@
 /**
  * @packageDocumentation
- * @module Requirements
+ * @module Requirements.Requirement
  */
 
 import { Period } from '@ts4ocds/core/period';
-import { plainToClass, Type } from 'class-transformer';
+import { Initializable } from '@ts4ocds/utils';
 
 import {
   RequirementResponse,
@@ -15,10 +15,10 @@ import {
 import type { DataType } from '../data-type';
 import { RequirementReference } from '../requirement-reference';
 
-import type { BooleanRequirement } from './boolean-requirement';
 import type { StringRequirement } from './string-requirement';
-import type { NumericRequirement } from './numeric-requirement';
 import type { RangedRequirement } from './ranged-requirement';
+import type { NumericRequirement } from './numeric-requirement';
+import type { BooleanRequirement } from './boolean-requirement';
 
 /**
  * An atomic requirement.
@@ -26,17 +26,15 @@ import type { RangedRequirement } from './ranged-requirement';
  * or a range of threshold values within which the response has to fit in.
  * The requirement may apply to a certain period of time.
  */
-export class Requirement {
+export class Requirement extends Initializable<Requirement> {
   /**
    * The data type in which the requirement response must be provided.
    */
-  @Type(() => String)
   public dataType?: DataType;
 
   /**
    * Used to specify a particular period the requirement applies to, for example the bidder's turnover in a given year.
    */
-  @Type(() => Period)
   public period?: Period;
 
   /**
@@ -44,7 +42,7 @@ export class Requirement {
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
    * See the [identifier guidance](http://standard.open-contracting.org/latest/en/schema/identifiers/) for further details.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The title of this atomic requirement.
@@ -67,7 +65,11 @@ export class Requirement {
    * 'numeric' is accepted for checking for both `number` and `integer` at the same time.
    */
   public isOfType(dataType: DataType | 'numeric'): boolean {
-    return dataType === 'numeric' ? ['number', 'integer'].includes(this.dataType || '') : this.dataType === dataType;
+    if (dataType === 'numeric') {
+      return ['number', 'integer'].includes(this.dataType || '');
+    }
+
+    return this.dataType === dataType;
   }
 
   /**
@@ -82,10 +84,13 @@ export class Requirement {
   }
 
   /**
-   * Creates a {@link RequirementReference} from this `Requirement`
+   * Creates an instance of a {@link RequirementReference} class from this `Requirement`
    */
   public toReference(): RequirementReference {
-    return plainToClass(RequirementReference, this);
+    return new RequirementReference({
+      id: this.id,
+      title: this.title,
+    });
   }
 
   public toResponse(id: RequirementResponse['id']): RequirementResponse;
@@ -106,28 +111,10 @@ export class Requirement {
   ): NumericRequirementResponse;
 
   /**
-   * Creates a {@link RequirementResponse} from this `Requirement`
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`
    */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
-    const prototype = (() => {
-      switch (typeof value) {
-        case 'string': {
-          return StringRequirementResponse;
-        }
-        case 'boolean': {
-          return BooleanRequirementResponse;
-        }
-        case 'number': {
-          return NumericRequirementResponse;
-        }
-        case 'undefined':
-        default: {
-          return RequirementResponse;
-        }
-      }
-    })();
-
-    return plainToClass(prototype, {
+    return new RequirementResponse({
       id,
       value,
       requirement: this.toReference(),

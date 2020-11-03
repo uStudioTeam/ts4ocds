@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Utilities.CodeList
+ */
+
 export class ClosedCodeList<T extends string> {
   protected readonly set: ReadonlySet<T>;
 

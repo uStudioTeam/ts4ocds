@@ -1,3 +1,8 @@
+/**
+ * @packageDocumentation
+ * @module Utilities.CodeList
+ */
+
 import { OpenCodeList } from './open-code-list';
 import { ClosedCodeList } from './closed-code-list';
 

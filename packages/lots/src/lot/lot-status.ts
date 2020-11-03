@@ -1,6 +1,6 @@
 /**
  *  @packageDocumentation
- *  @module Lots
+ *  @module Lots.Lot
  */
 
 import { TenderStatuses } from '@ts4ocds/core/tender';

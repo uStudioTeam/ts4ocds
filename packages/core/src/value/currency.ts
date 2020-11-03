@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Value
+ * @module Standard.Value
  */
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';
 

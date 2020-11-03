@@ -1,12 +1,12 @@
 /**
  * @packageDocumentation
- * @module Contract
+ * @module Standard.Contract
  */
 
-import { Type } from 'class-transformer';
+import { Initializable } from '@ts4ocds/utils';
 
-import { Value } from '../value';
-import { OrganizationReference } from '../organization';
+import type { Value } from '../value';
+import type { OrganizationReference } from '../organization';
 
 /**
  * A spending transaction related to the contracting process.
@@ -16,36 +16,32 @@ import { OrganizationReference } from '../organization';
  * or to provide enough information to allow a user to manually or automatically cross-reference with some other
  * published source of transactional spending data.
  */
-export class Transaction {
+export class Transaction extends Initializable<Transaction> {
+  /**
+   * A unique identifier for this transaction.
+   * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
+   */
+  public id!: string | number;
+
   /**
    * The date of the transaction
    */
-  @Type(() => Date)
   public date?: Date | string;
 
   /**
    * The value of the transaction.
    */
-  @Type(() => Value)
-  public value: Value;
+  public value!: Value;
 
   /**
    * An organization reference for the organization from which the funds in this transaction originate.
    */
-  @Type(() => OrganizationReference)
-  public payer: OrganizationReference;
+  public payer!: OrganizationReference;
 
   /**
    * An organization reference for the organization which receives the funds in this transaction.
    */
-  @Type(() => OrganizationReference)
-  public payee: OrganizationReference;
-
-  /**
-   * A unique identifier for this transaction.
-   * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
-   */
-  public id: string | number;
+  public payee!: OrganizationReference;
 
   /**
    * Used to point either to a corresponding Fiscal Data Package, IATI file,

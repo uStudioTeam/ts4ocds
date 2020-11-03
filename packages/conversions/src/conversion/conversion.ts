@@ -1,27 +1,33 @@
 /**
  * @packageDocumentation
- * @module Conversions
+ * @module Conversions.Conversion
  */
 
-import { Type } from 'class-transformer';
+import { hasOwnProperty, Initializable } from '@ts4ocds/utils';
 
 import { Coefficient } from '../coefficient';
+
+import type { RelatedConversion } from './related-conversion';
 
 /**
  * Conversion is used to describe conversions and its coefficients applicable
  * for specific value received for requirement or observation
  */
-export class Conversion {
-  /**
-   * A list of applicable coefficients for this conversion
-   */
-  @Type(() => Coefficient)
-  public coefficients: Coefficient[];
-
+export class Conversion extends Initializable<Conversion> {
   /**
    * An identifier for this conversion.
    */
-  public id: string | number;
+  public id!: string | number;
+
+  /**
+   * Free text description of this conversion could be shared here
+   */
+  public description?: string;
+
+  /**
+   * A list of applicable coefficients for this conversion
+   */
+  public coefficients!: Coefficient[];
 
   /**
    * The free-text rationale of using of this conversion
@@ -29,7 +35,9 @@ export class Conversion {
   public rationale?: string;
 
   /**
-   * Free text description of this conversion could be shared here
+   * Used to show if this conversion relates to a specific {@link Requirement} or {@link Observation}
    */
-  public description?: string;
+  public isRelated(): this is RelatedConversion {
+    return hasOwnProperty(this, 'relatesTo', 'relatedItem');
+  }
 }

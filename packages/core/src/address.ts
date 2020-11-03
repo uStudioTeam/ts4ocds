@@ -1,12 +1,14 @@
 /**
  * @packageDocumentation
- * @module Organization
+ * @module Standard.Organization
  */
+
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * An address.
  */
-export class Address {
+export class Address extends Initializable<Address> {
   /**
    * The street address. For example, 1600 Amphitheatre Pkwy.
    */

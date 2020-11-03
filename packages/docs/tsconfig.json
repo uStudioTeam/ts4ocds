@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src/default/assets/js/src/**/*.ts"],
+  "compilerOptions": {
+    "module": "ES2015",
+    "target": "ES5",
+    "lib": ["ES2016", "dom", "dom.iterable"],
+    "alwaysStrict": false,
+    "downlevelIteration": true,
+    "noImplicitUseStrict": true
+  }
+}
