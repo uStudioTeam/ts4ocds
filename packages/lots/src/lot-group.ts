@@ -9,7 +9,7 @@ import type { Value } from '@ts4ocds/core/value';
 import type { Lot } from './lot';
 
 /**
- * Where the buyer reserves the right to combine lots, or wishes to specify the total value for a group of lots,
+ * Where the buyer reserves the right to combine {@link Lot | lots}, or wishes to specify the total value for a group of {@link Lot | lots},
  * a lot group is used to capture this information.
  */
 export class LotGroup extends Initializable<LotGroup> {
@@ -19,19 +19,19 @@ export class LotGroup extends Initializable<LotGroup> {
   public id!: string;
 
   /**
-   * A list of the identifiers of the lots that form this group.
-   * Lots may appear in more than one group.
+   * A list of the identifiers of the {@link Lot | lots} that form this group.
+   * {@link Lot | Lots} may appear in more than one group.
    */
   public relatedLots?: Array<Lot['id']>;
 
   /**
-   * The maximum estimated value of the lots in this group.
-   * This may be lower than the sum total of lot values
+   * The maximum estimated {@link Lot.value | value} of the {@link Lot | lots} in this group.
+   * This may be lower than the sum total of {@link Lot.value | lot values}.
    */
   public maximumValue!: Value;
 
   /**
-   * The buyer reserves the right to combine the lots in this group when awarding a contract.
+   * The buyer reserves the right to combine the {@link Lot | lots} in this group when {@link Award | awarding} a contract.
    */
   public optionsToCombine?: boolean;
 }

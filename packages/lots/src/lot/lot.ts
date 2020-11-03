@@ -9,12 +9,12 @@ import type { Value } from '@ts4ocds/core/value';
 import type { LotStatus } from './lot-status';
 
 /**
- * A lot is a grouping of items within a tender that can be bid on or awarded together.
+ * A lot is a grouping of {@link Item | items} within a tender that can be bid on or {@link Award | awarded} together.
  */
 export class Lot extends Initializable<Lot> {
   /**
    * A local identifier for this lot, such as a lot number.
-   * This is used in relatedLots references at the item, document and award level.
+   * This is used in relatedLots references at the {@link Item | item}, {@link Document | document} and {@link Award | award} level.
    */
   public id!: string;
 
@@ -29,12 +29,12 @@ export class Lot extends Initializable<Lot> {
   public description?: string;
 
   /**
-   * The maximum estimated value of this lot.
+   * The maximum estimated {@link Value | value} of this lot.
    */
   public value!: Value;
 
   /**
-   * The current status of the process related to this lot
+   * The current {@link LotStatus | status} of the process related to this lot
    * based on the [tenderStatus codelist](http://standard.open-contracting.org/1.1/en/schema/codelists/#tender-status)
    */
   public status?: LotStatus;
