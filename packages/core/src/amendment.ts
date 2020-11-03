@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Standard.Amendment
+ * @module Standard
  */
 
 import { Initializable } from '@ts4ocds/utils';
