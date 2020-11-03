@@ -6,7 +6,7 @@
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';
 
 /**
- * The scheme or codelist from which the classification code is taken.
+ * The scheme or codelist from which the {@link Classification.id | classification code} is taken.
  * For line {@link Item.classification | item classifications},
  * this uses the open [itemClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#item-classification-scheme) codelist.
  */
@@ -22,7 +22,7 @@ export const ItemClassificationSchemes = new OpenCodeList([
 ]);
 
 /**
- * The scheme or codelist from which the classification code is taken.
+ * The scheme or codelist from which the {@link Classification.id | classification code} is taken.
  * For line {@link Item.classification | item classifications},
  * this uses the open [itemClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#item-classification-scheme) codelist.
  */
