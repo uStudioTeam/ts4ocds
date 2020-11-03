@@ -1,3 +1,5 @@
+@import '~bootstrap/scss/bootstrap-grid';
+
 @mixin size-xs {
   @media (max-width: 640px) {
     & {
@@ -46,44 +48,8 @@
   }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-
-  @include size-xs {
-    padding: 0 20px;
-  }
-}
 
 .container-main {
-  padding-bottom: 200px;
-}
-
-.row {
-  @include clearfix;
-
-  display: flex;
-  position: relative;
-  margin: 0 -10px;
-}
-
-.col {
-  @extend %prevent-children-margin;
-
-  box-sizing: border-box;
-  float: left;
-  padding: 0 10px;
-}
-
-@for $width from 1 to 12 {
-  .col-#{$width} {
-    @extend .col;
-
-    width: $width / 12 * 100%;
-  }
-
-  .offset-#{$width} {
-    margin-left: $width / 12 * 100%;
-  }
+  padding-bottom: 128px;
+  flex-grow: 1;
 }
