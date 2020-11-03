@@ -29,7 +29,7 @@ export class Coefficient extends Initializable<Coefficient> {
   public period?: Period;
 
   /**
-   * Where mathematical formula is used to calculate precise value that has to be applied for {@link Conversion | conversion}
+   * Where mathematical formula is used to calculate {@link PreciseCoefficient.value | precise value} that has to be applied for {@link Conversion | conversion}
    * in specific case this field must be populated with such formula.
    */
   public formula?: string;
@@ -42,7 +42,7 @@ export class Coefficient extends Initializable<Coefficient> {
   }
 
   /**
-   * Used to show if this coefficient should be defined by a {@link RangedCoefficient | range of `[minValue, maxValue]`}.
+   * Used to show if this coefficient should be defined by a {@link RangedCoefficient | range} of [`minValue`, `maxValue`].
    */
   public isRanged(): this is RangedCoefficient {
     return hasOwnProperty(this, 'minValue', 'maxValue');

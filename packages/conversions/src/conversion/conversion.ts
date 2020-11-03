@@ -10,8 +10,8 @@ import { Coefficient } from '../coefficient';
 import type { RelatedConversion } from './related-conversion';
 
 /**
- * Conversion is used to describe conversions and its coefficients applicable
- * for specific value received for requirement or observation.
+ * Conversion is used to describe conversions and its {@link Coefficient | coefficients} applicability
+ * for specific value received for {@link Requirement | requirement} or {@link Observation | observation}.
  */
 export class Conversion extends Initializable<Conversion> {
   /**
