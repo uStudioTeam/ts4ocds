@@ -29,8 +29,8 @@ export class Budget extends Initializable<Budget> {
   public description?: string;
 
   /**
-   * The value reserved in the budget for this contracting process.
-   * A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
+   * The {@link Value | value} reserved in the budget for this contracting process.
+   * A negative {@link Value | value} indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
    * Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
    */
   public amount!: Value;
@@ -54,7 +54,7 @@ export class Budget extends Initializable<Budget> {
    * A URI pointing directly to a machine-readable record about the budget line-item or line-items that fund this contracting process.
    * Information can be provided in a range of formats, including using IATI, the Open Fiscal Data Standard
    * or any other standard which provides structured data on budget sources.
-   * Human readable documents can be included using the planning.documents block.
+   * Human readable documents can be included using the `planning.documents` block.
    */
   public uri?: string;
 }

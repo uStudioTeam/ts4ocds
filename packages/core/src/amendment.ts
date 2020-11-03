@@ -6,11 +6,11 @@
 import { Initializable } from '@ts4ocds/utils';
 
 /**
- * Amendment information
+ * Amendment information.
  */
 export class Amendment extends Initializable<Amendment> {
   /**
-   * An identifier for this amendment: often the amendment number
+   * An identifier for this amendment: often the amendment number.
    */
   public id?: string;
 
@@ -30,13 +30,13 @@ export class Amendment extends Initializable<Amendment> {
   public rationale?: string;
 
   /**
-   * Provide the identifier (release.id) of the OCDS release (from this contracting process)
+   * Provide the identifier (`release.id`) of the OCDS release (from this contracting process)
    * that provides the values for this contracting process **before** the amendment was made.
    */
   public amendsReleaseID?: string;
 
   /**
-   * Provide the identifier (release.id) of the OCDS release (from this contracting process)
+   * Provide the identifier (`release.id`) of the OCDS release (from this contracting process)
    * that provides the values for this contracting process **after** the amendment was made.
    */
   public releaseID?: string;

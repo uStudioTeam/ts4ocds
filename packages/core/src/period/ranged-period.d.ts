@@ -6,8 +6,8 @@
 import type { Period } from './period';
 
 /**
- * Key events during a contracting process may have a known start date, end date, duration,
- * or maximum extent (the latest date the period can extend to).
+ * Key events during a contracting process may have a known {@link Period.startDate | start date}, {@link Period.endDate | end date}, {@link Period.durationInDays | duration},
+ * or {@link Period.maxExtentDate | maximum extent} (the latest date the period can extend to).
  * In some cases, not all of these fields will have known or relevant values.
  */
 export interface RangedPeriod extends Period {

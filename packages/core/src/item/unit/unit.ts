@@ -14,6 +14,12 @@ import type { UnitClassificationScheme } from './unit-classification-scheme';
  */
 export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> extends Initializable<Unit<S>> {
   /**
+   * The identifier from the codelist referenced in the {@link Unit.scheme | scheme} property.
+   * Check the {@link UnitClassificationScheme | codelist} for details of how to find and use identifiers from the {@link Unit.scheme | scheme} in use.
+   */
+  public id?: string;
+
+  /**
    * The list from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
    * 'UNCEFACT' is recommended.
@@ -21,15 +27,9 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
   public scheme?: S | string;
 
   /**
-   * The monetary value of a single unit.
+   * The monetary {@link Value | value} of a single unit.
    */
   public value?: Value;
-
-  /**
-   * The identifier from the codelist referenced in the scheme property.
-   * Check the codelist for details of how to find and use identifiers from the scheme in use.
-   */
-  public id?: string;
 
   /**
    * Name of the unit.
@@ -37,7 +37,7 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
   public name?: string;
 
   /**
-   * The machine-readable URI for the unit of measure, provided by the scheme.
+   * The machine-readable URI for the unit of measure, provided by the {@link Unit.scheme | scheme}.
    */
   public uri?: string;
 }

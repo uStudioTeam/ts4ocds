@@ -24,17 +24,17 @@ export class Item extends Initializable<Item> {
   public description?: string;
 
   /**
-   * The primary classification for the item.
+   * The primary {@link Classification | classification} for the item.
    */
   public classification?: Classification;
 
   /**
-   * An array of additional classifications for the item.
+   * An array of additional {@link Classification | classifications} for the item.
    */
   public additionalClassifications?: Classification[];
 
   /**
-   * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
+   * A description of the {@link Unit | unit} in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
    */
   public unit?: Unit;
 
