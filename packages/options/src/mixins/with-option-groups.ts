@@ -1,8 +1,14 @@
-import { Type } from 'class-transformer';
+/**
+ * @packageDocumentation
+ * @module Options.Mixins
+ */
 
-import { OptionGroup } from '../option-group';
 import type { OptionGroups } from '../option-details';
 
+/**
+ * Adds an `optionDetils` field declaration to class being applied to,
+ * which should hold an {@link OptionGroups} object inside
+ */
 export function WithOptionGroups<T extends new (...args: any[]) => any>(
   Base: T
 ): T & {
@@ -10,14 +16,10 @@ export function WithOptionGroups<T extends new (...args: any[]) => any>(
     optionDetails: OptionGroups;
   };
 } {
-  class OptionDetails extends Base {
-    @Type(() => {
-      return () => ({
-        optionGroups: OptionGroup,
-      });
-    })
-    public optionDetails: OptionGroups;
-  }
-
-  return OptionDetails;
+  return class OptionDetails extends Base {
+    /**
+     * Where options are applied 'Option Details' is used to capture this information
+     */
+    public optionDetails!: OptionGroups;
+  };
 }

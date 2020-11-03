@@ -14,13 +14,14 @@
     "typecheck": "tsc -p ./tsconfig.ci.json",
     "prebuild": "rimraf \"packages/*/{lib,*.tsbuildinfo}\" dist",
     "build:ts": "lerna exec --scope \"@ts4ocds/{address-details,core,utils}\" -- cp -R src/ lib/",
-    "build:docs": "typedoc",
+    "build:docs": "yarn --cwd packages/docs build",
     "build": "npm-run-all -p build:ts build:docs",
     "test": "npm-run-all -p format lint typecheck",
     "ci": "npm-run-all -s build test",
-    "prerelease": "yarn build && node scripts/create-meta-files.js",
-    "release": "lerna publish --yes --conventional-commits --create-release github --contents lib",
-    "deploy": "gh-pages -d dist",
+    "bump": "lerna version --no-private --yes --create-release github --tag-version-prefix=''",
+    "deploy": "gh-pages -d packages/docs/dist -r https://${GH_TOKEN}@github.com/uStudioTeam/brix-ui",
+    "prerelease": "node scripts/create-meta-files.js",
+    "release": "lerna exec -- yarn publish lib --new-version ${TRAVIS_TAG}",
     "cd": "npm-run-all -p deploy release"
   },
   "devDependencies": {
@@ -40,7 +41,6 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "typedoc": "^0.19.2",
     "typescript": "^4.0.3"
   }
 }

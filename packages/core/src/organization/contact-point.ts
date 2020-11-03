@@ -1,12 +1,14 @@
 /**
  * @packageDocumentation
- * @module Organization
+ * @module Standard.Organization
  */
+
+import { Initializable } from '@ts4ocds/utils';
 
 /**
  * A person, contact point or department to contact in relation to this contracting process.
  */
-export class ContactPoint {
+export class ContactPoint extends Initializable<ContactPoint> {
   /**
    * The name of the contact person, department, or contact point, for correspondence relating to this contracting process.
    */

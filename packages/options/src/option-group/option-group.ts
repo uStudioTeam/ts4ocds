@@ -1,27 +1,22 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.OptionGroup
  */
 
-import { Type } from 'class-transformer';
+import { Initializable } from '@ts4ocds/utils';
 
-import { Option } from '../option';
+import type { Option } from '../option';
+
 import type { OptionGroupRelatesTo } from './option-group-relates-to';
 
 /**
  * An option group is a set of options that may be applied by Procuring Entity for specific property
  */
-export class OptionGroup {
-  /**
-   * Options available for this 'optionGroup'
-   */
-  @Type(() => Option)
-  public options: Option[];
-
+export class OptionGroup extends Initializable<OptionGroup> {
   /**
    * An identifier for this group
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Free-text description for this group
@@ -29,7 +24,12 @@ export class OptionGroup {
   public description?: string;
 
   /**
+   * Options available for this 'optionGroup'
+   */
+  public options!: Option[];
+
+  /**
    * The scheme element that the group applies to
    */
-  public relatesTo: OptionGroupRelatesTo;
+  public relatesTo!: OptionGroupRelatesTo;
 }

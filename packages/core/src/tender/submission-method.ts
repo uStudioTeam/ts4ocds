@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Tender
+ * @module Standard.Tender
  */
 
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';

@@ -3,10 +3,12 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": ["packages/*"],
+  "ignoreChanges": ["packages/docs"],
   "command": {
-    "publish": {
-      "allowBranch": ["main"],
-      "message": "chore(release): %s"
+    "version": {
+      "message": "chore(release): %s",
+      "allowBranch": ["hotfix-*", "release-*"],
+      "conventionalCommits": true
     }
   }
 }

@@ -1,9 +1,14 @@
+/**
+ * @packageDocumentation
+ * @module Utilities.CodeList
+ */
+
 import { ClosedCodeList } from './closed-code-list';
 
 export class OpenCodeList<T extends string> extends ClosedCodeList<T> {
   public readonly [Symbol.toStringTag] = this.set[Symbol.toStringTag];
 
-  protected readonly set: Set<T>;
+  protected readonly set!: Set<T>;
 
   public constructor(values: readonly T[] | null) {
     super(values || []);

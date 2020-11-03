@@ -104,7 +104,7 @@ module.exports = {
 
     'no-process-env': 'off',
     'id-length': ['warn', { exceptions: ['_'] }],
-    'no-console': 'warn',
+    'no-console': 'off',
     'no-underscore-dangle': 'off',
     'sort-imports': 'off',
     'no-useless-constructor': 'off',

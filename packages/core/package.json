@@ -2,8 +2,7 @@
   "name": "@ts4ocds/core",
   "version": "1.0.0",
   "dependencies": {
-    "@ts4ocds/utils": "^1.0.0",
-    "class-transformer": "^0.3.1"
+    "@ts4ocds/utils": "^1.0.0"
   },
   "peerDependencies": {
     "typescript": "4.0.3"

@@ -1,28 +1,22 @@
 /**
  *  @packageDocumentation
- *  @module Lots
+ *  @module Lots.Lot
  */
 
-import { Type } from 'class-transformer';
-import { Value } from '@ts4ocds/core/value';
+import { Initializable } from '@ts4ocds/utils';
+import type { Value } from '@ts4ocds/core/value';
 
 import type { LotStatus } from './lot-status';
 
 /**
  * A lot is a grouping of items within a tender that can be bid on or awarded together.
  */
-export class Lot {
-  /**
-   * The maximum estimated value of this lot.
-   */
-  @Type(() => Value)
-  public value: Value;
-
+export class Lot extends Initializable<Lot> {
   /**
    * A local identifier for this lot, such as a lot number.
    * This is used in relatedLots references at the item, document and award level.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * A title for this lot.
@@ -33,6 +27,11 @@ export class Lot {
    * A description of this lot.
    */
   public description?: string;
+
+  /**
+   * The maximum estimated value of this lot.
+   */
+  public value!: Value;
 
   /**
    * The current status of the process related to this lot

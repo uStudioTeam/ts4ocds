@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Tender
+ * @module Standard.Tender
  */
 
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';

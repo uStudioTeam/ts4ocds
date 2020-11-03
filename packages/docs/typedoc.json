@@ -1,0 +1,35 @@
+{
+  "name": "TS4OCDS",
+
+  "inputFiles": [
+    "../address-details/src",
+    "../conversions/src",
+    "../core/src",
+    "../lots/src",
+    "../metrics/src",
+    "../options/src",
+    "../requirements/src",
+    "../utils/src"
+  ],
+  "exclude": ["../*/**/*/index.{d.ts,ts}"],
+
+  "out": "dist",
+  "theme": "bin/default",
+  "mode": "modules",
+
+  "readme": "README.md",
+  "includeVersion": true,
+  "includeDeclarations": true,
+  "ignoreCompilerErrors": true,
+  "disableSources": false,
+
+  "excludeExternals": true,
+  "excludeNotExported": true,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "stripInternal": true,
+
+  "favicon": "public/favicon.png",
+  "hideDate": true,
+  "hideTime": true
+}

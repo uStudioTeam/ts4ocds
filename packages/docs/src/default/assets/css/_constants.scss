@@ -1,0 +1,32 @@
+:root {
+  --font-family: 'Source Sans Pro', sans-serif;
+  --font-family-mono: Inconsolata, Menlo, Monaco, Consolas, 'Courier New', monospace;
+
+  --font-size: 16px;
+  --font-size-mono: 13px;
+
+  --line-height: 1.375em;
+
+  --c-background: #F8FAFB;
+  --c-text: #131F2B;
+  --c-text-aside: #707070;
+  --c-link: #1A81DB;
+  --c-menu-divider: #eee;
+  --c-menu-divider-focus: #000;
+  --c-menu-label: #707070;
+  --c-panel: #fff;
+  --c-panel-divider: #eee;
+  --c-comment-tag: #707070;
+  --c-comment-tag-text: #fff;
+  --c-code-background: rgba(#000, 0.04);
+
+  --c-ts: #61aeef;
+  --c-ts-interface: #98c379;
+  --c-ts-enum: #d6c986;
+  --c-ts-class: #d6c986;
+  --c-ts-private: #707070;
+
+  --c-toolbar: #fff;
+  --c-toolbar-text: #333;
+  --toolbar-height: 40px;
+}

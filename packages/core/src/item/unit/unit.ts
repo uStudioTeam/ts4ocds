@@ -1,29 +1,28 @@
 /**
  * @packageDocumentation
- * @module Item
+ * @module Standard.Item
  */
 
-import { Type } from 'class-transformer';
+import { Initializable } from '@ts4ocds/utils';
 
-import { Value } from '../../value';
+import type { Value } from '../../value';
+
 import type { UnitClassificationScheme } from './unit-classification-scheme';
 
 /**
  * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
  */
-export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> {
+export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> extends Initializable<Unit<S>> {
   /**
    * The list from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
    * 'UNCEFACT' is recommended.
    */
-  @Type(() => String)
   public scheme?: S | string;
 
   /**
    * The monetary value of a single unit.
    */
-  @Type(() => Value)
   public value?: Value;
 
   /**
