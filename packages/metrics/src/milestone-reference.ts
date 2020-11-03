@@ -7,23 +7,23 @@ import { Initializable } from '@ts4ocds/utils';
 import type { Milestone } from '@ts4ocds/core/planning';
 
 /**
- * A block used to reference a milestone, including the ID and title of the milestone being referenced.
+ * A block used to reference a {@link Milestone | milestone}, including the {@link Milestone.id | ID} and {@link Milestone.title | title} of the {@link Milestone | milestone} being referenced.
  */
 export class MilestoneReference extends Initializable<MilestoneReference> {
   /**
-   * The ID of the milestone being referenced,
-   * this must match the ID of a milestone described elsewhere in a release about this contracting process.
+   * The {@link Milestone.id | ID} of the {@link Milestone | milestone} being referenced,
+   * this must match the {@link Milestone.id | ID} of a {@link Milestone | milestone} described elsewhere in a release about this contracting process.
    */
   public id!: string;
 
   /**
-   * The title of the milestone being referenced,
+   * The {@link Milestone.title | title} of the {@link Milestone | milestone} being referenced,
    * this must match the title of a milestone described elsewhere in a release about this contracting process.
    */
   public title?: string;
 
   /**
-   * Creates an instance of a `MilestoneReference` class from the provided {@link Milestone}
+   * Creates an instance of a `MilestoneReference` class from the provided {@link Milestone}.
    */
   public static fromMilestone<M extends Milestone>(milestone: M): MilestoneReference {
     return new MilestoneReference({

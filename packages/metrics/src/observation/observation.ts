@@ -15,12 +15,12 @@ import type { NonFinancialObservation } from './non-financial-observation';
 
 /**
  * An actual or target observation.
- * Observations should include either a value (for financial metrics) or measure (for other metrics).
+ * Observations should include either a {@link Observation.value | value} (for financial {@link Metric | metrics}) or {@link Observation.measure | measure} (for other {@link Metric | metrics}).
  */
 export class Observation<D extends Dimensions = undefined> extends Initializable<Observation<D>> {
   /**
    * A local identifier for this specific observation.
-   * This may be an arbitrary identifier, or could be a composite of the metric identifier, and the date
+   * This may be an arbitrary identifier, or could be a composite of the {@link Metric | metric} identifier, and the date
    * and other dimensions of this observation.
    */
   public id!: string;
@@ -32,12 +32,12 @@ export class Observation<D extends Dimensions = undefined> extends Initializable
   public notes?: string;
 
   /**
-   * The period over which this observation is measured.
+   * The {@link Period | period} over which this observation is measured.
    */
   public period?: Period;
 
   /**
-   * Unit
+   * {@link Unit}.
    */
   public unit?: Unit;
 
@@ -48,20 +48,20 @@ export class Observation<D extends Dimensions = undefined> extends Initializable
   public dimensions?: D;
 
   /**
-   * A link to the milestone in the implementation section of OCDS to which this forecast,
+   * A link to the {@link MilestoneReference | milestone} in the implementation section of OCDS to which this forecast,
    * target or actual observation relates.
    */
   public relatedImplementationMilestone?: MilestoneReference;
 
   /**
-   * Used to specify if this observation is related to financial metrics.
+   * Used to specify if this observation is related to financial {@link Metric | metrics}.
    */
   public isFinancial(): this is FinancialObservation<D> {
     return hasOwnProperty(this, 'value');
   }
 
   /**
-   * Used to specify if this observation is related to non-financial metrics.
+   * Used to specify if this observation is related to non-financial {@link Metric | metrics}.
    */
   public isNonFinancial(): this is NonFinancialObservation<D> {
     return hasOwnProperty(this, 'measure');
