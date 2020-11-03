@@ -11,17 +11,19 @@ module.exports = (file, factory) => {
     templateContent = readFileSync(resolve(__dirname, `../${file}`));
   }
 
-  readdirSync(packagesPath).forEach((directory) => {
-    const directoryPath = resolve(packagesPath, directory);
-    const libPath = resolve(directoryPath, 'lib');
+  readdirSync(packagesPath)
+    .filter((directory) => directory !== 'docs')
+    .forEach((directory) => {
+      const directoryPath = resolve(packagesPath, directory);
+      const libPath = resolve(directoryPath, 'lib');
 
-    if (typeof file === 'function') {
-      const template = file(directoryPath);
-      templateName = template[0];
-      templateContent = template[1];
-    }
+      if (typeof file === 'function') {
+        const template = file(directoryPath);
+        templateName = template[0];
+        templateContent = template[1];
+      }
 
-    mkdirSync(libPath, { recursive: true });
-    writeFileSync(resolve(libPath, templateName), factory(directoryPath, templateContent));
-  });
+      mkdirSync(libPath, { recursive: true });
+      writeFileSync(resolve(libPath, templateName), factory(directoryPath, templateContent));
+    });
 };

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Utils
+ * @module Utilities.CodeList
  */
 
 import { OpenCodeList } from './open-code-list';

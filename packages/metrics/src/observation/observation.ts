@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Metrics
+ * @module Metrics.Observation
  */
 
 import type { Unit } from '@ts4ocds/core/item';

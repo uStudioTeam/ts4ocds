@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.OptionGroup
  */
 
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Requirements
+ * @module Requirements.Requirement
  */
 
 import type { Requirement } from './requirement';

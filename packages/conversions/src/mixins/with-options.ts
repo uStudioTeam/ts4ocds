@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Conversions
+ * @module Conversions.Mixins
  */
 
 import type { Option } from '@ts4ocds/options/option';

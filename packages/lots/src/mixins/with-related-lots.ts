@@ -1,6 +1,6 @@
 /**
  *  @packageDocumentation
- *  @module Lots
+ *  @module Lots.Mixins
  */
 
 import type { Lot } from '../lot';

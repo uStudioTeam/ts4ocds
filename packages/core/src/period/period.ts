@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Period
+ * @module Standard.Period
  */
 
 import { Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  *  @packageDocumentation
- *  @module Lots
+ *  @module Lots.Lot
  */
 
 import { Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Utils
+ * @module Utilities.CodeList
  */
 
 import { ClosedCodeList } from './closed-code-list';

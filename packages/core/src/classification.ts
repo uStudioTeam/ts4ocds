@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Classification
+ * @module Standard.Classification
  */
 
 import { Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Metrics
+ * @module Metrics.Observation
  */
 
 import type { Value } from '@ts4ocds/core/value';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Award
+ * @module Standard.Award
  */
 
 import { Initializable } from '@ts4ocds/utils';

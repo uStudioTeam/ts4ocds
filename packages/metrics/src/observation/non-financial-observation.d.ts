@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Metrics
+ * @module Metrics.Observation
  */
 
 import type { Dimensions } from './dimensions';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.Mixins
  */
 
 import type { OptionsToCombine } from '../option-details';

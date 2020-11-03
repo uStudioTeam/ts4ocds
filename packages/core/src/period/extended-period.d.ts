@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Period
+ * @module Standard.Period
  */
 
 import type { Period } from './period';

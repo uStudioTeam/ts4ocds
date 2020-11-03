@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Conversions
+ * @module Conversions.Conversion
  */
 
 import { hasOwnProperty, Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Planning
+ * @module Standard.Planning
  */
 
 import { Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.Option
  */
 
 import type { Dimensions } from '@ts4ocds/metrics/observation';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.Option
  */
 
 import type { Unit } from '@ts4ocds/core/item';

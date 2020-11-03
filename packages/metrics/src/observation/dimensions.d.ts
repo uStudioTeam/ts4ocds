@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Metrics
+ * @module Metrics.Observation
  */
 
 /**

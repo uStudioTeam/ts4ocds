@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Utils
+ * @module Utilities.CodeList
  */
 
 export class ClosedCodeList<T extends string> {

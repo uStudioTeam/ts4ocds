@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module RelatedProcess
+ * @module Standard.RelatedProcess
  */
 
 import { Initializable } from '@ts4ocds/utils';

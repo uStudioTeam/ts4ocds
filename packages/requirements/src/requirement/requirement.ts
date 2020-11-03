@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Requirements
+ * @module Requirements.Requirement
  */
 
 import { Period } from '@ts4ocds/core/period';

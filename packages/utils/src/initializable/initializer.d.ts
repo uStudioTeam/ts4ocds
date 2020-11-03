@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Utils
+ * @module Utilities.Initializable
  */
 
 export type Initializer<T> = Pick<

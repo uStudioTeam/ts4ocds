@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Planning
+ * @module Standard.Planning
  */
 
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';

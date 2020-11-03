@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Requirements
+ * @module Requirements.RequirementResponse
  */
 
 import type { RequirementResponse } from './requirement-response';

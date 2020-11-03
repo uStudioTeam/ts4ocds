@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Award
+ * @module Standard.Award
  */
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';
 

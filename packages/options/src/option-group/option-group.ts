@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Options
+ * @module Options.OptionGroup
  */
 
 import { Initializable } from '@ts4ocds/utils';

@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Planning
+ * @module Standard.Planning
  */
 
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';

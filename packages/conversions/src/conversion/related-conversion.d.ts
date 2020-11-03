@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Conversions
+ * @module Conversions.Conversion
  */
 
 import type { Conversion } from './conversion';

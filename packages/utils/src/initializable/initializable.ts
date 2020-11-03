@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Utils
+ * @module Utilities.Initializable
  */
 
 import type { Initializer } from './initializer';

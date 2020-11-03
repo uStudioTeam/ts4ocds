@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Conversions
+ * @module Conversions.Coefficient
  */
 
 import type { Coefficient } from './coefficient';

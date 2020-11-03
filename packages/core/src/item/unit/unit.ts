@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Item
+ * @module Standard.Item
  */
 
 import { Initializable } from '@ts4ocds/utils';

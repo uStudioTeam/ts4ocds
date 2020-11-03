@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Requirements
+ * @module Requirements.Criterion
  */
 
 import { Initializable } from '@ts4ocds/utils';
