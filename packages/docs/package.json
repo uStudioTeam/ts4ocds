@@ -1,0 +1,10 @@
+{
+  "name": "@ts4ocds/docs",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "typedoc": "^0.19.2",
+    "typedoc-plugin-external-module-name": "^4.0.3",
+    "typedoc-plugin-extras": "^1.1.6"
+  }
+}
