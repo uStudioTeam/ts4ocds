@@ -11,6 +11,7 @@
 packages/*/lib
 !packages/*/src/lib
 dist
+bin
 
 # Logs
 logs

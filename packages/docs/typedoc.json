@@ -14,8 +14,8 @@
   "exclude": ["../*/**/*/index.{d.ts,ts}"],
 
   "out": "dist",
+  "theme": "bin/default",
   "mode": "modules",
-  "theme": "./theme",
 
   "readme": "README.md",
   "includeVersion": true,

@@ -1,0 +1,26 @@
+footer {
+  border-top: 1px solid var(--c-panel-divider);
+  background-color: var(--c-panel);
+
+  &.with-border-bottom {
+    border-bottom: 1px solid var(--c-panel-divider);
+  }
+
+  .tsd-legend-group {
+    font-size: 0;
+  }
+
+  .tsd-legend {
+    display: inline-block;
+    width: 25%;
+    padding: 0;
+    font-size: var(--font-size);
+    list-style: none;
+    line-height: var(--line-height);
+    vertical-align: top;
+
+    @include size-xs-sm {
+      width: 50%;
+    }
+  }
+}
