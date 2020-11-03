@@ -23,7 +23,7 @@ export class Observation<D extends Dimensions = undefined> extends Initializable
    * This may be an arbitrary identifier, or could be a composite of the metric identifier, and the date
    * and other dimensions of this observation.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * Any notes on this observation.

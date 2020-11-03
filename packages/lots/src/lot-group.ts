@@ -16,7 +16,7 @@ export class LotGroup extends Initializable<LotGroup> {
   /**
    * A local identifier for this group of lots.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * A list of the identifiers of the lots that form this group.
@@ -28,7 +28,7 @@ export class LotGroup extends Initializable<LotGroup> {
    * The maximum estimated value of the lots in this group.
    * This may be lower than the sum total of lot values
    */
-  public maximumValue: Value;
+  public maximumValue!: Value;
 
   /**
    * The buyer reserves the right to combine the lots in this group when awarding a contract.

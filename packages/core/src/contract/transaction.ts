@@ -21,7 +21,7 @@ export class Transaction extends Initializable<Transaction> {
    * A unique identifier for this transaction.
    * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * The date of the transaction
@@ -31,17 +31,17 @@ export class Transaction extends Initializable<Transaction> {
   /**
    * The value of the transaction.
    */
-  public value: Value;
+  public value!: Value;
 
   /**
    * An organization reference for the organization from which the funds in this transaction originate.
    */
-  public payer: OrganizationReference;
+  public payer!: OrganizationReference;
 
   /**
    * An organization reference for the organization which receives the funds in this transaction.
    */
-  public payee: OrganizationReference;
+  public payee!: OrganizationReference;
 
   /**
    * Used to point either to a corresponding Fiscal Data Package, IATI file,

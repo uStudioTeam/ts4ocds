@@ -16,7 +16,7 @@ export class Lot extends Initializable<Lot> {
    * A local identifier for this lot, such as a lot number.
    * This is used in relatedLots references at the item, document and award level.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * A title for this lot.
@@ -31,7 +31,7 @@ export class Lot extends Initializable<Lot> {
   /**
    * The maximum estimated value of this lot.
    */
-  public value: Value;
+  public value!: Value;
 
   /**
    * The current status of the process related to this lot

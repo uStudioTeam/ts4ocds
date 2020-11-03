@@ -33,7 +33,7 @@ export class Budget extends Initializable<Budget> {
    * A negative value indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
    * Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
    */
-  public amount: Value;
+  public amount!: Value;
 
   /**
    * The name of the project through which this contracting process is funded (if applicable).

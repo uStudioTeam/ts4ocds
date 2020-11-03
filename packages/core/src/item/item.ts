@@ -16,7 +16,7 @@ export class Item extends Initializable<Item> {
    * A local identifier to reference and merge the items by.
    * Must be unique within a given array of items.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * A description of the goods, services to be provided.

@@ -20,6 +20,6 @@ export function WithOptionsToCombine<T extends new (...args: any[]) => any>(
     /**
      * Where options are applied 'Option Details' is used to capture this information
      */
-    public optionDetails: OptionsToCombine;
+    public optionDetails!: OptionsToCombine;
   };
 }

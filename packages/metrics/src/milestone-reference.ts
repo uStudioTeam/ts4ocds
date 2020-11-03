@@ -14,7 +14,7 @@ export class MilestoneReference extends Initializable<MilestoneReference> {
    * The ID of the milestone being referenced,
    * this must match the ID of a milestone described elsewhere in a release about this contracting process.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The title of the milestone being referenced,

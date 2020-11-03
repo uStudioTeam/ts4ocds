@@ -16,7 +16,7 @@ export class Coefficient extends Initializable<Coefficient> {
   /**
    * An identifier for this coefficient.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Precise value that has to be applied for conversion in specific case

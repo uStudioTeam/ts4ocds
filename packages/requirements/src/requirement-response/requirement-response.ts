@@ -23,7 +23,7 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
    * See the [identifier guidance](http://standard.open-contracting.org/latest/en/schema/identifiers/) for further details.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * A title for this requirement response.
@@ -49,7 +49,7 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
   /**
    * The id and title of the requirement which the response is applicable to.
    */
-  public requirement: RequirementReference;
+  public requirement!: RequirementReference;
 
   /**
    * Where this requirement response relates to a tenderer and is provided by the buyer or procuring entity

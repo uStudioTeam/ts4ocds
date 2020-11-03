@@ -1,14 +1,12 @@
 {
+  "extends": "../../tsconfig.json",
   "include": ["src/default/assets/js/src/**/*.ts"],
   "compilerOptions": {
-    "target": "es5",
-    "module": "es2015",
-    "lib": ["es2016", "dom", "dom.iterable"],
-    "declaration": false,
-    "skipLibCheck": true,
-    "sourceMap": false,
-    "strict": true,
+    "module": "ES2015",
+    "target": "ES5",
+    "lib": ["ES2016", "dom", "dom.iterable"],
     "alwaysStrict": false,
+    "downlevelIteration": true,
     "noImplicitUseStrict": true
   }
 }

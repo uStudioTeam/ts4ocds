@@ -13,7 +13,7 @@ export class OrganizationReference extends Initializable<OrganizationReference> 
   /**
    * The id of the party being referenced. This must match the id of an entry in the parties section.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * The name of the party being referenced.

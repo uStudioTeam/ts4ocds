@@ -18,7 +18,7 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> extends I
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
    * See the [identifier guidance](http://standard.open-contracting.org/latest/en/schema/identifiers/) for further details.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * A title for this criterion.
@@ -36,7 +36,7 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> extends I
    * A criterion is satisfied by one or more requirement groups being met.
    * A requirement group is met when all requirements in the group are satisfied.
    */
-  public requirementGroups: RG[];
+  public requirementGroups!: RG[];
 
   /**
    * Source of response to the requirements specified in the criterion,

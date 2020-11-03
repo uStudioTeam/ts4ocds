@@ -16,7 +16,7 @@ export class Milestone<MT extends MilestoneType = MilestoneType> extends Initial
    * A local identifier for this milestone, unique within this block.
    * This field is used to keep track of multiple revisions of a milestone through the compilation from release to record mechanism.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Milestone title

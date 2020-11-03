@@ -16,7 +16,7 @@ export class OptionGroup extends Initializable<OptionGroup> {
   /**
    * An identifier for this group
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Free-text description for this group
@@ -26,10 +26,10 @@ export class OptionGroup extends Initializable<OptionGroup> {
   /**
    * Options available for this 'optionGroup'
    */
-  public options: Option[];
+  public options!: Option[];
 
   /**
    * The scheme element that the group applies to
    */
-  public relatesTo: OptionGroupRelatesTo;
+  public relatesTo!: OptionGroupRelatesTo;
 }

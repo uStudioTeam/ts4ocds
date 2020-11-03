@@ -1,9 +1,9 @@
-import { Application, registerComponent } from './typedoc/Application';
-import { Search } from './typedoc/components/Search';
-import { MenuHighlight } from './typedoc/components/MenuHighlight';
-import { Signature } from './typedoc/components/Signature';
-import { Toggle } from './typedoc/components/Toggle';
-import { Filter } from './typedoc/components/Filter';
+import { Application, registerComponent } from './typedoc/application';
+import { Search } from './typedoc/components/search';
+import { MenuHighlight } from './typedoc/components/menu-highlight';
+import { Signature } from './typedoc/components/signature';
+import { Toggle } from './typedoc/components/toggle';
+import { Filter } from './typedoc/components/filter';
 
 import '../../css/main.scss';
 

@@ -19,7 +19,7 @@ export class Option<D extends Dimensions = undefined> extends Initializable<Opti
   /**
    * An identifier for this option.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Title for this option

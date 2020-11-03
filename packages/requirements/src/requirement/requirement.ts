@@ -42,7 +42,7 @@ export class Requirement extends Initializable<Requirement> {
    * It must be unique and cannot change within the Open Contracting Process it is part of (defined by a single ocid).
    * See the [identifier guidance](http://standard.open-contracting.org/latest/en/schema/identifiers/) for further details.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The title of this atomic requirement.

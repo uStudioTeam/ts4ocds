@@ -16,15 +16,15 @@ export class Implementation extends Initializable<Implementation> {
   /**
    * A list of the spending transactions made against this contract
    */
-  public transactions: Transaction[];
+  public transactions!: Transaction[];
 
   /**
    * As milestones are completed, the milestone's status and dates should be updated.
    */
-  public milestones: Milestone[];
+  public milestones!: Milestone[];
 
   /**
    * Documents and reports that are part of the implementation phase e.g. audit and evaluation reports.
    */
-  public documents: Document[];
+  public documents!: Document[];
 }

@@ -14,7 +14,7 @@ export class RequirementReference extends Initializable<RequirementReference> {
   /**
    * The id of the requirement which the response is applicable to.
    */
-  public id: Requirement['id'];
+  public id!: Requirement['id'];
 
   /**
    * The title of the requirement which the response is applicable to.

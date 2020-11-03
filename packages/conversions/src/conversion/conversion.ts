@@ -17,7 +17,7 @@ export class Conversion extends Initializable<Conversion> {
   /**
    * An identifier for this conversion.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Free text description of this conversion could be shared here
@@ -27,7 +27,7 @@ export class Conversion extends Initializable<Conversion> {
   /**
    * A list of applicable coefficients for this conversion
    */
-  public coefficients: Coefficient[];
+  public coefficients!: Coefficient[];
 
   /**
    * The free-text rationale of using of this conversion

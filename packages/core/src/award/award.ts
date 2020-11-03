@@ -24,7 +24,7 @@ export class Award extends Initializable<Award> {
    * It must be unique and must not change within the Open Contracting Process it is part of (defined by a single ocid).
    * See the [identifier guidance](https://standard.open-contracting.org/1.1/en/schema/identifiers/) for further details.
    */
-  public id: string | number;
+  public id!: string | number;
 
   /**
    * Award title
@@ -54,30 +54,30 @@ export class Award extends Initializable<Award> {
    * The suppliers awarded this award.
    * If different suppliers have been awarded different items or values, these should be split into separate award blocks.
    */
-  public suppliers: OrganizationReference[];
+  public suppliers!: OrganizationReference[];
 
   /**
    * The goods and services awarded in this award, broken into line items wherever possible.
    * Items should not be duplicated, but the quantity specified instead.
    */
-  public items: Item[];
+  public items!: Item[];
 
   /**
    * The period for which the contract has been awarded.
    */
-  public contractPeriod: Period;
+  public contractPeriod!: Period;
 
   /**
    * All documents and attachments related to the award, including any notices.
    */
-  public documents: Document[];
+  public documents!: Document[];
 
   /**
    * An award amendment is a formal change to the details of the award,
    * and generally involves the publication of a new award notice/release.
    * The rationale and a description of the changes made can be provided here.
    */
-  public amendments: Amendment[];
+  public amendments!: Amendment[];
 
   /**
    * The current status of the award,

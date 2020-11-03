@@ -22,7 +22,7 @@ export class Organization<
    * The ID used for cross-referencing to this party from other sections of the release.
    * This field may be built with the following structure {identifier.scheme}-{identifier.id}(-{department-identifier}).
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The primary identifier for this organization or participant.
@@ -30,7 +30,7 @@ export class Organization<
    * Consult the [organization identifier guidance](https://standard.open-contracting.org/1.1/en/schema/identifiers/)
    * for the preferred scheme and identifier to use.
    */
-  public identifier: Identifier;
+  public identifier!: Identifier;
 
   /**
    * A list of additional / supplemental identifiers for the organization or participant,
@@ -38,14 +38,14 @@ export class Organization<
    * This can be used to provide an internally used identifier for this organization
    * in addition to the primary legal entity identifier.
    */
-  public additionalIdentifiers: Identifier[];
+  public additionalIdentifiers!: Identifier[];
 
   /**
    * An address.
    * This may be the legally registered address of the organization, or may be a correspondence address
    * for this particular contracting process.
    */
-  public address: Address;
+  public address!: Address;
 
   /**
    * Contact details that can be used for this party.

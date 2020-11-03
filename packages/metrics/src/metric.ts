@@ -19,7 +19,7 @@ export class Metric<O extends Observation = Observation> extends Initializable<M
    * In some cases this may be drawn from a codelist of metrics required for this type of contracting process,
    * or in other instances may be an arbitrary identifier.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The title of this metric
@@ -35,5 +35,5 @@ export class Metric<O extends Observation = Observation> extends Initializable<M
   /**
    * An array of target or actual values for this metric.
    */
-  public observations: O[];
+  public observations!: O[];
 }

@@ -17,7 +17,7 @@ export class RelatedProcess<R extends Relationship = Relationship, S extends Sch
   /**
    * A local identifier for this relationship, unique within this array.
    */
-  public id: string;
+  public id!: string;
 
   /**
    * The title of the related process, where referencing an open contracting process,
@@ -35,7 +35,7 @@ export class RelatedProcess<R extends Relationship = Relationship, S extends Sch
    * The identification scheme used by this cross-reference,
    * using the open [relatedProcessScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#related-process-scheme) codelist.
    */
-  public scheme: S | string;
+  public scheme!: S | string;
 
   /**
    * The identifier of the related process.
