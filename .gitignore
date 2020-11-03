@@ -10,7 +10,7 @@
 # Build
 packages/*/lib
 !packages/*/src/lib
-build
+dist
 
 # Logs
 logs
