@@ -13,7 +13,7 @@
     "lint": "eslint --quiet --color \"packages/**/*.ts\"",
     "typecheck": "tsc -p ./tsconfig.ci.json",
     "prebuild": "rimraf \"packages/*/{lib,*.tsbuildinfo}\" dist",
-    "build:ts": "lerna exec --scope \"@ts4ocds/{address-details,core,utils}\" -- cp -R src/ lib/",
+    "build:ts": "lerna exec --no-private --parallel -- cp -R src/ lib/",
     "build:docs": "yarn --cwd packages/docs build",
     "build": "npm-run-all -p build:ts build:docs",
     "test": "npm-run-all -p format lint typecheck",
