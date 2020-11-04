@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "dependencies": {
     "@ts4ocds/core": "^1.0.0",
-    "@ts4ocds/requirements": "^1.0.0",
     "@ts4ocds/metrics": "^1.0.0",
     "@ts4ocds/options": "^1.0.0",
+    "@ts4ocds/requirements": "^1.0.0",
     "@ts4ocds/utils": "^1.0.0"
   },
   "peerDependencies": {

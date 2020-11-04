@@ -2,12 +2,19 @@
   "version": "1.0.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": ["packages/*"],
-  "ignoreChanges": ["packages/docs"],
+  "packages": [
+    "packages/*"
+  ],
+  "ignoreChanges": [
+    "packages/docs"
+  ],
   "command": {
     "version": {
       "message": "chore(release): %s",
-      "allowBranch": ["hotfix-*", "release-*"],
+      "allowBranch": [
+        "hotfix-*",
+        "release-*"
+      ],
       "conventionalCommits": true
     }
   }
