@@ -6,7 +6,7 @@
 import { Initializable } from '@ts4ocds/utils';
 import { ItemClassificationScheme } from './item-classification-scheme';
 
-import type { Unit } from './unit';
+import type { Unit } from '../unit';
 import type { Classification } from '../classification';
 
 /**
