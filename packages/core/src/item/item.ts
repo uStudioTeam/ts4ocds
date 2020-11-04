@@ -11,6 +11,11 @@ import type { Classification } from '../classification';
 
 /**
  * A good, service, or work to be contracted.
+ *
+ * @param S
+ * The scheme or codelist from which the {@link Classification.id | classification code} is taken.
+ * For line item {@link Item.classification | classifications},
+ * this uses the open [itemClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#item-classification-scheme) codelist.
  */
 export class Item<S extends ItemClassificationScheme = ItemClassificationScheme> extends Initializable<Item> {
   /**
@@ -35,7 +40,7 @@ export class Item<S extends ItemClassificationScheme = ItemClassificationScheme>
   public additionalClassifications?: Classification<S | string>[];
 
   /**
-   * A description of the {@link Unit | unit} in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
+   * A description of the {@link Unit.Unit | unit} in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
    */
   public unit?: Unit;
 

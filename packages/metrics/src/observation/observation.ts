@@ -16,6 +16,10 @@ import type { NonFinancialObservation } from './non-financial-observation';
 /**
  * An actual or target observation.
  * Observations should include either a {@link FinancialObservation.value | value} (for financial {@link Metric | metrics}) or {@link NonFinancialObservation.measure | measure} (for other {@link Metric | metrics}).
+ *
+ * @param D
+ * Any number of dimensions can be recorded within this object.
+ * Dimensions names should follow the camelCase conventions of OCDS.
  */
 export class Observation<D extends Dimensions = undefined> extends Initializable<Observation<D>> {
   /**
@@ -32,12 +36,12 @@ export class Observation<D extends Dimensions = undefined> extends Initializable
   public notes?: string;
 
   /**
-   * The {@link Period | period} over which this observation is measured.
+   * The {@link Period.Period | period} over which this observation is measured.
    */
   public period?: Period;
 
   /**
-   * {@link Unit}.
+   * {@link Unit.Unit}.
    */
   public unit?: Unit;
 
@@ -54,14 +58,14 @@ export class Observation<D extends Dimensions = undefined> extends Initializable
   public relatedImplementationMilestone?: MilestoneReference;
 
   /**
-   * Used to specify if this observation is related to financial {@link Metric | metrics}.
+   * Used to specify if this observation is related to {@link FinancialObservation | financial} {@link Metric | metrics}.
    */
   public isFinancial(): this is FinancialObservation<D> {
     return hasOwnProperty(this, 'value');
   }
 
   /**
-   * Used to specify if this observation is related to non-financial {@link Metric | metrics}.
+   * Used to specify if this observation is related to {@link NonFinancialObservation | non-financial} {@link Metric | metrics}.
    */
   public isNonFinancial(): this is NonFinancialObservation<D> {
     return hasOwnProperty(this, 'measure');

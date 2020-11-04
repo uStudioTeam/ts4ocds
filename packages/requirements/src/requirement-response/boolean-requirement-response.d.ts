@@ -6,8 +6,8 @@
 import type { RequirementResponse } from './requirement-response';
 
 /**
- * An assertion that responds to a single {@link Requirement | requirement}.
- * A requirement response provides the value for the {@link Requirement | requirement} and may provide the {@link Period | period} to which it applies.
+ * An assertion that responds to a single {@link Requirement.Requirement | requirement}.
+ * A requirement response provides the value for the {@link Requirement.Requirement | requirement} and may provide the {@link Period.Period | period} to which it applies.
  */
 export interface BooleanRequirementResponse extends RequirementResponse {
   /**

@@ -10,9 +10,9 @@ import { WithOptionGroups } from '../../mixins';
 
 /**
  * An atomic requirement.
- * Requirements can specify the expected value that the {@link RequirementResponse | response} has to contain,
- * or a {@link RangedRequirement | range} of threshold values within which the {@link RequirementResponse | response} has to fit in.
- * The requirement may apply to a certain {@link Period | period} of time.
+ * Requirements can specify the expected value that the {@link RequirementResponse.RequirementResponse | response} has to contain,
+ * or a {@link RangedRequirement | range} of threshold values within which the {@link RequirementResponse.RequirementResponse | response} has to fit in.
+ * The requirement may apply to a certain {@link Period.Period | period} of time.
  */
 export class Requirement extends WithOptionGroups(Core.Requirement) {
   public constructor(initializer: Initializer<Requirement>) {

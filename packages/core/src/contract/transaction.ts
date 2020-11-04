@@ -30,17 +30,17 @@ export class Transaction extends Initializable<Transaction> {
   public date?: Date | string;
 
   /**
-   * The {@link Value | value} of the transaction.
+   * The {@link Value.Value | value} of the transaction.
    */
   public value!: Value;
 
   /**
-   * An {@link OrganizationReference | organization reference} for the {@link Organization | organization} from which the funds in this transaction originate.
+   * An {@link OrganizationReference | organization reference} for the {@link Organization.Organization | organization} from which the funds in this transaction originate.
    */
   public payer!: OrganizationReference;
 
   /**
-   * An {@link OrganizationReference | organization reference} for the {@link Organization | organization} which receives the funds in this transaction.
+   * An {@link OrganizationReference | organization reference} for the {@link Organization.Organization | organization} which receives the funds in this transaction.
    */
   public payee!: OrganizationReference;
 

@@ -11,13 +11,13 @@ import { Initializable } from '@ts4ocds/utils';
  */
 export class OrganizationReference extends Initializable<OrganizationReference> {
   /**
-   * The {@link Organization.id | id} of the party being referenced.
+   * The {@link Organization.id | id} of the {@link Organization | party} being referenced.
    * This must match the {@link Organization.id | id} of an entry in the parties section.
    */
   public id!: string | number;
 
   /**
-   * The {@link Organization.name | name} of the party being referenced.
+   * The {@link Organization.name | name} of the {@link Organization | party} being referenced.
    * This must match the {@link Organization.name | name} of an entry in the parties section.
    */
   public name?: string;

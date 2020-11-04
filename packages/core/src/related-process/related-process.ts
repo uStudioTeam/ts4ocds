@@ -10,6 +10,13 @@ import type { Relationship } from './relationship';
 
 /**
  * A reference to a related contracting process: generally one preceding or following on from the current process.
+ *
+ * @param R
+ * The type of relationship,
+ * using the open [relatedProcess](https://standard.open-contracting.org/1.1/en/schema/codelists/#related-process) codelist.
+ *
+ * @param S
+ * The related process scheme describes the kind of identifier used to cross-reference another process.
  */
 export class RelatedProcess<R extends Relationship = Relationship, S extends Scheme = Scheme> extends Initializable<
   RelatedProcess<R, S>
@@ -26,13 +33,13 @@ export class RelatedProcess<R extends Relationship = Relationship, S extends Sch
   public title?: string;
 
   /**
-   * The type of relationship,
+   * The type of {@link Relationship | relationship},
    * using the open [relatedProcess](https://standard.open-contracting.org/1.1/en/schema/codelists/#related-process) codelist.
    */
   public relationship?: Array<R | string>;
 
   /**
-   * The identification scheme used by this cross-reference,
+   * The identification {@link Scheme | scheme} used by this cross-reference,
    * using the open [relatedProcessScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#related-process-scheme) codelist.
    */
   public scheme!: S | string;

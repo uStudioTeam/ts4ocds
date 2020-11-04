@@ -11,6 +11,10 @@ import type { DocumentType } from './document-type';
  * Links to, or descriptions of, external documents can be attached at various locations within the standard.
  * Documents can be supporting information, formal notices, downloadable forms,
  * or any other kind of resource that ought to be made public as part of full open contracting.
+ *
+ * @param DT
+ * A {@link Document.documentType | classification} of the document described,
+ * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
  */
 export class Document<DT extends DocumentType = DocumentType> extends Initializable<Document<DT>> {
   /**

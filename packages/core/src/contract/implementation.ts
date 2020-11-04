@@ -24,7 +24,7 @@ export class Implementation extends Initializable<Implementation> {
   public milestones!: Milestone[];
 
   /**
-   * {@link Document | Documents} and reports that are part of the implementation phase e.g. audit and evaluation reports.
+   * {@link Document.Document | Documents} and reports that are part of the implementation phase e.g. audit and evaluation reports.
    */
   public documents!: Document[];
 }

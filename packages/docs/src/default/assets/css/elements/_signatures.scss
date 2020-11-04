@@ -204,6 +204,10 @@ ul.tsd-type-parameters {
     list-style: none;
   }
 
+  > li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
   h5 {
     font-family: var(--font-family-mono);
     font-size: var(--font-size-mono);
@@ -212,5 +216,9 @@ ul.tsd-type-parameters {
 
   .tsd-comment {
     margin-top: -0.5em;
+
+    p {
+      margin: 0;
+    }
   }
 }

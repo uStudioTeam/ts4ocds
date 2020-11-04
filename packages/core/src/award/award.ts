@@ -43,7 +43,7 @@ export class Award extends Initializable<Award> {
   public date?: Date | string;
 
   /**
-   * The total {@link Value | value} of this award.
+   * The total {@link Value.Value | value} of this award.
    * In the case of a framework contract this may be the total estimated lifetime value, or maximum value, of the agreement.
    * There may be more than one award per procurement. A negative value indicates that the award may involve payments
    * from the supplier to the buyer (commonly used in concession contracts).
@@ -52,23 +52,23 @@ export class Award extends Initializable<Award> {
 
   /**
    * The suppliers awarded this award.
-   * If different suppliers have been awarded different {@link Item | items} or {@link Value | values}, these should be split into separate award blocks.
+   * If different suppliers have been awarded different {@link Item.Item | items} or {@link Value.Value | values}, these should be split into separate award blocks.
    */
   public suppliers!: OrganizationReference[];
 
   /**
-   * The goods and services awarded in this award, broken into {@link Item | line items} wherever possible.
-   * {@link Item | Items} should not be duplicated, but the {@link Item.quantity | quantity} specified instead.
+   * The goods and services awarded in this award, broken into {@link Item.Item | line items} wherever possible.
+   * {@link Item.Item | Items} should not be duplicated, but the {@link Item.quantity | quantity} specified instead.
    */
   public items!: Item[];
 
   /**
-   * The {@link Period | period} for which the contract has been awarded.
+   * The {@link Period.Period | period} for which the contract has been awarded.
    */
   public contractPeriod!: Period;
 
   /**
-   * All {@link Document | documents} and attachments related to the award, including any notices.
+   * All {@link Document.Document | documents} and attachments related to the award, including any notices.
    */
   public documents!: Document[];
 

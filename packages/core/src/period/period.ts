@@ -45,28 +45,28 @@ export class Period extends Initializable<Period> {
   public durationInDays?: number;
 
   /**
-   * Used to check if this `period` is defined through the use of {@link Period.startDate | `startDate`} and {@link Period.maxExtentDate | `maxExtentDate`} fields.
+   * Used to check if this period is defined through the use of {@link Period.startDate | `startDate`} and {@link Period.maxExtentDate | `maxExtentDate`} fields.
    */
   public isExtended(): this is ExtendedPeriod {
     return this.startDate !== undefined && this.maxExtentDate !== undefined;
   }
 
   /**
-   * Used to check if this `period` is defined through the use of `{@link Period.startDate | `startDate`} and {@link Period.endDate | `endDate`} fields.
+   * Used to check if this period is defined through the use of {@link Period.startDate | `startDate`} and {@link Period.endDate | `endDate`} fields.
    */
   public isRanged(): this is RangedPeriod {
     return this.startDate !== undefined && this.endDate !== undefined;
   }
 
   /**
-   * Returns the range of dates this `period` is being valid for.
+   * Returns the number of days this period is being valid for.
    */
   public getRange(maxDate: Date | string): number {
     return (new Date(maxDate).getTime() - new Date(this.startDate || '').getTime()) / (1000 * 60 * 60 * 24) ?? -1;
   }
 
   /**
-   * Sets the range for this `period`.
+   * Sets the range for this period.
    */
   public setRange(startDate: NonNullable<Period['startDate']>, endDate: NonNullable<Period['endDate']>): void {
     this.startDate = startDate;
@@ -76,7 +76,7 @@ export class Period extends Initializable<Period> {
   }
 
   /**
-   * Sets the extent for this `period`.
+   * Sets the extent for this period.
    */
   public setExtent(
     startDate: NonNullable<Period['startDate']>,
@@ -89,7 +89,7 @@ export class Period extends Initializable<Period> {
   }
 
   /**
-   * Checks if this `period`'s range is valid according to `{@link Period.durationInDays}` description.
+   * Checks if this period's range is valid according to the {@link Period.durationInDays | `durationInDays` field} description.
    */
   public isRangeValid(): boolean {
     return Boolean(this.getRange(this.endDate as Date) >= 0);
@@ -97,7 +97,7 @@ export class Period extends Initializable<Period> {
 
   /**
    *
-   * Checks if this `period`'s duration is valid according to `{@link Period.durationInDays}` description.
+   * Checks if this period's duration is valid according to the {@link Period.durationInDays | `durationInDays` field} description.
    */
   public isDurationValid(
     maxDate: Date | string,

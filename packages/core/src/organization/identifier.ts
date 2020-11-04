@@ -31,7 +31,7 @@ export class Identifier extends Initializable<Identifier> {
    * A URI to identify the {@link Organization | organization}, such as those provided by
    * [Open Corporates](http://www.opencorporates.com) or some other relevant URI provider.
    * This is not for listing the website of the {@link Organization | organization}:
-   * that can be done through the URL field of the {@link Organization} {@link ContactPoint | contact point}.
+   * that can be done through the {@link ContactPoint.url | URL field} of the Organization contact point.
    */
   public uri?: string;
 }

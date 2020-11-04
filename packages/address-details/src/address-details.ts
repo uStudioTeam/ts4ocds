@@ -6,6 +6,11 @@
 import { Initializable } from '@ts4ocds/utils';
 import type { Classification } from '@ts4ocds/core/classification';
 
+/**
+ * @param NC
+ * The most detailed level of NUTS codes, NUTS 3 should be used and it should be taken from the
+ * [EU codelist](http://ec.europa.eu/eurostat/ramon/index.cfm?TargetUrl=DSP_PUB_WELC).
+ */
 export class AddressDetails<NC extends string = string> extends Initializable<AddressDetails<NC>> {
   /**
    * Country code according to ['iso-alpha2'](https://www.iso.org/obp/ui/#search) {@link Classification | classifier}.

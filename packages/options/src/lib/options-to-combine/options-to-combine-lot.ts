@@ -9,7 +9,7 @@ import type { Initializer } from '@ts4ocds/utils';
 import { WithOptionsToCombine } from '../../mixins';
 
 /**
- * A lot is a grouping of items within a tender that can be bid on or awarded together.
+ * A lot is a grouping of {@link Item.Item | items} within a tender that can be bid on or {@link Award.Award | awarded} together.
  */
 export class Lot extends WithOptionsToCombine(Core.Lot) {
   public constructor(initializer: Initializer<Lot>) {
