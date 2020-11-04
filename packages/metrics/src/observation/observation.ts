@@ -15,7 +15,7 @@ import type { NonFinancialObservation } from './non-financial-observation';
 
 /**
  * An actual or target observation.
- * Observations should include either a {@link Observation.value | value} (for financial {@link Metric | metrics}) or {@link Observation.measure | measure} (for other {@link Metric | metrics}).
+ * Observations should include either a {@link FinancialObservation.value | value} (for financial {@link Metric | metrics}) or {@link NonFinancialObservation.measure | measure} (for other {@link Metric | metrics}).
  */
 export class Observation<D extends Dimensions = undefined> extends Initializable<Observation<D>> {
   /**

@@ -8,7 +8,7 @@ import type { Observation } from './observation';
 
 /**
  * An actual or target observation.
- * Observations should include either a {@link Observation.value | value} (for financial {@link Metric | metrics}) or {@link Observation.measure | measure} (for other {@link Metric | metrics}).
+ * Observations should include either a {@link FinancialObservation.value | value} (for financial {@link Metric | metrics}) or {@link NonFinancialObservation.measure | measure} (for other {@link Metric | metrics}).
  */
 export interface NonFinancialObservation<D extends Dimensions = undefined> extends Observation<D> {
   /**
