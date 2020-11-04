@@ -2,7 +2,7 @@
   "name": "ts4ocds",
   "version": "1.0.0",
   "private": true,
-  "description": "ts4ocds is library of TypeScript interfaces that takes an approach to befriend large OCDS JSONs with your per-project routine of writing whole lotta interfaces for them.",
+  "description": "TS4OCDS is a library of TypeScript entities that takes an approach to befriend large OCDS JSONs with your per-project routine of writing whole lotta interfaces for them.",
   "workspaces": {
     "packages": [
       "packages/*"
