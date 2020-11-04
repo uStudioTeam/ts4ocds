@@ -186,6 +186,20 @@ ul.tsd-type-parameters {
   margin: 0;
   padding: 0;
 
+  h4 {
+    color: var(--c-faint-strong-up);
+
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
+
+    em {
+      color: var(--c-ts-interface);
+
+      font-size: 16px;
+      font-style: normal;
+    }
+  }
+
   > li.tsd-parameter-signature {
     list-style: none;
   }

@@ -21,7 +21,7 @@ export class RelatedProcess<R extends Relationship = Relationship, S extends Sch
 
   /**
    * The title of the related process, where referencing an open contracting process,
-   * this field should match the tender/title field in the related process.
+   * this field should match the `tender.title` field in the related process.
    */
   public title?: string;
 

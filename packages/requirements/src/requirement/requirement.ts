@@ -22,18 +22,18 @@ import type { BooleanRequirement } from './boolean-requirement';
 
 /**
  * An atomic requirement.
- * Requirements can specify the expected value that the response has to contain,
- * or a range of threshold values within which the response has to fit in.
- * The requirement may apply to a certain period of time.
+ * Requirements can specify the expected value that the {@link RequirementResponse | response} has to contain,
+ * or a {@link RangedRequirement | range} of threshold values within which the {@link RequirementResponse | response} has to fit in.
+ * The requirement may apply to a certain {@link Period | period} of time.
  */
 export class Requirement extends Initializable<Requirement> {
   /**
-   * The data type in which the requirement response must be provided.
+   * The {@link DataType | data type} in which the {@link RequirementResponse | requirement response} must be provided.
    */
   public dataType?: DataType;
 
   /**
-   * Used to specify a particular period the requirement applies to, for example the bidder's turnover in a given year.
+   * Used to specify a particular {@link Period | period} the requirement applies to, for example the bidder's turnover in a given year.
    */
   public period?: Period;
 
@@ -54,15 +54,24 @@ export class Requirement extends Initializable<Requirement> {
    */
   public description?: string;
 
+  /**
+   * Used to check if the requirement is of `boolean` {@link DataType | data type}.
+   */
   public isOfType(type: 'boolean'): this is BooleanRequirement;
 
+  /**
+   * Used to check if the requirement is of `string` {@link DataType | data type}.
+   */
   public isOfType(type: 'string'): this is StringRequirement;
 
+  /**
+   * Used to check if the requirement is of numeric {@link DataType | data type}.
+   * `numeric` is accepted for checking for both `number` and `integer` at the same time.
+   */
   public isOfType(type: 'number' | 'integer' | 'numeric'): this is NumericRequirement;
 
   /**
-   * Used to check if the requirement is of specific dataType.
-   * 'numeric' is accepted for checking for both `number` and `integer` at the same time.
+   * Used to check if the requirement is of specific {@link DataType | data type}.
    */
   public isOfType(dataType: DataType | 'numeric'): boolean {
     if (dataType === 'numeric') {
@@ -73,7 +82,7 @@ export class Requirement extends Initializable<Requirement> {
   }
 
   /**
-   * Used to check if the requirement has specified numeric value range (`minValue`, `maxValue`).
+   * Used to check if the requirement has specified numeric value range [`minValue`, `maxValue`].
    */
   public isRanged(requirement: Requirement): this is RangedRequirement {
     if (this.isOfType('numeric')) {
@@ -84,7 +93,7 @@ export class Requirement extends Initializable<Requirement> {
   }
 
   /**
-   * Creates an instance of a {@link RequirementReference} class from this `Requirement`
+   * Creates an instance of a {@link RequirementReference} class from this `Requirement`.
    */
   public toReference(): RequirementReference {
     return new RequirementReference({
@@ -93,25 +102,40 @@ export class Requirement extends Initializable<Requirement> {
     });
   }
 
+  /**
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`.
+   */
   public toResponse(id: RequirementResponse['id']): RequirementResponse;
 
+  /**
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`.
+   * Holds a shape of a {@link BooleanRequirementResponse}.
+   */
   public toResponse(
     id: RequirementResponse['id'],
     value: BooleanRequirementResponse['value']
   ): BooleanRequirementResponse;
 
+  /**
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`.
+   * Holds a shape of a {@link StringRequirementResponse}.
+   */
   public toResponse(
     id: RequirementResponse['id'],
     value: StringRequirementResponse['value']
   ): StringRequirementResponse;
 
+  /**
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`.
+   * Holds a shape of a {@link NumericRequirementResponse}.
+   */
   public toResponse(
     id: RequirementResponse['id'],
     value: NumericRequirementResponse['value']
   ): NumericRequirementResponse;
 
   /**
-   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`
+   * Creates an instance of a {@link RequirementResponse} class from this `Requirement`.
    */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
     return new RequirementResponse({

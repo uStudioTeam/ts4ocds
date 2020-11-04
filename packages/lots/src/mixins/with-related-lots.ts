@@ -6,7 +6,8 @@
 import type { Lot } from '../lot';
 
 /**
- * Adds a `relatedLots` field declaration to class being applied to
+ * Adds a `relatedLots` field declaration to class being applied to.
+ * Holds an array of {@link Lot.id | lots' identifiers}.
  */
 export function WithRelatedLots<T extends new (...args: any[]) => any>(
   Base: T
@@ -17,7 +18,7 @@ export function WithRelatedLots<T extends new (...args: any[]) => any>(
 } {
   return class RelatedLots extends Base {
     /**
-     * If the entity relates to one or more specific lots, provide the identifier(s) of the related lot(s) here.
+     * If this entity relates to one or more specific {@link Lot | lots}, provide the {@link Lot.id | identifier(s)} of the related {@link Lot | lot(s)} here.
      */
     public relatedLots?: Array<Lot['id']>;
   };

@@ -22,7 +22,7 @@ export class Metric<O extends Observation = Observation> extends Initializable<M
   public id!: string;
 
   /**
-   * The title of this metric
+   * The title of this metric.
    */
   public title?: string;
 

@@ -1,11 +1,8 @@
-{{#unless hideName}}{{{wbr name}}}{{/unless}}
 {{#if typeParameters}}
-    &lt;
     {{#each typeParameters}}
         {{#if @index}},&nbsp;{{/if}}
-        {{name}}
+        &lt;<em>{{name}}</em>&gt;
     {{/each}}
-    &gt;
 {{/if}}
 <span class="tsd-signature-symbol">(</span>
 {{#each parameters}}

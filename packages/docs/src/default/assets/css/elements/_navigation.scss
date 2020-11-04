@@ -74,13 +74,7 @@
     @include INDENTS(6, 8, 20);
   }
 
-  > ul {
-    border-bottom: 1px solid var(--c-panel-divider);
-  }
-
   li {
-    border-top: 1px solid var(--c-panel-divider);
-
     &.current > a {
       font-weight: bold;
     }

@@ -8,7 +8,7 @@ import { Initializable } from '@ts4ocds/utils';
 import { Requirement } from './requirement';
 
 /**
- * A requirement group is a set of requirements that must be fulfilled together to validate a criterion.
+ * A requirement group is a set of {@link Requirement | requirements} that must be fulfilled together to validate a {@link Criterion | criterion}.
  */
 export class RequirementGroup<R extends Requirement = Requirement> extends Initializable<RequirementGroup<R>> {
   /**
@@ -24,7 +24,7 @@ export class RequirementGroup<R extends Requirement = Requirement> extends Initi
   public description?: string;
 
   /**
-   * A list requirements which must all be satisfied for the requirement group to be met.
+   * A list of {@link Requirement | requirements} which must all be satisfied for the requirement group to be met.
    */
   public requirements!: R[];
 }

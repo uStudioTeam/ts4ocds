@@ -5,7 +5,7 @@
 import { ClosedCodeList, CodeList } from '@ts4ocds/utils';
 
 /**
- * The currency of the amount,
+ * The currency of the {@link Value.amount | amount},
  * from the closed [currency](https://standard.open-contracting.org/1.1/en/schema/codelists/#currency) codelist.
  */
 export const Currencies = new ClosedCodeList([
@@ -314,7 +314,7 @@ export const Currencies = new ClosedCodeList([
 ]);
 
 /**
- * The currency of the amount,
+ * The currency of the {@link Value.amount | amount},
  * from the closed [currency](https://standard.open-contracting.org/1.1/en/schema/codelists/#currency) codelist.
  */
 export type Currency = CodeList<typeof Currencies>;

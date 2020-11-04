@@ -9,7 +9,7 @@ import type { Initializer } from '@ts4ocds/utils';
 import { WithRelatedLots } from '../mixins';
 
 /**
- * If this document relates to the particular lot(s), provide the identifier(s) of the related lot(s) here.
+ * If this document relates to one or more specific {@link Lot | lots}, provide the {@link Lot.id | identifier(s)} of the related {@link Lot | lot(s)} here.
  */
 export class Document<DT extends Core.DocumentType = Core.DocumentType> extends WithRelatedLots(Core.Document) {
   public documentType?: Core.Document<DT>['documentType'];

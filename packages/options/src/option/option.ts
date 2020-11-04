@@ -3,7 +3,7 @@
  * @module Options.Option
  */
 
-import type { Unit } from '@ts4ocds/core/item';
+import type { Unit } from '@ts4ocds/core/unit';
 import type { Period } from '@ts4ocds/core/period';
 import type { Address } from '@ts4ocds/core/address';
 import { hasOwnProperty, Initializable } from '@ts4ocds/utils';

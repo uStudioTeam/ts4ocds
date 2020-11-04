@@ -15,7 +15,7 @@ import type { Metric } from '../metric';
  */
 export class Award extends Core.Award {
   /**
-   * Any target metrics set out as part of the contract award.
+   * Any target {@link Metric | metrics} set out as part of the contract award.
    */
   public agreedMetrics?: Metric[];
 

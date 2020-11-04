@@ -19,33 +19,34 @@ import type { OrganizationReference } from '../organization';
 export class Transaction extends Initializable<Transaction> {
   /**
    * A unique identifier for this transaction.
-   * This identifier should be possible to cross-reference against the provided data source. For IATI this is the transaction reference.
+   * This identifier should be possible to cross-reference against the provided data source.
+   * For IATI this is the transaction reference.
    */
   public id!: string | number;
 
   /**
-   * The date of the transaction
+   * The date of the transaction.
    */
   public date?: Date | string;
 
   /**
-   * The value of the transaction.
+   * The {@link Value | value} of the transaction.
    */
   public value!: Value;
 
   /**
-   * An organization reference for the organization from which the funds in this transaction originate.
+   * An {@link OrganizationReference | organization reference} for the {@link Organization | organization} from which the funds in this transaction originate.
    */
   public payer!: OrganizationReference;
 
   /**
-   * An organization reference for the organization which receives the funds in this transaction.
+   * An {@link OrganizationReference | organization reference} for the {@link Organization | organization} which receives the funds in this transaction.
    */
   public payee!: OrganizationReference;
 
   /**
    * Used to point either to a corresponding Fiscal Data Package, IATI file,
-   * or machine or human-readable source where users can find further information on the budget line item identifiers,
+   * or machine or human-readable source where users can find further information on the {@link Budget | budget} {@link Item | line item} identifiers,
    * or project identifiers, provided here.
    */
   public source?: string;
