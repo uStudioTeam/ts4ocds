@@ -23,23 +23,23 @@ writing whole lotta interfaces for them.
 
 ## Usage
 
-`@ts4ocds` namespace contains the [`/core`](packages/core) package which implements the [OCDS standard v1.1.5](https://standard.open-contracting.org/latest/en/).
+`@ts4ocds` namespace contains the [`/core`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/core) package which implements the [OCDS standard v1.1.5](https://standard.open-contracting.org/latest/en/).
 All other packages implement their respective extension's latest present version.
 
-[`/utils`](packages/utils) package contains useful utility entities that are used in all of our packages under the hood.
+[`/utils`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils) package contains useful utility entities that are used in all of our packages under the hood.
 
 Each package is divided into logical modules containing all child entities.
 The entities unique to the package/module are exported from its `index.ts` file.
 
 Extension packages can also contain the `lib` folder which adds upon the entities from other packages
-(like [`/core`](packages/core) or other extensions);
+(like [`/core`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/core) or other extensions);
 the `mixins` folder which holds [mixin classes](https://www.typescriptlang.org/docs/handbook/mixins.html).
 
 ### Classes
 
 Every class in `ts4ocds` can be constructed like any other JavaScript/TypeScript class.
 To facilitate the construction process we made sure every constructor accepts a special
-[initializer](packages/utils/src/initializable/initializer.d.ts) object which represents the shape
+[initializer](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/initializable/initializer.d.ts) object which represents the shape
 of a to-be constructed class without its methods (if any are present).
 
 Any other OO aspect is also applicable (inheritance, polymorphism, overriding).
@@ -47,7 +47,7 @@ Any other OO aspect is also applicable (inheritance, polymorphism, overriding).
 ### Interfaces
 
 In the classes land interfaces serve as more specific possible shapes for the entities they represent.
-For example, [`Requirement`](packages/requirements/src/requirement/requirement.ts) can have several data types
+For example, [`Requirement`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/requirements/src/requirement/requirement.ts) can have several data types
 which can later be discriminated by its supporting interfaces.
 
 ### Code lists
@@ -59,17 +59,17 @@ We went further by making these code lists the abstractions over the JavaScript'
 
 In OCDS there are two types of code lists – open and closed.
 
-#### [`OpenCodeList`](packages/utils/src/code-list/open-code-list.ts)
+#### [`OpenCodeList`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/open-code-list.ts)
 
 `OpenCodeList` class serves as an abstraction over the native `Set`.
 It just implements all needed properties and methods in a type-safe and immutable way.
 
-#### [`ClosedCodeList`](packages/utils/src/code-list/closed-code-list.ts)
+#### [`ClosedCodeList`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/closed-code-list.ts)
 
 `ClosedCodeList` serves the same purpose as the open one, except it implements TypeScript's `ReadonlySet`
 interface making sure nothing can be added to/deleted from its instance.
 
-#### [`CodeList`](packages/utils/src/code-list/code-list.d.ts)
+#### [`CodeList`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/code-list.d.ts)
 
 `CodeList` type helps extract the values from the code list's instance in a form of a string union type.
 

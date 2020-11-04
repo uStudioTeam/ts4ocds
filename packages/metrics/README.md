@@ -17,4 +17,4 @@
 ## Usage
 
 Other than implementing extension-specific entities, this package also extends some classes from standard.
-These can be found inside the [`/lib`](src/lib) folder.
+These can be found inside the [`/lib`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/metrics/src/lib) folder.

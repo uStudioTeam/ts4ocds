@@ -18,7 +18,7 @@
 ## Usage
 
 Other than implementing extension-specific entities, this package also extends some classes from other extensions.
-These can be found inside the [`/lib`](src/lib) folder.
+These can be found inside the [`/lib`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/options/src/lib) folder.
 
-Also, [`WithOptionGroups`](src/mixins/with-option-groups.ts) and [`WithOptionsToCombine`](src/mixins/with-options-to-combine.ts) mixins
+Also, [`WithOptionGroups`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/options/src/mixins/with-option-groups.ts) and [`WithOptionsToCombine`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/options/src/mixins/with-options-to-combine.ts) mixins
 which add respective fields inside the `optionDetails` field to the mixed-in class are provided by this package.

@@ -17,7 +17,7 @@
   "theme": "bin/default",
   "mode": "modules",
 
-  "readme": "README.md",
+  "readme": "../../README.md",
   "includeVersion": true,
   "includeDeclarations": true,
   "ignoreCompilerErrors": true,

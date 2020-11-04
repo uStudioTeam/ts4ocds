@@ -17,7 +17,8 @@
 ## Usage
 
 Other than implementing extension-specific entities, this package also extends some classes from standard.
-These can be found inside the [`/lib`](src/lib) folder.
+These can be found inside the [`/lib`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/lots/src/lib) folder.
 
-Also, [`WithRelatedLot`](src/mixins/with-related-lot.ts) and [`WithRelatedLots`](src/mixins/with-related-lots.ts) mixins
+Also, [`WithRelatedLot`](https://github.com/uStudioTeam/ts4ocds/blob/main/packages/lots/src/mixins/with-related-lot.ts)
+and [`WithRelatedLots`](https://github.com/uStudioTeam/ts4ocds/blob/main/packages/lots/src/mixins/with-related-lots.ts) mixins
 which add respective fields to the mixed-in class are provided by this package.

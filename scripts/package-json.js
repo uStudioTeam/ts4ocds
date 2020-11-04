@@ -1,12 +1,15 @@
 const { resolve } = require('path');
-const fromTemplate = require('./from-template');
 
-const meta = {
+const fromTemplate = require('./from-template');
+const rootPackageJson = require('../package.json');
+
+const meta = (packageName) => ({
   author: 'uStudio Company <toberead@ustudio.company> (http://ustudio.company)',
   repository: 'github:uStudioTeam/ts4ocds',
-  homepage: 'https://github.com/uStudioTeam/ts4ocds/blob/main/README.md',
+  homepage: `https://github.com/uStudioTeam/ts4ocds/packages/${packageName}`,
+  description: rootPackageJson.description,
   license: 'MIT',
-};
+});
 
 const engineInfo = {
   engines: {
@@ -26,7 +29,7 @@ module.exports = () => {
         {
           name,
           version,
-          ...meta,
+          ...meta(name.slice(name.indexOf('/') + 1)),
           keywords: ['ocds', 'typescript', 'type-definitions', 'classes', 'ts'],
           ...packageJson,
           ...engineInfo,

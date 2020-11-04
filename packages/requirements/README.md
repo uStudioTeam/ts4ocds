@@ -17,4 +17,4 @@
 ## Usage
 
 Other than implementing extension-specific entities, this package also extends one class from standard.
-It can be found inside the [`/lib`](src/lib) folder.
+It can be found inside the [`/lib`](https://github.com/uStudioTeam/ts4ocds/tree/main/packages/requirements/src/lib) folder.
