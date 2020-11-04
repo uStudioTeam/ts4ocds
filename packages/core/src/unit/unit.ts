@@ -1,11 +1,11 @@
 /**
  * @packageDocumentation
- * @module Standard.Item
+ * @module Standard.Unit
  */
 
 import { Initializable } from '@ts4ocds/utils';
 
-import type { Value } from '../../value';
+import type { Value } from '../value';
 
 import type { UnitClassificationScheme } from './unit-classification-scheme';
 
