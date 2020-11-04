@@ -21,7 +21,7 @@
     "bump": "lerna version --no-private --yes --create-release github --tag-version-prefix=''",
     "deploy": "gh-pages -d packages/docs/dist -r https://${GH_TOKEN}@github.com/uStudioTeam/brix-ui",
     "prerelease": "node scripts/create-meta-files.js",
-    "release": "lerna exec -- yarn publish lib --new-version ${TRAVIS_TAG}",
+    "release": "lerna exec --no-private --parallel -- yarn publish lib --new-version ${TRAVIS_TAG}",
     "cd": "npm-run-all -p deploy release"
   },
   "devDependencies": {
