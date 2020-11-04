@@ -12,7 +12,7 @@
     "format": "prettier --check \"packages/**/*.ts\"",
     "lint": "eslint --quiet --color \"packages/**/*.ts\"",
     "typecheck": "tsc -p ./tsconfig.ci.json",
-    "prebuild": "rimraf \"packages/*/{lib,*.tsbuildinfo}\" dist",
+    "prebuild": "rimraf \"packages/*/{lib,*.tsbuildinfo}\"",
     "build:ts": "lerna exec --no-private --parallel -- cp -R src/ lib/",
     "build:docs": "yarn --cwd packages/docs build",
     "build": "npm-run-all -p build:ts build:docs",
