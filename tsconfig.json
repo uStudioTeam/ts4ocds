@@ -19,10 +19,12 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "@ts4ocds/address-details/*": ["packages/address-details/src/*"],
       "@ts4ocds/address-details": ["packages/address-details/src/index.ts"],
       "@ts4ocds/conversions/*": ["packages/conversions/src/*"],
       "@ts4ocds/conversions": ["packages/conversions/src/index.ts"],
       "@ts4ocds/core/*": ["packages/core/src/*"],
+      "@ts4ocds/core": ["packages/core/src/index.ts"],
       "@ts4ocds/lots/*": ["packages/lots/src/*"],
       "@ts4ocds/lots": ["packages/lots/src/index.ts"],
       "@ts4ocds/metrics/*": ["packages/metrics/src/*"],
@@ -31,6 +33,7 @@
       "@ts4ocds/options": ["packages/options/src/index.ts"],
       "@ts4ocds/requirements/*": ["packages/requirements/src/*"],
       "@ts4ocds/requirements": ["packages/requirements/src/index.ts"],
+      "@ts4ocds/utils/*": ["packages/utils/src/*"],
       "@ts4ocds/utils": ["packages/utils/src/index.ts"]
     }
   }
