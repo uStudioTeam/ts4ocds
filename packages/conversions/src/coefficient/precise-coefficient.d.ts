@@ -6,11 +6,12 @@
 import type { Coefficient } from './coefficient';
 
 /**
- * A coefficient applied in case of the value of prescribed attribute matches
+ * A coefficient applied in case of the value of prescribed attribute matches.
  */
 export interface PreciseCoefficient extends Coefficient {
   /**
-   * Value of related 'requirement' or one of available 'options' if applicable received through 'requirementResponse'
+   * {@link NumericRequirement.expectedValue | Value} of related {@link Requirement | requirement} or one of available {@link Option | options}.
+   * If applicable received through {@link RequirementResponse | requirementResponse}.
    */
   value?: number;
 }

@@ -3,6 +3,9 @@
  * @module Utilities.CodeList
  */
 
+/**
+ * Type-safe interface over the native `ReadonlySet`.
+ */
 export class ClosedCodeList<T extends string> {
   protected readonly set: ReadonlySet<T>;
 

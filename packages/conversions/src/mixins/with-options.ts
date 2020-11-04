@@ -6,7 +6,8 @@
 import type { Option } from '@ts4ocds/options/option';
 
 /**
- * Adds an `option` field declaration to class being applied to
+ * Adds an `option` field declaration to the class being applied to.
+ * Holds an array of {@link Option | options}.
  */
 export function WithOptions<T extends new (...args: any[]) => any>(
   Base: T

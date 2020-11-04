@@ -6,7 +6,7 @@
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';
 
 /**
- * A classification of the document described,
+ * A {@link Document.documentType | classification} of the {@link Document | document} described,
  * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
  */
 export const DocumentTypes = new OpenCodeList([
@@ -54,7 +54,7 @@ export const DocumentTypes = new OpenCodeList([
 ]);
 
 /**
- * A classification of the document described,
+ * A {@link Document.documentType | classification} of the {@link Document | document} described,
  * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
  */
 export type DocumentType = CodeList<typeof DocumentTypes>;

@@ -27,12 +27,12 @@ export class Award extends Initializable<Award> {
   public id!: string | number;
 
   /**
-   * Award title
+   * Award title.
    */
   public title?: string;
 
   /**
-   * Award description
+   * Award description.
    */
   public description?: string;
 
@@ -43,7 +43,7 @@ export class Award extends Initializable<Award> {
   public date?: Date | string;
 
   /**
-   * The total value of this award.
+   * The total {@link Value | value} of this award.
    * In the case of a framework contract this may be the total estimated lifetime value, or maximum value, of the agreement.
    * There may be more than one award per procurement. A negative value indicates that the award may involve payments
    * from the supplier to the buyer (commonly used in concession contracts).
@@ -52,35 +52,35 @@ export class Award extends Initializable<Award> {
 
   /**
    * The suppliers awarded this award.
-   * If different suppliers have been awarded different items or values, these should be split into separate award blocks.
+   * If different suppliers have been awarded different {@link Item | items} or {@link Value | values}, these should be split into separate award blocks.
    */
   public suppliers!: OrganizationReference[];
 
   /**
-   * The goods and services awarded in this award, broken into line items wherever possible.
-   * Items should not be duplicated, but the quantity specified instead.
+   * The goods and services awarded in this award, broken into {@link Item | line items} wherever possible.
+   * {@link Item | Items} should not be duplicated, but the {@link Item.quantity | quantity} specified instead.
    */
   public items!: Item[];
 
   /**
-   * The period for which the contract has been awarded.
+   * The {@link Period | period} for which the contract has been awarded.
    */
   public contractPeriod!: Period;
 
   /**
-   * All documents and attachments related to the award, including any notices.
+   * All {@link Document | documents} and attachments related to the award, including any notices.
    */
   public documents!: Document[];
 
   /**
-   * An award amendment is a formal change to the details of the award,
+   * An award {@link Amendment | amendment} is a formal change to the details of the award,
    * and generally involves the publication of a new award notice/release.
-   * The rationale and a description of the changes made can be provided here.
+   * The {@link Amendment.rationale | rationale} and a {@link Amendment.description | description} of the changes made can be provided here.
    */
   public amendments!: Amendment[];
 
   /**
-   * The current status of the award,
+   * The current {@link AwardStatus | status} of the award,
    * from the closed [awardStatus](https://standard.open-contracting.org/1.1/en/schema/codelists/#award-status) codelist.
    */
   public status?: AwardStatus;

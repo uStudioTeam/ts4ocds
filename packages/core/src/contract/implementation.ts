@@ -14,17 +14,17 @@ import type { Transaction } from './transaction';
  */
 export class Implementation extends Initializable<Implementation> {
   /**
-   * A list of the spending transactions made against this contract
+   * A list of the spending {@link Transaction | transactions} made against this contract.
    */
   public transactions!: Transaction[];
 
   /**
-   * As milestones are completed, the milestone's status and dates should be updated.
+   * As {@link Milestone | milestones} are completed, the {@link Milestone.status | milestone's status} and dates should be updated.
    */
   public milestones!: Milestone[];
 
   /**
-   * Documents and reports that are part of the implementation phase e.g. audit and evaluation reports.
+   * {@link Document | Documents} and reports that are part of the implementation phase e.g. audit and evaluation reports.
    */
   public documents!: Document[];
 }

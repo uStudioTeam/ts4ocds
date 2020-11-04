@@ -4,14 +4,15 @@
  */
 
 import { Initializable } from '@ts4ocds/utils';
+import { ItemClassificationScheme } from './item-classification-scheme';
 
-import type { Unit } from './unit';
+import type { Unit } from '../unit';
 import type { Classification } from '../classification';
 
 /**
  * A good, service, or work to be contracted.
  */
-export class Item extends Initializable<Item> {
+export class Item<S extends ItemClassificationScheme = ItemClassificationScheme> extends Initializable<Item> {
   /**
    * A local identifier to reference and merge the items by.
    * Must be unique within a given array of items.
@@ -24,17 +25,17 @@ export class Item extends Initializable<Item> {
   public description?: string;
 
   /**
-   * The primary classification for the item.
+   * The primary {@link Classification | classification} for the item.
    */
-  public classification?: Classification;
+  public classification?: Classification<S | string>;
 
   /**
-   * An array of additional classifications for the item.
+   * An array of additional {@link Classification | classifications} for the item.
    */
-  public additionalClassifications?: Classification[];
+  public additionalClassifications?: Classification<S | string>[];
 
   /**
-   * A description of the unit in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
+   * A description of the {@link Unit | unit} in which the supplies, services or works are provided (e.g. hours, kilograms) and the unit-price.
    */
   public unit?: Unit;
 

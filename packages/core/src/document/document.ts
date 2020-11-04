@@ -33,7 +33,7 @@ export class Document<DT extends DocumentType = DocumentType> extends Initializa
   public description?: string;
 
   /**
-   * A classification of the document described,
+   * A {@link DocumentType | classification} of the document described,
    * using the open [documentType](https://standard.open-contracting.org/1.1/en/schema/codelists/#document-type) codelist.
    */
   public documentType?: DT | string;
@@ -45,7 +45,7 @@ export class Document<DT extends DocumentType = DocumentType> extends Initializa
   public datePublished?: Date | string;
 
   /**
-   * Date that the document was last modified
+   * Date that the document was last modified.
    */
   public dateModified?: Date | string;
 
@@ -57,8 +57,8 @@ export class Document<DT extends DocumentType = DocumentType> extends Initializa
 
   /**
    * The format of the document, using the open [IANA Media Types](http://www.iana.org/assignments/media-types/) codelist
-   * (see the values in the 'Template' column), or using the 'offline/print' code if the described document is published offline.
-   * For example, web pages have a format of 'text/html'.
+   * (see the values in the 'Template' column), or using the `offline/print` code if the described document is published offline.
+   * For example, web pages have a format of `text/html`.
    */
   public format?: string;
 

@@ -6,12 +6,12 @@
 import type { RequirementResponse } from './requirement-response';
 
 /**
- * An assertion that responds to a single requirement.
- * A requirement response provides the value for the requirement and may provide the period to which it applies.
+ * An assertion that responds to a single {@link Requirement | requirement}.
+ * A requirement response provides the value for the {@link Requirement | requirement} and may provide the {@link Period | period} to which it applies.
  */
 export interface StringRequirementResponse extends RequirementResponse {
   /**
-   * The value of this requirement response. The value must be of the type defined in the requirement.dataType field.
+   * The value of this requirement response. The value must be of the type `string`.
    */
   value: string;
 }
