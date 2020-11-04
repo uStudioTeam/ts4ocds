@@ -4,10 +4,6 @@
     {{/each}}
 </ul>
 
-<ul class="tsd-descriptions">
-    {{#each signatures}}
-        <li class="tsd-description">
-            {{> member.signature.body }}
-        </li>
-    {{/each}}
-</ul>
+{{#if signatures}}
+  <ul class="tsd-descriptions">{{#each signatures}}<li class="tsd-description">{{> member.signature.body }}</li>{{/each}}</ul>
+{{/if}}
