@@ -6,7 +6,7 @@
 import * as Core from '@ts4ocds/requirements';
 import type { Initializer } from '@ts4ocds/utils';
 
-import { WithOptionsToCombine } from '../mixins';
+import { WithOptionsToCombine } from '../../mixins';
 
 /**
  * An atomic requirement.
