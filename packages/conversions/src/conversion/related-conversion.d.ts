@@ -6,7 +6,7 @@
 import type { Conversion } from './conversion';
 
 /**
- * Conversion is used to describe conversions and its {@link Coefficient | coefficients} applicability
+ * Conversion is used to describe conversions and its {@link Coefficient.Coefficient | coefficients} applicability
  * for specific value received for {@link Requirement | requirement} or {@link Observation | observation}.
  */
 export interface RelatedConversion extends Conversion {

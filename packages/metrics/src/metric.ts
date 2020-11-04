@@ -12,6 +12,9 @@ import { Observation } from './observation';
  * During the planning and tender sections, a metric indicates the anticipated results.
  * In award and contract sections it indicates the awarded/contracted results.
  * In the implementation section it is used to provide updates on actually delivered results, also known as outputs.
+ *
+ * @param O
+ * A target or actual value for this metric.
  */
 export class Metric<O extends Observation = Observation> extends Initializable<Metric<O>> {
   /**

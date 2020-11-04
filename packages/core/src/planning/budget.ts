@@ -29,8 +29,8 @@ export class Budget extends Initializable<Budget> {
   public description?: string;
 
   /**
-   * The {@link Value | value} reserved in the budget for this contracting process.
-   * A negative {@link Value | value} indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
+   * The {@link Value.Value | value} reserved in the budget for this contracting process.
+   * A negative {@link Value.Value | value} indicates anticipated income to the budget as a result of this contracting process, rather than expenditure.
    * Where the budget is drawn from multiple sources, the budget breakdown extension can be used.
    */
   public amount!: Value;

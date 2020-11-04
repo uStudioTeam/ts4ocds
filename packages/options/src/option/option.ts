@@ -13,7 +13,8 @@ import type { RangedOption } from './ranged-option';
 import type { PreciseOption } from './precise-option';
 
 /**
- * Available prescribed option for requirement/observation that can be set as a value for bid.requirementResponse/award.
+ * Available prescribed option for {@link Requirement.Requirement | requirement}/{@link Observation.Observation | observation}
+ * that can be set as a value for {@link RequirementResponse.RequirementResponse | bid.requirementResponse}/{@link Award.Award | award}.
  */
 export class Option<D extends Dimensions = undefined> extends Initializable<Option<D>> {
   /**
@@ -22,12 +23,12 @@ export class Option<D extends Dimensions = undefined> extends Initializable<Opti
   public id!: string | number;
 
   /**
-   * Title for this option
+   * Title for this option.
    */
   public title?: string;
 
   /**
-   * Free-text description for this option
+   * Free-text description for this option.
    */
   public description?: string;
 
@@ -42,14 +43,14 @@ export class Option<D extends Dimensions = undefined> extends Initializable<Opti
   public measure?: string | number;
 
   /**
-   * Used to check if this `option` is definined by a precise `value`
+   * Used to check if this option is definined by a {@link PreciseOption | precise} `value`.
    */
   public isPresice(): this is PreciseOption<D> {
     return hasOwnProperty(this, 'value');
   }
 
   /**
-   * Used to show if this coefficient should be defined by a range of `[minValue, maxValue]`
+   * Used to show if this coefficient should be defined by a {@link RangedOption | range} of `[minValue, maxValue]`.
    */
   public isRanged(): this is RangedOption<D> {
     return hasOwnProperty(this, 'minValue', 'maxValue');

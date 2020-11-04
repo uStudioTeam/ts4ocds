@@ -98,7 +98,7 @@ import { Item } from '@ts4ocds/core/item';
 /**
  * Some modules contain type-only entities.
  * We recommend importing them using type-only imports.
- * @see {@link https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export}
+ * @see https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
  */
 import type { FinancialObservation } from '@ts4ocds/metrics/observation';
 ```

@@ -10,6 +10,10 @@ import type { MilestoneStatus } from './milestone-status';
 
 /**
  * The milestone block can be used to represent a wide variety of events in the lifetime of a contracting process.
+ *
+ * @param MT
+ * The nature of the milestone,
+ * using the open [milestoneType](https://standard.open-contracting.org/1.1/en/schema/codelists/#milestone-type) codelist.
  */
 export class Milestone<MT extends MilestoneType = MilestoneType> extends Initializable<Milestone<MT>> {
   /**

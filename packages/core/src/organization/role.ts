@@ -6,7 +6,7 @@
 import { CodeList, OpenCodeList } from '@ts4ocds/utils';
 
 /**
- * The {@link Organization | party's} role(s) in the contracting process,
+ * The {@link Organization | party's} {@link Organization.roles | role(s)} in the contracting process,
  * using the open [partyRole](https://standard.open-contracting.org/1.1/en/schema/codelists/#party-role) codelist.
  */
 export const Roles = new OpenCodeList([
@@ -23,7 +23,7 @@ export const Roles = new OpenCodeList([
 ]);
 
 /**
- * The {@link Organization | party's} role(s) in the contracting process,
+ * The {@link Organization | party's} {@link Organization.roles | role(s)} in the contracting process,
  * using the open [partyRole](https://standard.open-contracting.org/1.1/en/schema/codelists/#party-role) codelist.
  */
 export type Role = CodeList<typeof Roles>;

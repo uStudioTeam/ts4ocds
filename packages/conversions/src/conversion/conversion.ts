@@ -10,7 +10,7 @@ import { Coefficient } from '../coefficient';
 import type { RelatedConversion } from './related-conversion';
 
 /**
- * Conversion is used to describe conversions and its {@link Coefficient | coefficients} applicability
+ * Conversion is used to describe conversions and its {@link Coefficient.Coefficient | coefficients} applicability
  * for specific value received for {@link Requirement | requirement} or {@link Observation | observation}.
  */
 export class Conversion extends Initializable<Conversion> {
@@ -25,7 +25,7 @@ export class Conversion extends Initializable<Conversion> {
   public description?: string;
 
   /**
-   * A list of applicable {@link Coefficient | coefficients} for this conversion.
+   * A list of applicable {@link Coefficient.Coefficient | coefficients} for this conversion.
    */
   public coefficients!: Coefficient[];
 
@@ -35,7 +35,7 @@ export class Conversion extends Initializable<Conversion> {
   public rationale?: string;
 
   /**
-   * Used to show if this conversion relates to a specific {@link Requirement} or {@link Observation}.
+   * Used to show if this conversion {@link RelatedConversion | relates to} a specific {@link Requirement | requirement} or {@link Observation | observation}.
    */
   public isRelated(): this is RelatedConversion {
     return hasOwnProperty(this, 'relatesTo', 'relatedItem');
