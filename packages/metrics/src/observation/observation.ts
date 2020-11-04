@@ -20,7 +20,7 @@ import type { NonFinancialObservation } from './non-financial-observation';
 export class Observation<D extends Dimensions = undefined> extends Initializable<Observation<D>> {
   /**
    * A local identifier for this specific observation.
-   * This may be an arbitrary identifier, or could be a composite of the {@link Metric | metric} identifier, and the date
+   * This may be an arbitrary identifier, or could be a composite of the {@link Metric | metric} {@link Metric.id | identifier}, and the date
    * and other dimensions of this observation.
    */
   public id!: string;
