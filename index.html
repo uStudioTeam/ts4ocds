@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>TS4OCDS - v1.0.0</title>
+	<meta name="description" content="Documentation for TS4OCDS - v1.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="icon" href="favicon.png" />
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">TS4OCDS - v1.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>TS4OCDS - v1.0.0</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><img src="https://raw.githubusercontent.com/uStudioTeam/ts4ocds/main/ts4ocds-banner.png" alt="logo"></p>
+				<p><a href="https://lerna.js.org/"><img src="https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg" alt="lerna"></a>
+				<a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="code style: prettier"></a></p>
+				<a href="#ts4ocds" id="ts4ocds" style="color: inherit; text-decoration: none;">
+					<h1>TS4OCDS</h1>
+				</a>
+				<p><code>ts4ocds</code> is a library of TypeScript interfaces that takes an approach
+					to befriend large OCDS JSONs with your per-project routine of
+				writing whole lotta interfaces for them.</p>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code class="language-shell">λ npm i @ts4ocds/&lt;package&gt;</code></pre>
+				<pre><code class="language-shell">λ yarn add @ts4ocds/&lt;package&gt;</code></pre>
+				<blockquote>
+					<p><code>typescript</code> must be included in your (dev-)dependencies as well as it is our peer dependency in all packages.</p>
+				</blockquote>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p><code>@ts4ocds</code> namespace contains the <a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/core"><code>/core</code></a> package which implements the <a href="https://standard.open-contracting.org/latest/en/">OCDS standard v1.1.5</a>.
+				All other packages implement their respective extension&#39;s latest present version.</p>
+				<p><a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils"><code>/utils</code></a> package contains useful utility entities that are used in all of our packages under the hood.</p>
+				<p>Each package is divided into logical modules containing all child entities.
+				The entities unique to the package/module are exported from its <code>index.ts</code> file.</p>
+				<p>Extension packages can also contain the <code>lib</code> folder which adds upon the entities from other packages
+					(like <a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/core"><code>/core</code></a> or other extensions);
+				the <code>mixins</code> folder which holds <a href="https://www.typescriptlang.org/docs/handbook/mixins.html">mixin classes</a>.</p>
+				<a href="#classes" id="classes" style="color: inherit; text-decoration: none;">
+					<h3>Classes</h3>
+				</a>
+				<p>Every class in <code>ts4ocds</code> can be constructed like any other JavaScript/TypeScript class.
+					To facilitate the construction process we made sure every constructor accepts a special
+					<a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/initializable/initializer.d.ts">initializer</a> object which represents the shape
+				of a to-be constructed class without its methods (if any are present).</p>
+				<p>Any other OO aspect is also applicable (inheritance, polymorphism, overriding).</p>
+				<a href="#interfaces" id="interfaces" style="color: inherit; text-decoration: none;">
+					<h3>Interfaces</h3>
+				</a>
+				<p>In the classes land interfaces serve as more specific possible shapes for the entities they represent.
+					For example, <a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/requirements/src/requirement/requirement.ts"><code>Requirement</code></a> can have several data types
+				which can later be discriminated by its supporting interfaces.</p>
+				<a href="#code-lists" id="code-lists" style="color: inherit; text-decoration: none;">
+					<h3>Code lists</h3>
+				</a>
+				<p>OCDS standard heavily relies on code lists which represent the sets of possible accepted
+				string values (the analogue of the TypeScript&#39;s union string type).</p>
+				<p>We went further by making these code lists the abstractions over the JavaScript&#39;s <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Set"><code>Set</code></a>.</p>
+				<p>In OCDS there are two types of code lists – open and closed.</p>
+				<a href="#opencodelist" id="opencodelist" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/open-code-list.ts"><code>OpenCodeList</code></a></h4>
+				</a>
+				<p><code>OpenCodeList</code> class serves as an abstraction over the native <code>Set</code>.
+				It just implements all needed properties and methods in a type-safe and immutable way.</p>
+				<a href="#closedcodelist" id="closedcodelist" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/closed-code-list.ts"><code>ClosedCodeList</code></a></h4>
+				</a>
+				<p><code>ClosedCodeList</code> serves the same purpose as the open one, except it implements TypeScript&#39;s <code>ReadonlySet</code>
+				interface making sure nothing can be added to/deleted from its instance.</p>
+				<a href="#codelist" id="codelist" style="color: inherit; text-decoration: none;">
+					<h4><a href="https://github.com/uStudioTeam/ts4ocds/tree/main/packages/utils/src/code-list/code-list.d.ts"><code>CodeList</code></a></h4>
+				</a>
+				<p><code>CodeList</code> type helps extract the values from the code list&#39;s instance in a form of a string union type.</p>
+				<a href="#mixins" id="mixins" style="color: inherit; text-decoration: none;">
+					<h3>Mixins</h3>
+				</a>
+				<blockquote>
+					<p>If you are not familiar with the concept of mixins, make sure to first read this <a href="https://www.typescriptlang.org/docs/handbook/mixins.html">handbook article</a>.</p>
+				</blockquote>
+				<p>In some cases OCDS extensions extend many entities with same properties.
+					To make sure we are not repeating ourselves in each of these cases, we made it possible to use mixins
+				in a place of such extensions.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { WithOptions } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/conversions/mixins&#x27;</span>;</code></pre>
+				<a href="#package-specific-entities" id="package-specific-entities" style="color: inherit; text-decoration: none;">
+					<h3>Package-specific entities</h3>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Classification } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/core&#x27;</span>;
+<span class="hljs-comment">/**
+ * /core package contains many sub-mobules with their own index.ts files.
+ * They are not included in the root index.ts file with the intention not to pollute it.
+ */</span>
+<span class="hljs-keyword">import</span> { Item } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/core/item&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * Some modules contain type-only entities.
+ * We recommend importing them using type-only imports.
+ * <span class="hljs-doctag">@see </span>https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-8.html#type-only-imports-and-export
+ */</span>
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">type</span> { FinancialObservation } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/metrics/observation&#x27;</span>;</code></pre>
+				<a href="#extended-entities" id="extended-entities" style="color: inherit; text-decoration: none;">
+					<h3>Extended entities</h3>
+				</a>
+				<p>Entities extending their base counterparts have the same name to make sure we are still operating
+				on the same entity except now it comes from the OCDS extension package.</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { Document } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/lots/lib&#x27;</span>;
+
+<span class="hljs-comment">/**
+ * There are two of each extended classes with the same name as their base,
+ * so the index.ts export is not possible here.
+ */</span>
+<span class="hljs-keyword">import</span> { Requirement } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@ts4ocds/requirements/lib/options-to-combine&#x27;</span>;</code></pre>
+				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+					<h2>Contributing</h2>
+				</a>
+				<p>We are open to receive any contributings to our project. If you are willing to contribute,
+					please make sure to read our <a href="https://github.com/uStudioTeam/ts4ocds/blob/main/CONTRIBUTING.md">contributing</a>
+				guide.</p>
+				<p>If you have noticed bugs or want to propose a new feature/improvement, you should check out
+					our <a href="https://github.com/uStudioTeam/ts4ocds/issues">issues</a> section. Every properly
+				written issue will be attended and reviewed by our team.</p>
+			</div>
+		</div>
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" tsd-kind-module">
+						<a href="modules/addressdetails.html">Address<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="modules/conversions.html">Conversions</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="modules/lots.html">Lots</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="modules/metrics.html">Metrics</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="modules/options.html">Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/requirements.html">Requirements</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/standard.html">Standard</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="modules/utilities.html">Utilities</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<div class='row'>
+			<div class='col-xs col-lg-9'>
+				<div class="tsd-legend-group">
+					<ul class="tsd-legend">
+						<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+						<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+						<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a>. Made by <a href='https://ustudio.company'>uStudio Company</a> with ❤️</p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

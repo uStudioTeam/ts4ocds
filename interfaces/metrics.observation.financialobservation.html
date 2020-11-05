@@ -1,0 +1,376 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>FinancialObservation | TS4OCDS - v1.0.0</title>
+	<meta name="description" content="Documentation for TS4OCDS - v1.0.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<link rel="icon" href="../favicon.png" />
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">TS4OCDS - v1.0.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/metrics.html">Metrics</a>
+				</li>
+				<li>
+					<a href="../modules/metrics.observation.html">Observation</a>
+				</li>
+				<li>
+					<a href="metrics.observation.financialobservation.html">FinancialObservation</a>
+				</li>
+			</ul>
+			<h1>Interface FinancialObservation&lt;D&gt;</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>An actual or target observation.
+						Observations should include either a <a href="metrics.observation.financialobservation.html#value">value</a> (for financial <a href="../classes/metrics.metric.html">metrics</a>) or <a href="metrics.observation.nonfinancialobservation.html#measure">measure</a> (for other <a href="../classes/metrics.metric.html">metrics</a>).</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-type-parameters">
+				<h3>Type parameters</h3>
+				<ul class="tsd-type-parameters">
+					<li>
+						<h4>&lt;<em>D</em>&gt;<span class="tsd-signature-symbol">: </span><a href="../modules/metrics.observation.html#dimensions" class="tsd-signature-type">Dimensions</a> = <span class="tsd-signature-type">undefined</span></h4>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Any number of dimensions can be recorded within this object.
+								Dimensions names should follow the camelCase conventions of OCDS.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#dimensions" class="tsd-kind-icon">dimensions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#notes" class="tsd-kind-icon">notes</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#period" class="tsd-kind-icon">period</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#relatedimplementationmilestone" class="tsd-kind-icon">related<wbr>Implementation<wbr>Milestone</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#unit" class="tsd-kind-icon">unit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="metrics.observation.financialobservation.html#value" class="tsd-kind-icon">value</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#isfinancial" class="tsd-kind-icon">is<wbr>Financial</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-inherited"><a href="metrics.observation.financialobservation.html#isnonfinancial" class="tsd-kind-icon">is<wbr>Non<wbr>Financial</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="constructor" class="tsd-anchor"></a>
+						constructor
+					</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>initializer<span class="tsd-signature-symbol">: </span><a href="../modules/utilities.initializable.html#initializer" class="tsd-signature-type">Initializer</a><span class="tsd-signature-symbol">&lt;</span><a href="../classes/metrics.observation.observation.html" class="tsd-signature-type">Observation</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">D</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="metrics.observation.financialobservation.html" class="tsd-signature-type">FinancialObservation</a></li>
+					</ul>
+					<ul class="tsd-descriptions"><li class="tsd-description"></li></ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="dimensions" class="tsd-anchor"></a>
+						dimensions
+						<span class="tsd-flag ts-flagOptional">
+							Optional
+						</span>
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <a href="" class="tsd-signature-type">D</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Any number of dimensions can be recorded within this object.
+							Dimensions names should follow the camelCase conventions of OCDS.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="id" class="tsd-anchor"></a>
+						id
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A local identifier for this specific observation.
+								This may be an arbitrary identifier, or could be a composite of the <a href="../classes/metrics.metric.html">metric</a> <a href="../classes/metrics.metric.html#id">identifier</a>, and the date
+							and other dimensions of this observation.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="notes" class="tsd-anchor"></a>
+						notes
+						<span class="tsd-flag ts-flagOptional">
+							Optional
+						</span>
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Any notes on this observation.
+							This may include clarifying information.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="period" class="tsd-anchor"></a>
+						period
+						<span class="tsd-flag ts-flagOptional">
+							Optional
+						</span>
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <a href="../modules/standard.period.html" class="tsd-signature-type">Period</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="../classes/standard.period.period.html">period</a> over which this observation is measured.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="relatedimplementationmilestone" class="tsd-anchor"></a>
+						related<wbr>Implementation<wbr>Milestone
+						<span class="tsd-flag ts-flagOptional">
+							Optional
+						</span>
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <a href="../classes/metrics.milestonereference.html" class="tsd-signature-type">MilestoneReference</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A link to the <a href="../classes/metrics.milestonereference.html">milestone</a> in the implementation section of OCDS to which this forecast,
+							target or actual observation relates.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="unit" class="tsd-anchor"></a>
+						unit
+						<span class="tsd-flag ts-flagOptional">
+							Optional
+						</span>
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <a href="../modules/standard.unit.html" class="tsd-signature-type">Unit</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p><a href="../classes/standard.unit.unit.html">Unit.Unit</a>.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<h3>
+						<a id="value" class="tsd-anchor"></a>
+						value
+					</h3>
+					<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">:</span> <a href="../classes/standard.value.value.html" class="tsd-signature-type">Value</a></div>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <a href="../classes/standard.value.value.html">value</a> of this forecast, target or actual observation.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="isfinancial" class="tsd-anchor"></a>
+						is<wbr>Financial
+					</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">FinancialObservation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">D</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions"><li class="tsd-description">        <div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to specify if this observation is related to <a href="metrics.observation.financialobservation.html">financial</a> <a href="../classes/metrics.metric.html">metrics</a>.</p>
+								</div>
+							</div>
+					</li></ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+					<h3>
+						<a id="isnonfinancial" class="tsd-anchor"></a>
+						is<wbr>Non<wbr>Financial
+					</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span><span class="tsd-signature-symbol"> is </span><span class="tsd-signature-type">NonFinancialObservation</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">D</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions"><li class="tsd-description">        <div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Used to specify if this observation is related to <a href="metrics.observation.nonfinancialobservation.html">non-financial</a> <a href="../classes/metrics.metric.html">metrics</a>.</p>
+								</div>
+							</div>
+					</li></ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-3 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" tsd-kind-module">
+						<a href="../modules/addressdetails.html">Address<wbr>Details</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/conversions.html">Conversions</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/lots.html">Lots</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/metrics.html">Metrics</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/options.html">Options</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/requirements.html">Requirements</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="../modules/standard.html">Standard</a>
+					</li>
+					<li class=" tsd-kind-module tsd-is-not-exported">
+						<a href="../modules/utilities.html">Utilities</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="../classes/metrics.observation.observation.html" class="tsd-kind-icon">Observation</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="metrics.observation.financialobservation.html" class="tsd-kind-icon">Financial<wbr>Observation</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#dimensions" class="tsd-kind-icon">dimensions</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#id" class="tsd-kind-icon">id</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#notes" class="tsd-kind-icon">notes</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#period" class="tsd-kind-icon">period</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#relatedimplementationmilestone" class="tsd-kind-icon">related<wbr>Implementation<wbr>Milestone</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#unit" class="tsd-kind-icon">unit</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="metrics.observation.financialobservation.html#value" class="tsd-kind-icon">value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#isfinancial" class="tsd-kind-icon">is<wbr>Financial</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
+								<a href="metrics.observation.financialobservation.html#isnonfinancial" class="tsd-kind-icon">is<wbr>Non<wbr>Financial</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-has-type-parameter">
+						<a href="metrics.observation.nonfinancialobservation.html" class="tsd-kind-icon">Non<wbr>Financial<wbr>Observation</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="../modules/metrics.observation.html#dimensions" class="tsd-kind-icon">Dimensions</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<div class='row'>
+			<div class='col-xs col-lg-9'>
+				<div class="tsd-legend-group">
+					<ul class="tsd-legend">
+						<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+						<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+						<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+					</ul>
+					<ul class="tsd-legend">
+						<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+						<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a>. Made by <a href='https://ustudio.company'>uStudio Company</a> with ❤️</p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
