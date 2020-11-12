@@ -6,9 +6,12 @@
 import { ClosedCodeList } from './closed-code-list';
 
 /**
- * Type-safe interface over the native `Set` with all methods (except {@link OpenCodeList.forEach | forEach} being immatable.
+ * Type-safe interface over the native `Set` with all methods (except for {@link OpenCodeList.forEach | forEach}) being immutable.
  */
 export class OpenCodeList<T extends string> extends ClosedCodeList<T> {
+  /**
+   * @ignore
+   */
   public readonly [Symbol.toStringTag] = this.set[Symbol.toStringTag];
 
   protected readonly set!: Set<T>;
