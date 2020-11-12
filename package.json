@@ -18,11 +18,11 @@
     "build": "npm-run-all -p build:ts build:docs",
     "test": "npm-run-all -p format lint typecheck",
     "ci": "npm-run-all -s build test",
-    "bump": "lerna version --no-private --yes --create-release github --tag-version-prefix=''",
+    "bump": "lerna version --no-private --yes --tag-version-prefix=''",
     "deploy": "gh-pages -d packages/docs/dist -r https://${GH_TOKEN}@github.com/uStudioTeam/ts4ocds",
     "prerelease": "node scripts/create-meta-files.js",
     "prepack": "lerna exec --no-private --parallel -- copyfiles README.md lib",
-    "release": "lerna exec --no-private --parallel -- yarn publish lib --new-version ${TRAVIS_TAG}",
+    "release": "lerna exec --no-private --parallel -- yarn publish lib --non-interactive",
     "cd": "npm-run-all -p deploy release"
   },
   "devDependencies": {
