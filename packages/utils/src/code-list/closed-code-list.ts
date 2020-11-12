@@ -17,6 +17,9 @@ export class ClosedCodeList<T extends string> {
     return this.set.size;
   }
 
+  /**
+   * @ignore
+   */
   public [Symbol.iterator](): IterableIterator<T> {
     return this.set[Symbol.iterator]();
   }
