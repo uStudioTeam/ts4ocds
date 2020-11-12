@@ -54,7 +54,7 @@ export class Budget extends Initializable<Budget> {
    * A URI pointing directly to a machine-readable record about the budget line-item or line-items that fund this contracting process.
    * Information can be provided in a range of formats, including using IATI, the Open Fiscal Data Standard
    * or any other standard which provides structured data on budget sources.
-   * Human readable documents can be included using the `planning.documents` block.
+   * Human readable documents can be included using the {@link Document | `planning.documents`} block.
    */
   public uri?: string;
 }
