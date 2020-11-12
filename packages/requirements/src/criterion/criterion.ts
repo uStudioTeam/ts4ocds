@@ -13,9 +13,9 @@ import type { TendererCriterion } from './tenderer-criterion';
  * A criterion on which either bidders or {@link Item.Item | items} will be judged, evaluated or assessed.
  *
  * @param RG
- * A list of {@link RequirementGroup.RequirementGroup | requirement groups} for this criterion.
- * A criterion is satisfied by one or more {@link RequirementGroup.RequirementGroup | requirement groups} being met.
- * A {@link RequirementGroup.RequirementGroup | requirement groups} is met when all {@link Requirement.Requirement | requirements} in the group are satisfied.
+ * A list of {@link RequirementGroup | requirement groups} for this criterion.
+ * A criterion is satisfied by one or more {@link RequirementGroup | requirement groups} being met.
+ * A {@link RequirementGroup | requirement groups} is met when all {@link Requirement.Requirement | requirements} in the group are satisfied.
  */
 export class Criterion<RG extends RequirementGroup = RequirementGroup> extends Initializable<Criterion<RG>> {
   /**
@@ -37,9 +37,9 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> extends I
   public description?: string;
 
   /**
-   * A list of {@link RequirementGroup.RequirementGroup | requirement groups} for this criterion.
-   * A criterion is satisfied by one or more {@link RequirementGroup.RequirementGroup | requirement groups} being met.
-   * A {@link RequirementGroup.RequirementGroup | requirement groups} is met when all {@link Requirement.Requirement | requirements} in the group are satisfied.
+   * A list of {@link RequirementGroup | requirement groups} for this criterion.
+   * A criterion is satisfied by one or more {@link RequirementGroup | requirement groups} being met.
+   * A {@link RequirementGroup | requirement groups} is met when all {@link Requirement.Requirement | requirements} in the group are satisfied.
    */
   public requirementGroups!: RG[];
 
@@ -61,12 +61,12 @@ export class Criterion<RG extends RequirementGroup = RequirementGroup> extends I
   public isRelatedTo(relatesTo: 'tenderer'): this is TendererCriterion;
 
   /**
-   * Used to check this criterion's {@link ItemCriterion | relation} to the specific {@link Item.Item}.
+   * Used to check this criterion's {@link ItemCriterion | relation} to the specific {@link Item.Item | Item}.
    */
   public isRelatedTo(relatesTo: 'item'): this is ItemCriterion;
 
   /**
-   * Used to check this criterion's relation to the specific {@link Item.Item} or tenderer.
+   * Used to check this criterion's relation to the specific {@link Item.Item | Item} or tenderer.
    */
   public isRelatedTo(relatesTo: Criterion['relatesTo']): boolean {
     return this.relatesTo === relatesTo;

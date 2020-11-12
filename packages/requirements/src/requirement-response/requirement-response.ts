@@ -59,22 +59,22 @@ export class RequirementResponse extends Initializable<RequirementResponse> {
   public relatedTenderer?: OrganizationReference;
 
   /**
-   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link BooleanRequirementResponse | `boolean`} {@link DataType | dataType}.
+   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link BooleanRequirementResponse | `boolean`} {@link DataType | data type}.
    */
   public isOfType(dataType: 'boolean'): this is BooleanRequirementResponse;
 
   /**
-   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link StringRequirementResponse | `string`} {@link DataType | dataType}.
+   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link StringRequirementResponse | `string`} {@link DataType | data type}.
    */
   public isOfType(dataType: 'string'): this is StringRequirementResponse;
 
   /**
-   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link NumericRequirementResponse | numeric} {@link DataType | dataType}.
+   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has {@link NumericRequirementResponse | numeric} {@link DataType | data type}.
    */
   public isOfType(dataType: 'number' | 'integer' | 'numeric'): this is NumericRequirementResponse;
 
   /**
-   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has spesific {@link DataType | dataType}.
+   * Used to check if this `RequirementResponse`'s {@link RequirementResponse.value | `value`} has spesific {@link DataType | data type}.
    */
   public isOfType(dataType: DataType | 'numeric'): boolean {
     if (['integer', 'numeric'].includes(dataType)) {
