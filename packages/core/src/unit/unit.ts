@@ -15,7 +15,7 @@ import type { UnitClassificationScheme } from './unit-classification-scheme';
  * @param S
  * The list from which {@link Unit.id | identifiers} for units of measure are taken,
  * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
- * 'UNCEFACT' is recommended.
+ * _'UNCEFACT'_ is recommended.
  */
 export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme> extends Initializable<Unit<S>> {
   /**
@@ -27,7 +27,7 @@ export class Unit<S extends UnitClassificationScheme = UnitClassificationScheme>
   /**
    * The {@link UnitClassificationScheme | list} from which identifiers for units of measure are taken,
    * using the open [unitClassificationScheme](https://standard.open-contracting.org/1.1/en/schema/codelists/#unit-classification-scheme) codelist.
-   * 'UNCEFACT' is recommended.
+   * _'UNCEFACT'_ is recommended.
    */
   public scheme?: S | string;
 

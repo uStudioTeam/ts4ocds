@@ -8,7 +8,7 @@ import { Initializable } from '@ts4ocds/utils';
 import type { DocumentType } from './document-type';
 
 /**
- * Links to, or descriptions of, external documents can be attached at various locations within the standard.
+ * {@link Document.url | Links to}, or {@link Document.description}, external documents can be attached at various locations within the standard.
  * Documents can be supporting information, formal notices, downloadable forms,
  * or any other kind of resource that ought to be made public as part of full open contracting.
  *

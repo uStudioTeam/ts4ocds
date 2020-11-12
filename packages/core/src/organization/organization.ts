@@ -15,11 +15,11 @@ import { OrganizationReference } from './organization-reference';
  * A party (organization)
  *
  * @param R
- * The party's role(s) in the contracting process,
+ * The party's {@link Organization.roles | role(s)} in the contracting process,
  * using the open [partyRole](https://standard.open-contracting.org/1.1/en/schema/codelists/#party-role) codelist.
  *
  * @param PD
- * Additional classification information about parties can be provided using `partyDetail` extensions
+ * Additional classification {@link Organization.details | information about parties} can be provided using `partyDetail` extensions
  * that define particular properties and classification schemes.
  */
 export class Organization<
@@ -81,7 +81,7 @@ export class Organization<
   public name?: string;
 
   /**
-   * Creates an instance of the {@link OrganizationReference} class from this organization.
+   * Creates an instance of the {@link OrganizationReference | `OrganizationReference`} class from this `Organization`.
    */
   public toReference(): OrganizationReference {
     return new OrganizationReference({
