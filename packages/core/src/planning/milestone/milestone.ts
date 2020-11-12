@@ -1,6 +1,6 @@
 /**
  * @packageDocumentation
- * @module Standard.Planning
+ * @module Standard.Planning.Milestone
  */
 
 import { Initializable } from '@ts4ocds/utils';
@@ -43,7 +43,7 @@ export class Milestone<MT extends MilestoneType = MilestoneType> extends Initial
   public dateMet?: Date | string;
 
   /**
-   * The date the milestone was last reviewed or modified and the status was altered or confirmed to still be correct.
+   * The date the milestone was last reviewed or modified and the {@link Milestone.status | status} was altered or confirmed to still be correct.
    */
   public dateModified?: Date | string;
 
@@ -61,7 +61,7 @@ export class Milestone<MT extends MilestoneType = MilestoneType> extends Initial
 
   /**
    * Milestone codes can be used to track specific events that take place for a particular kind of contracting process.
-   * For example, a code of `approvalLetter' can be used to allow applications to understand this milestone
+   * For example, a code of `approvalLetter` can be used to allow applications to understand this milestone
    * represents the date an `approvalLetter` is due or signed.
    */
   public code?: string;
