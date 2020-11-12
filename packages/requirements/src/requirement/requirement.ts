@@ -93,7 +93,7 @@ export class Requirement extends Initializable<Requirement> {
   }
 
   /**
-   * Creates an instance of a {@link RequirementReference} class from this `Requirement`.
+   * Creates an instance of a {@link RequirementReference | `RequirementReference`} class from this `Requirement`.
    */
   public toReference(): RequirementReference {
     return new RequirementReference({
@@ -103,13 +103,13 @@ export class Requirement extends Initializable<Requirement> {
   }
 
   /**
-   * Creates an instance of a {@link RequirementResponse.RequirementResponse} class from this `Requirement`.
+   * Creates an instance of a {@link RequirementResponse.RequirementResponse | `RequirementResponse`} class from this `Requirement`.
    */
   public toResponse(id: RequirementResponse['id']): RequirementResponse;
 
   /**
-   * Creates an instance of a {@link RequirementResponse.RequirementResponse} class from this `Requirement`.
-   * Holds a shape of a {@link BooleanRequirementResponse}.
+   * Creates an instance of a {@link RequirementResponse.RequirementResponse | `RequirementResponse`} class from this `Requirement`.
+   * Holds a shape of a {@link BooleanRequirementResponse | `BooleanRequirementResponse`}.
    */
   public toResponse(
     id: RequirementResponse['id'],
@@ -117,8 +117,8 @@ export class Requirement extends Initializable<Requirement> {
   ): BooleanRequirementResponse;
 
   /**
-   * Creates an instance of a {@link RequirementResponse.RequirementResponse} class from this `Requirement`.
-   * Holds a shape of a {@link StringRequirementResponse}.
+   * Creates an instance of a {@link RequirementResponse.RequirementResponse | `RequirementResponse`} class from this `Requirement`.
+   * Holds a shape of a {@link StringRequirementResponse | `StringRequirementResponse`}.
    */
   public toResponse(
     id: RequirementResponse['id'],
@@ -126,8 +126,8 @@ export class Requirement extends Initializable<Requirement> {
   ): StringRequirementResponse;
 
   /**
-   * Creates an instance of a {@link RequirementResponse.RequirementResponse} class from this `Requirement`.
-   * Holds a shape of a {@link NumericRequirementResponse}.
+   * Creates an instance of a {@link RequirementResponse.RequirementResponse | `RequirementResponse`} class from this `Requirement`.
+   * Holds a shape of a {@link NumericRequirementResponse | `NumericRequirementResponse`}.
    */
   public toResponse(
     id: RequirementResponse['id'],
@@ -135,7 +135,7 @@ export class Requirement extends Initializable<Requirement> {
   ): NumericRequirementResponse;
 
   /**
-   * Creates an instance of a {@link RequirementResponse.RequirementResponse} class from this `Requirement`.
+   * Creates an instance of a {@link RequirementResponse.RequirementResponse | `RequirementResponse`} class from this `Requirement`.
    */
   public toResponse(id: RequirementResponse['id'], value?: RequirementResponse['value']): RequirementResponse {
     return new RequirementResponse({
