@@ -1,8 +1,8 @@
 {
   "name": "@ts4ocds/core",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
-    "@ts4ocds/utils": "^1.0.0"
+    "@ts4ocds/utils": "^1.1.0"
   },
   "peerDependencies": {
     "typescript": "4.0.3"
