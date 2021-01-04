@@ -1,12 +1,12 @@
 {
   "name": "@ts4ocds/options",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "dependencies": {
-    "@ts4ocds/core": "^1.0.0",
-    "@ts4ocds/lots": "^1.0.0",
-    "@ts4ocds/metrics": "^1.0.0",
-    "@ts4ocds/requirements": "^1.0.0",
-    "@ts4ocds/utils": "^1.0.0"
+    "@ts4ocds/core": "^1.1.0",
+    "@ts4ocds/lots": "^1.1.0",
+    "@ts4ocds/metrics": "^1.1.0",
+    "@ts4ocds/requirements": "^1.1.0",
+    "@ts4ocds/utils": "^1.1.0"
   },
   "peerDependencies": {
     "typescript": "4.0.3"
