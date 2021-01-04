@@ -12,10 +12,16 @@ import type { OptionGroupRelatesTo } from './option-group-relates-to';
 /**
  * An option group is a set of options that may be applied by Procuring Entity for specific property.
  *
+ * @param O
+ * {@link Option | Options} available for this `optionGroup`.
+ *
  * @param R
  * The scheme element that the group applies to.
  */
-export class OptionGroup<R extends OptionGroupRelatesTo = OptionGroupRelatesTo> extends Initializable<OptionGroup> {
+export class OptionGroup<
+  O extends Option = Option,
+  R extends OptionGroupRelatesTo = OptionGroupRelatesTo
+> extends Initializable<OptionGroup<O, R>> {
   /**
    * An identifier for this group.
    */
@@ -29,7 +35,7 @@ export class OptionGroup<R extends OptionGroupRelatesTo = OptionGroupRelatesTo> 
   /**
    * {@link Option | Options} available for this `optionGroup`.
    */
-  public options!: Option[];
+  public options!: O[];
 
   /**
    * The scheme element that the group applies to.
