@@ -9,11 +9,11 @@ import type { OptionToCombine } from './option-to-combine';
 /**
  * Where options are applied 'Option Details' is used to capture this information.
  */
-export interface OptionGroups {
+export interface OptionGroups<OG extends OptionGroup = OptionGroup> {
   /**
    * A list of option groups for this element.
    */
-  optionGroups: OptionGroup[];
+  optionGroups: OG[];
 }
 
 /**
